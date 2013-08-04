@@ -3,7 +3,7 @@
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname chapter_02_02_02) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ())))
 ;; HtDP 2e 2.2 Functions
 ;; 2.2.2 Composing Functions
-;; Exercises 23-15
+;; Exercises 23-25
 (require 2htdp/image)
 
 ;; Sample program
