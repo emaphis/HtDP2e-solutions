@@ -12,7 +12,7 @@
 ;; Letter sample -- function composition
 
 (define (letter fst lst signature-name) 
-  (string-appen25
+  (string-append 
    (opening fst) 
    "\n" 
    (body fst lst) 
