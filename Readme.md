@@ -33,7 +33,7 @@ Chapter 2.4 Enumerations and Intervals
   chapter02_04_04      Ex.  44-51
 
 
-I'm also experimenting with (Realm of Racket)[http://www.nostarch.com/realmofracket]
-
+I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)
+See the 'Realm-of-Racket directory.
 
 Have fun.
