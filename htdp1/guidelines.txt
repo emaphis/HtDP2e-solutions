@@ -1,0 +1,12 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname guidelines) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ())))
+Guideline on Auxiliary Functions:
+Formulate auxiliary function definitions for every dependency between
+quantities mentioned in the problem statement or discovered with
+example calculations.
+
+
+Guideline on Variable Definitions
+Give names to frequently used constants and use the names instead of
+the constants in programs.
