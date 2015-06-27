@@ -1,0 +1,100 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname Recipe) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ())))
+The design recipe at a glance
+
+Phase: Contract,  Purpose, and Header
+
+Goal:
+- to name the function;
+- to specify its classes of
+    input data and its
+    class of output data;
+- to describe its purpose;
+- to formulate a header 
+
+Activity:
+- choose a name that fits the problem 
+- study the problem for clues on how many unknown ``givens''
+  the function consumes
+- pick one variable per input, if possible, use names that are
+  mentioned for the ``givens'' in the problem statement
+- describe what the function should produce using the chosen
+  variables names
+- formulate the contract and header:
+;; name : number ...--> number 
+;; to compute ... from x1 ...
+(define (name x1 ...) ...) 
+
+
+Phase: Examples 
+
+Goal: to characterize the input-output relationship via examples
+
+Activity:
+- search the problem statement for examples 
+- work through the examples
+- validate the results, if possible
+- make up examples
+
+
+Phase: Body
+
+Goal: to define the function 
+
+Activity:
+- formulate how the function computes its results
+- develop a Scheme expression that uses Scheme's primitive operations,
+  other functions, and the variables
+- translate the mathematical expressions in the problem statement,
+  when available
+
+Phase: Test
+
+Goal: to discover mistakes("typos" and logic)
+
+Activity:
+- apply the function to the inputs of the examples
+- check that the outputs are as predicted
+
+
+*************************************************************
+  Designing the body of a conditional function
+
+Phase: Data nalysis
+
+Goal: to determine the distinct situations a function deals with 
+
+Activity:
+- inspect the problem statement for distinct situations
+- enumerate all possible situations
+
+Phase: Examples 
+
+Goal: to provide an example per situation 
+
+Activity:
+- choose at least one example per situation
+- for intervals or enumerations, the examples must include
+  borderline cases
+
+          
+Phase: Body (1) Conditions
+
+Goal: to formulate a conditional expression 
+
+Activity:
+- write down the skeleton of a cond expression, with one clause per situation
+- formulate one condition per situation, using the parameters
+  ensure that the conditions distinguish the examples appropriately
+
+
+Phase: Body (2) Answers 
+
+Goal: to formulate the answers for the cond-clauses 
+
+Activity:
+- deal with each cond-line separately
+- assume the condition holds and develop a Scheme expression
+  that computes the appropriate answer for this case
+
