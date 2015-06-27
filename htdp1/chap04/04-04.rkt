@@ -162,3 +162,31 @@
 (check-expect (pay-back 2600) 14.75)
 
 ;; much much too recursive for this stage of the game.
+
+
+;; Exercise 4.4.4.
+;; Quadratic equations
+
+;; Develop the function how-many, which consumes the coefficients a, b, and c of a
+;; proper quadratic equation and determines how many solutions the equation has:
+
+;; how-many:  Integr Integer Integer -> Natural
+
+(check-expect (how-many 1 0 -1) 2)
+(check-expect (how-many 2 4  2) 1)
+(check-expect (how-many 2 4  3) 0)
+
+(define (how-many a b c)
+  (cond [(> (discriminant a b c) 0) 2]
+        [(= (discriminant a b c) 0) 1]
+        [(< (discriminant a b c) 0) 0]))
+
+;; discriminant : Integer Integer Integer -> Natural
+;; computes the discrimanent of a quadratic equation given coefficients a b c
+
+(check-expect (discriminant 1 0 -1)  4)
+(check-expect (discriminant 2 4  2)  0)
+(check-expect (discriminant 2 4  3) -8)
+
+(define (discriminant a b c)
+  (- (* b b) (* 4 a c)))
