@@ -16,14 +16,16 @@
 
 ;; Definitions examples
 
+;; Silly functions that don't use the parameters
 (define (f x) 1)
 (define (g x y) (+ 1 1))
 (define (h x y z) (+ (* 2 2) 3))
 
+;; a useful funtion
 (define (ff a)
   (* 10 a))
 
-(check-expect (f 1) 1)
+(check-expect (f 1) 1)  ;; doesn't use it's parameter
 (check-expect (f 2) 1)
 (check-expect (f "hello world") 1)
 (check-expect (f true) 1)
@@ -32,55 +34,93 @@
 (check-expect (ff (+ 1 1)) 20)
 (check-expect (+ (ff 3) 2) 32)
 (check-expect (* (ff 4) (+ (ff 3) 2)) 1280)
+(check-expect (ff (ff 1)) 100)
 
 (define (opening first last)
   (string-append "Dear " first ","))
 
 (check-expect (opening "Matthew" "Krishnamurthi") "Dear Matthew,")
 
-;; Exercise 13:
+
+;; Ex. 13:
+;; Define a function that consumes two numbers, x and y, and that
+;; computes the distance of point (x,y) to the origin.
 ;; based on ex. 1
 (define (distance x y) 
   (sqrt (+ (sqr x) (sqr y))))
 
+(check-expect (distance 0 0) 0)
 (check-expect (distance 3 4) 5)
 
-;; Exercise 14:
-(define (cube-volume sd)
+
+;; Ex. 14:
+;; Define the function cvolume, which accepts the length of a side of
+;; an equilateral cube and computes its volume. If you have time, consider
+;; defining csurface, too.
+(define (cvolume sd)
   (* sd sd sd))
 
-(check-expect (cube-volume 5) 125)
+(check-expect (cvolume 0) 0)
+(check-expect (cvolume 1) 1)
+(check-expect (cvolume 5) 125)
 
-;; Exercise 15: 
+(define (csurface s)
+  (* 6 (sqr s)))
+
+(check-expect (csurface 0) 0)
+(check-expect (csurface 1) 6)
+(check-expect (csurface 2) (* 4 6))
+
+
+;; Ex. 15:
+;;  Define the function string-last, which extracts the last 1String from
+;; a non-empty string. Don’t worry about empty strings. image
 (define (string-first str)
   (substring str 0 1))
 
-(check-expect (string-first "test") "t")
+(check-expect (string-first "s") "s")
+(check-expect (string-first "string") "s")
 
-;; Exercise 16:
+
+;; Ex. 16:
+;; Define the function string-last, which extracts the last 1String from
+;; a non-empty string. Don’t worry about empty strings.
 (define (string-last str)
   (substring str (- (string-length str) 1)))
 
+(check-expect (string-last "d") "d")
 (check-expect (string-last "hello world") "d")
 
-;; Exercise 17
+
+;; Ex. 17
+;; Define ==>. The function consumes two Boolean values, call them sunny
+;; and friday. Its answer is #true if sunny is false or friday is true.
+;; Note Logicians call this Boolean operation implication, and they use the
+;; notation sunny => friday for this purpose. image
 ;; based on ex 9 -- bool imply function
-(define (bool-imply p q)
+(define (==> p q)
   (or (not p) q))
 
-(check-expect (bool-imply true  true)  true)  ;; truth table
-(check-expect (bool-imply true  false) false)
-(check-expect (bool-imply false true)  true)
-(check-expect (bool-imply false false) true)
+(check-expect (==> #true  #true)  #true)  ;; truth table
+(check-expect (==> #true  #false) #false)
+(check-expect (==> #false #true)  #true)
+(check-expect (==> #false #false) #true)
 
-;; Exercise 18:
-;; based on ex. 5
+
+;; Ex. 18:
+;; Define the function image-area, which counts the number of pixels in a given image.
+;; based on ex. 7
 (define (image-area img)
   (* (image-height img) (image-width img)))
 
+(check-expect (image-area (rectangle 0 0 "solid" "blue")) 0)
 (check-expect (image-area (rectangle 10 20 "solid" "red")) 200)
 
-;; Exercise 19:
+
+;; Ex. 19:
+;; Define the function image-classify, which consumes an image and produces
+;; "tall" if the image is taller than wide, "wide" if it is wider than tall,
+;; or "square" if its width and height are the same.
 ;; based on ex. 10
 (define (image-classify img)
   (if (> (image-height img) (image-width img))
@@ -96,15 +136,23 @@
 (check-expect (image-classify WIDE) "wide")
 (check-expect (image-classify SQUARE) "square")
 
-;; Exercise 20.
-;; based on ex. 2
+
+;; Ex. 20
+;; Define the function string-join, which consumes two strings and
+;; appends them with "_" in between.
+;; based on ex. 4
 (define (string-join prefix suffix)
   (string-append prefix "_" suffix))
 
+(check-expect (string-join "" "") "_")
 (check-expect (string-join "hello" "world") "hello_world")
 
+
 ;; Exercise 21
-;; based on ex. 3
+;; Define the function string-insert, which consumes a string str plus
+;; a number i and inserts "_" at the ith position of str. Assume i is
+;; a number between 0 and the length of the given string (inclusive).
+;; based on ex. 5
 (define (string-insert str i)
   (string-append (substring str 0 i) "_" (substring str i)))
 
@@ -112,9 +160,18 @@
 (define i 5)
 (check-expect (string-insert "helloworld" 5) "hello_world")
 
+(check-expect (string-insert "" 0) "_")
+
+
 ;; Exercise 22
-;; based on ex. 4
+;; Define the function string-delete, which consumes a string plus a number
+;; i and deletes the ith position from str. Assume i is a number between 0
+;; (inclusive) and the length of the given string (exclusive).
+;; Can string-delete deal with empty strings?
+;; based on ex. 6
 (define (string-delete str i)
   (string-append (substring str 0 i) (substring str (+ i 1))))
 
 (check-expect (string-delete "helloworld" 5) "helloorld")
+
+;; Cant handle 0 length strings -- starting index out of range
