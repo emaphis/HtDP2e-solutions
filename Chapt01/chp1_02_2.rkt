@@ -1,159 +1,104 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname chapter_02_02_02) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ())))
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname chp1_02_2) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e 2.2 Functions
-;; 2.2.2 Composing Functions
+;; 2.2.2 Computing
 ;; Exercises 23-25
 (require 2htdp/image)
+
+(define (f x) 1)
+
+(define (ff a)
+  (* 10 a))
+
+;; Ex. 23:
+;; Use DrRacket’s stepper to evaluate (ff (ff 1)) step by step.
+;; Also try (+ (ff 1) (ff 1)).
+;; Does DrRacket’s stepper reuse the results of computations?
+
+(ff (ff 1))
+(ff (* 10 1))
+(ff 10)
+(* 10 10)
+100
+
+(+ (ff 1) (ff 1))
+(+ (* 10 1) (ff 1))
+(+ 10 (* 10 1))
+(+ 10 10)
+20
+
 
 ;; Sample program
 ;; Attendee's example and Letter example
 
 ;; Letter sample -- function composition
 
-(define (letter fst lst signature-name) 
-  (string-append 
-   (opening fst) 
-   "\n" 
-   (body fst lst) 
-   "\n" 
-   (closing signature-name))) 
+(define (opening first-name last-name)
+  (string-append "Dear " first-name ","))
 
-(define (opening fst) 
-  (string-append "Dear " fst ",")) 
-
-(define (body fst lst) 
-  (string-append 
-   "we have discovered that all people with the last name " 
-   "\n" 
-   lst " have won our lottery. So, " fst ", " 
-   "\n" 
-   "hurry and pick up your prize.")) 
-
-(define (closing signature-name) 
-  (string-append 
-   "Sincerely," 
-   "\n" 
-   signature-name)) 
-
-(check-expect (letter "Matthew" "Krishnamurthi" "Felleisen")
-              "Dear Matthew,\nwe have discovered that all people with the last name \nKrishnamurthi have won our lottery. So, Matthew, \nhurry and pick up your prize.\nSincerely,\nFelleisen")
+(check-expect (opening "Matthew" "Fisler") "Dear Matthew,")
 
 
-;; Attendees example
-#;
-(define (attendees ticket-price)
-  (+ 120 (* (/ 15 0.1) (- 5.0 ticket-price))))
-#;
-(define (revenue ticket-price)
-  (*  (attendees ticket-price) ticket-price))
-#;
-(define (cost ticket-price)
-  (+ 180 (* 0.04 (attendees ticket-price))))
-#;
-(define (profit ticket-price)
-  (- (revenue ticket-price)
-     (cost ticket-price)))
+;; Ex. 24: run in stepper
 
-;; Exercise 23:
-(define START-ATTENDEES 120)
-(define START-PRICE 5.00)
-(define INCREASE-ATTENDENCE 15)
-(define INCREASED-PRICE 0.10)
-(define FIXED-COST 180.00)
-(define PRICE-PER-ATTENDEE 0.04)
+(define (distance-to-origin x y)
+  (sqrt (+ (sqr x) (sqr y))))
 
-(define (attendees ticket-price)
-  (+ START-ATTENDEES 
-     (* (/ INCREASE-ATTENDENCE INCREASED-PRICE) 
-        (- START-PRICE ticket-price))))
+(distance-to-origin 3 4)
+(sqrt (+ (sqr 3) (sqr 4)))
+(sqrt (+ 9 (sqr 4)))
+(sqrt (+ 9 16))
+(sqrt 25)
+5
 
-(define (revenue ticket-price)
-  (*  (attendees ticket-price) ticket-price))
+;; Ex. 25:  run in stepper
+(define (string-first s)
+  (substring s 0 1))
 
-(define (cost ticket-price)
-  (+ FIXED-COST 
-     (* PRICE-PER-ATTENDEE (attendees ticket-price))))
+(string-first "hello world")
+(substring "hello world" 0 1)
+"h"
 
-(define (profit ticket-price)
-  (- (revenue ticket-price)
-     (cost ticket-price)))
+;; Ex 26: run in stepper
+(define (==> x y)
+  (or (not x) y))
 
-;; Exercise 24:
-;; a:
-(check-expect (profit 1.00)  511.20)
-(check-expect (profit 2.00)  937.20)
-(check-expect (profit 3.00) 1063.20)
-(check-expect (profit 4.00)  889.20)
-(check-expect (profit 5.00)  415.20)
+(==> #true #false)
+(or (not #true) #false)
+(or #false #false)
+#false
 
-;; b. Highest profit
-(check-expect (profit 2.80) 1062.00)
-(check-expect (profit 2.90) 1064.10) ;; Highest profit!!!
-(check-expect (profit 3.00) 1063.20)
+;; Ex 27 Does the stepping suggest how to fix this attempt? image
 
-;; c. Complex definition
-(define (profit2 price)
-  (- (* (+ 120
-           (* (/ 15 0.10)
-              (- 5.00 price)))
-        price)
-     (+ 180
-        (* 0.04
-           (+ 120
-              (* (/ 15 0.1)
-                 (- 5.0 price)))))))
+(define (image-classify img)
+  (cond
+    [(>= (image-height img) (image-width img))
+     "tall"]
+    [(= (image-height img) (image-width img))
+     "square"]
+    [(<= (image-height img) (image-width img))
+     "wide"]))
 
-(check-expect (profit2 1.00) (profit2 1.00))
-(check-expect (profit2 2.00) (profit2 2.00))
-(check-expect (profit2 3.00) (profit2 3.00))
-(check-expect (profit2 4.00) (profit2 4.00))
-(check-expect (profit2 5.00) (profit2 5.00))
+(image-classify (circle 3 "solid" "red"))
 
+;; Yes the "=" clause should come first.
 
-;; Exercise 25: 
-;; new fixed cost per attendee schedule
+(define (image-classify-fixed img)
+  (cond
+    [(= (image-height img) (image-width img))
+     "square"]
+    [(>= (image-height img) (image-width img))
+     "tall"]
+    [(<= (image-height img) (image-width img))
+     "wide"]))
 
-;; a. well factored program
-(define FIXED-COST-PER-ATTENDEE 1.50)
+;; Ex 28: Confirm with stepper
 
-(define (attendees3 ticket-price)
-  (+ START-ATTENDEES
-     (* (/ INCREASE-ATTENDENCE INCREASED-PRICE) 
-        (- START-PRICE ticket-price))))
+(define (string-insert s i)
+  (string-append (substring s 0 i)
+                 "_"
+                 (substring s i)))
 
-(define (revenue3 ticket-price)
-  (*  (attendees3 ticket-price) ticket-price))
-
-(define (cost3 ticket-price)
-  (* FIXED-COST-PER-ATTENDEE 
-     (attendees3 ticket-price)))
-
-(define (profit3 ticket-price)
-  (- (revenue3 ticket-price)
-     (cost3 ticket-price)))
-
-(check-expect (profit3 1.00) -360)
-(check-expect (profit3 2.00)  285)
-(check-expect (profit3 3.00)  630) 
-(check-expect (profit3 4.00)  675) ;; Highest
-(check-expect (profit3 5.00)  420)
-
-
-;; b. complex program
-(define (profit4 price)
-  (- (* (+ 120
-	   (* (/ 15 0.10)
-	      (- 5.00 price)))
-	price)
-     (* 1.50
-	(+ 120
-	   (* (/ 15 0.10)
-	      (- 5.00 price))))))
-
-(check-expect (profit4 1.00) (profit3 1.00))
-(check-expect (profit4 2.00) (profit3 2.00))
-(check-expect (profit4 3.00) (profit3 3.00)) ;; Highest
-(check-expect (profit4 4.00) (profit3 4.00))
-(check-expect (profit4 5.00) (profit3 5.00))
-
+(string-insert "helloworld" 6)
+"hellow_orld"
