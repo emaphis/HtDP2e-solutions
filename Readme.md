@@ -16,7 +16,7 @@ Chapter 0   Prologue
   chaper01_rocket   rocket example
 
 Chapter 1.1 Arithmatic
-  chapter02_01_01      Ex.   1-12
+  chapter02_01_01      Ex.   3-12
 
 Chapter 1.2 Functions and programs
   chp1_02_1      Ex.  13-22
