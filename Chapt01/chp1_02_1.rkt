@@ -1,13 +1,20 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname chapter_02_02_01) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ())))
-;; HtDP 2e 2.2 Functions and programs
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname chp1_02_1) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+;; HtDP 2e 1.2 Functions and programs
 ;; exercises 13-22
 ;; I'm using check-expets  early to easily show examples/
 (require 2htdp/image)
 
-;;  2.2.1 Defining funcions
+;; I.2
+;; Primatives provide a arithmetic of programming, functions
+;; provide am algerbra of programming
+;; Notions: variable, function, definition, function application and
+;; function composition
 
+;;  1.2.1 Defining funcions
+
+;; Definitions examples
 
 (define (f x) 1)
 (define (g x y) (+ 1 1))
