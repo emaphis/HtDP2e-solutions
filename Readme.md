@@ -16,13 +16,13 @@ Chapter 0   Prologue
   chaper01_rocket   rocket example
 
 Chapter 1.1 Arithmatic
-  chp01_01_1 Arithmetic      Ex.   3-12
+  chp01_01_1 Arithmetic          Ex.   3-12
 
 Chapter 1.2 Functions and programs
-  chp1_02_1  Functions       Ex.  13-22
-  chp1_02_2  Computing       Ex.  23-28
-  chp1_02_2  Composing       Ex.
-  chp1_02_4
+  chp1_02_1  Functions           Ex.  13-22
+  chp1_02_2  Computing           Ex.  23-28
+  chp1_02_3  Composing           Ex.  29-31
+  chp1_02_4  Global Constants    Ex.  32-
 
 Chapter 1.3 How to Design Programs
   chp1_03_1      Ex.  26-31

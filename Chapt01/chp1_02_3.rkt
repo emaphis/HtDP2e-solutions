@@ -6,34 +6,41 @@
 ;; Exercises
 (require 2htdp/image)
 
-
 #|
+ Programs usually consist of a main function that calls helper functions
+|#
+
+
 (define (letter fst lst signature-name) 
   (string-append
    (opening fst) 
-   "\n" 
+   "\n\n"
    (body fst lst) 
-   "\n" 
+   "\n\n"
    (closing signature-name))) 
 
+(define (opening fst)
+  (string-append "Dear " fst ","))
 
 (define (body fst lst) 
   (string-append 
-   "we have discovered that all people with the last name "
-   "\n" 
-   lst " have won our lottery. So, " fst ", " 
-   "\n" 
-   "hurry and pick up your prize.")) 
+   "we have discovered that all people with the"  "\n"
+   "last name " lst " have won our lottery. So, " "\n"
+   fst ", " "hurry and pick up your prize."))
 
 (define (closing signature-name) 
   (string-append 
    "Sincerely," 
-   "\n" 
-   signature-name)) 
+   "\n\n"
+   signature-name
+   "\n"))
 
 (check-expect (letter "Matthew" "Krishnamurthi" "Felleisen")
-              "Dear Matthew,\nwe have discovered that all people with the last name \nKrishnamurthi have won our lottery. So, Matthew, \nhurry and pick up your prize.\nSincerely,\nFelleisen")
+              "Dear Matthew,\n\nwe have discovered that all people with the\nlast name Krishnamurthi have won our lottery. So, \nMatthew, hurry and pick up your prize.\n\nSincerely,\n\nFelleisen\n")
 
+;(require 2htdp/batch-io)
+;(write-file 'stdout
+;    (letter "Matthew" "Fisler" "Felleisen"))
 
 ;; Attendees example
 #;
@@ -49,9 +56,10 @@
 (define (profit ticket-price)
   (- (revenue ticket-price)
      (cost ticket-price)))
-|#
 
-;; Exercise 24:
+;; Ex. 29:
+;; Collect all definitions in DrRacket’s definitions area and change them so
+;; that all magic numbers are refactored into constant definitions
 (define START-ATTENDEES 120)
 (define START-PRICE 5.00)
 (define INCREASE-ATTENDENCE 15)
@@ -75,7 +83,10 @@
   (- (revenue ticket-price)
      (cost ticket-price)))
 
-;; Exercise 24:
+;; Ex. 30:
+;; Determine the potential profit for these ticket prices: $1, $2, $3, $4, and $5.
+;; Which price should the owner of the movie theater choose to maximize his profits?
+;; Determine the best ticket price to a dime.
 ;; a:
 (check-expect (profit 1.00)  511.20)
 (check-expect (profit 2.00)  937.20)
@@ -100,14 +111,14 @@
               (* (/ 15 0.1)
                  (- 5.0 price)))))))
 
-(check-expect (profit2 1.00) (profit2 1.00))
-(check-expect (profit2 2.00) (profit2 2.00))
-(check-expect (profit2 3.00) (profit2 3.00))
-(check-expect (profit2 4.00) (profit2 4.00))
-(check-expect (profit2 5.00) (profit2 5.00))
+(check-expect (profit2 1.00) (profit 1.00))  ; should produce the same amount
+(check-expect (profit2 2.00) (profit 2.00))
+(check-expect (profit2 3.00) (profit 3.00))
+(check-expect (profit2 4.00) (profit 4.00))
+(check-expect (profit2 5.00) (profit 5.00))
 
 
-;; Exercise 25:
+;; Exercise 31:
 ;; new fixed cost per attendee schedule
 
 ;; a. well factored program
