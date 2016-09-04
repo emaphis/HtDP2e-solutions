@@ -1,75 +1,36 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname chp1_02_4) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-;; HtDP 2e 2.2 Functions
-;; 2.2.3 Programs
+;; HtDP 2e 2.3 Functions
+;; 2.2.4 Global Constants
+
 (require 2htdp/image)
-(require 2htdp/batch-io)
-(require 2htdp/universe)
 
-;; Batch Programs
+;; Examples
 
-;; Letter sample -- function composition
-;; defined last section
+; the current price of a movie ticket
+(define CURRENT-PRICE 5)
 
-(define (letter fst lst signature-name) 
-  (string-append
-   (opening fst)
-   "\n"
-   (body fst lst) 
-   "\n"
-   (closing signature-name)))
+; useful to compute the area of a disk:
+(define ALMOST-PI 3.14)
 
-(define (opening fst)
-  (string-append "Dear " fst ","))
+; a blank line:
+(define NL "\n")
 
-(define (body fst lst)
-  (string-append 
-   "We have discovered that all people with the last name " 
-   "\n"
-   lst " have won our lottery. So, " fst ", "
-   "\n"
-   "hurry and pick up your prize."))
+; an empty scene:
+(define MT (empty-scene 100 100))
 
-(define (closing signature-name)
-  (string-append
-   "Sincerely,"
-   "\n"
-   signature-name))
+; literal constants
+(define WIDTH 100)
+(define HEIGHT 200)
 
-;(letter "Robby" "Flatt" "Felleisen")
-;(letter "Christopher" "Columbus" "Felleisen")
-;(letter "ZC" "Krishnamurthi" "Felleisen")
+; arbitrary expressions
+(define MID-WIDTH (/ WIDTH 2))
+(define MID-HEIGHT (/ HEIGHT 2))
 
-;(write-file "Matthew-Krishnamurthi.txt" 
-;            (letter "Matthew" "Krishnamurthi" "Felleisen")) 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(define (f2c f)
-  (* 5/9 (- f 32)))
-
-(check-expect (f2c 32) 0)
-(check-expect (f2c 212) 100)
-(check-expect (f2c -40) -40)
-
-#;
-(define (convert in out)
-  (write-file out
-    (number->string
-      (f2c
-        (string->number (read-file in))))))
-
-
-;(convert "sample.dat" "out.dat")
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Interactive Programs
-
-(define (render t)
-  (text (number->string t) 12 "red"))
-
-(big-bang 100
-          (on-tick sub1)
-          (to-draw render)
-          (stop-when zero?))
-
+;; Ex. 32:
+;; Define constants for the price optimization program so that the price
+;; sensitivity of attendance (15 people for every 10 cents) becomes a computed constant.
+(define ATTENDEES 15)
+(define PRICE 0.10)
+(define PRICE-SENSITIVITY (/ ATTENDEES PRICE))  ; 150
