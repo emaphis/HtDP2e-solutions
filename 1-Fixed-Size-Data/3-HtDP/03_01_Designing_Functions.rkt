@@ -1,20 +1,29 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname chapter_02_03_01) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ())))
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname chp1_03_1) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e 2.3 How to Design Programs
 
-;; Exercises 26-31
+
 (require 2htdp/image)
 
-;; Exercise 26. Uhmm, It meant a lot of work.
+;; Ex. 35:
+;; Research the “year 2000” problem and what it meant for software developers.
+
+; It was a lot of work becuase programs weren't desinged for the long term
+; Also programs weren't designed to be modified so that created more work.
 
 
 ;; 2.3.1 Designing Functions
 
 ;; Simple data types: Number, String, Image, Boolean
 
+;; A data definition:
+
 ;; Temperature is a Number.
-;; interp. degrees Celsius
+;; interp. represents degrees Celsius
+
+; 102 is a dTtemperature because it is a number
+; "cold" is not a Temperature, it is a String
 
 ;; Number -> Number
 ;; produce temperature in Celsius given a temparature in Fahrenheit

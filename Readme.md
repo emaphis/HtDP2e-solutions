@@ -12,27 +12,28 @@ You owe it to youself to work through your own solutions first before you look a
 
   File           Excercises
 
-Chapter 0   Prologue
-  chaper01_rocket   rocket example
+0-Prologue
+  0_rocket       rocket example
 
-Chapter 1.1 Arithmatic
-  chp01_01_1 Arithmetic          Ex.   3-12
+1-Fixed-Size-Data
+  1-Arithmetic
+    01_01_Arithmetic                   Ex.   3-12
 
-Chapter 1.2 Functions and programs
-  chp1_02_1  Functions           Ex.  13-22
-  chp1_02_2  Computing           Ex.  23-28
-  chp1_02_3  Composing           Ex.  29-31
-  chp1_02_4  Gloval Constatns    Ex.  32
-  chp1_02_5  Programs            Ex.  33-
+  2-Functions and programs
+    02_01_Functions                    Ex.  13-22
+    02_02_Computing                    Ex.  23-28
+    02_03_Composing                    Ex.  29-31
+    02_04_Global                       Ex.  32
+    02_05_Programs                     Ex.  33,34
 
-Chapter 1.3 How to Design Programs
-  chp1_03_1      Ex.  26-31
-  chp1_03_6      Ex.  32-39
+  3-HtDP
+    03_01_Designing_Functions          Ex.  35
+    03_06_Desinging_Worlds             Ex.  32-39
 
-Chapter 1.4 Enumerations and Intervals
-  chp1_04_1      Ex.  40-41
-  chp1_04_3      Ex.  42-43
-  chp1_04_4      Ex.  44-51
+  4-Intervals
+    04_01_Programming_Conditionls      Ex.  40-41
+    04_03_Enumerations                 Ex.  42-43
+    04_04_Intervals                    Ex.  44-51
 
 
 I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)

@@ -3,6 +3,7 @@
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname chp1_02_5) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e 2.2 Functions
 ;; 2.2.4 Programs
+;; Ex 33,34
 (require 2htdp/batch-io)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
