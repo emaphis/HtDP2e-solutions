@@ -24,7 +24,7 @@
 
 (define (body fst lst) 
   (string-append 
-   "we have discovered that all people with the"  "\n"
+   "We have discovered that all people with the"  "\n"
    "last name " lst " have won our lottery. So, " "\n"
    fst ", " "hurry and pick up your prize."))
 
