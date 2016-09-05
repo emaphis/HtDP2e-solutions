@@ -55,3 +55,9 @@
 
 
 ** Test the function on the given examples
+
+* The wish list
+** Each entry on a wish list should consist of three things:
+   - a meaningful name for the function
+   - a signature
+   - a purpose statement.

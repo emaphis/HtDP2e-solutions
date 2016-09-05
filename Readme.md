@@ -28,12 +28,13 @@ You owe it to youself to work through your own solutions first before you look a
 
   3-HtDP
     03_01_Designing_Functions          Ex.  35
-    03_01_Finger_Exercises             Ex.  36-40
+    03_02_Finger_Exercises             Ex.  36-40
+    03_05_On_Testing                   Ex.
     03_06_Desinging_Worlds             Ex.
 
   4-Intervals
     04_01_Programming_Conditionls      Ex.  40-41
-    04_03_Enumerations                 Ex.  42-43
+    04_02_Enumerations                 Ex.  42-43
     04_04_Intervals                    Ex.  44-51
 
 

@@ -1,30 +1,11 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-intermediate-reader.ss" "lang")((modname chapter_02_03_06) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ())))
+#reader(lib "htdp-intermediate-reader.ss" "lang")((modname 03_01_Designing_Worlds) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e 2.3 How to Design Programs
 ;; Exercises 32-39
 
 (require 2htdp/image)
 (require 2htdp/universe)
-
-;; 2.3.3 Domain Knowledge
-
-;; 2.3.4 From Functions to Programs
-
-;; 2.3.5 On Testing
-
-
-;; Figure 8
-
-; Number -> Number 
-; convert Fahrenheit temperatures to Celsius temperatures  
-  
-(check-expect (f2c -40) -40) 
-(check-expect (f2c 32) 0) 
-(check-expect (f2c 212) 100) 
-  
-(define (f2c f) 
-  (* 5/9 (- f 32))) 
 
 
 ;; 2.3.6 Designing World Programs
