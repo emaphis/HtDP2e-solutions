@@ -30,7 +30,10 @@ You owe it to youself to work through your own solutions first before you look a
     03_01_Designing_Functions          Ex.  35
     03_02_Finger_Exercises             Ex.  36-40
     03_05_On_Testing                   Ex.
-    03_06_Desinging_Worlds             Ex.
+    03_06_Desinging_Worlds             Ex.  41-46
+    anitmationstate.rkt                Ex.  45a
+    simefunction.rkt                   Ex.  45b
+    allkeys.rkt                        Ex.  46
 
   4-Intervals
     04_01_Programming_Conditionls      Ex.  40-41

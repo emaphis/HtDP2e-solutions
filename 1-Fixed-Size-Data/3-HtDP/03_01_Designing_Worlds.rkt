@@ -1,72 +1,85 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-intermediate-reader.ss" "lang")((modname 03_01_Designing_Worlds) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-;; HtDP 2e 2.3 How to Design Programs
-;; Exercises 32-39
+;; HtDP 2e 3 How to Design Programs
+;; 3.6 Designing World Programs
+;; Exercises 41-46
 
 (require 2htdp/image)
 (require 2htdp/universe)
 
-
-;; 2.3.6 Designing World Programs
-
-;; Exercise 32.
 ;; Car sample world
 
-;; Constants;
+;; Ex. 41:
+;; Develop your favorite image of an automobile so that WHEEL-RADIUS
+;; remains the single point of control.
+
+;; Physical Constants;
 (define W-WIDTH 300)
 (define W-HEIGTH 40)
-(define SCALE 3)
+;(define SCALE 3)
 
-;; Physical Constants
-(define WHEEL-RADIUS 5) 
+(define WHEEL-RADIUS 5)  ; single point of control
 (define WHEEL-DISTANCE (* WHEEL-RADIUS 5)) 
 (define BODY-LENGTH (+ WHEEL-DISTANCE (* 6 WHEEL-RADIUS))) 
-(define BODY-HEIGHT (* WHEEL-RADIUS 2)) 
+(define BODY-HEIGHT (* WHEEL-RADIUS 3))
 
 ;; Graphical Constants
-(define WHL (circle WHEEL-RADIUS "solid" "black")) 
-(define BDY 
+(define WHEEL (circle WHEEL-RADIUS "solid" "black"))
+(define BODY
   (above 
     (rectangle (/ BODY-LENGTH 2) (/ BODY-HEIGHT 2) 
                "solid" "red") 
     (rectangle BODY-LENGTH BODY-HEIGHT "solid" "red"))) 
-(define SPC (rectangle WHEEL-DISTANCE 1 "solid" "white")) 
+(define SPC (rectangle WHEEL-DISTANCE WHEEL-RADIUS
+                       "solid" "transparent"))
 
 ;; a car!
-(define CAR (above BDY
-                   (beside WHL SPC WHL)))
+(define CAR (above BODY
+                   (beside WHEEL SPC WHEEL)))
 
 (define Y-CAR (- W-HEIGTH (/ (image-height CAR) 2)))
 (define BACKGROUND (empty-scene W-WIDTH W-HEIGTH)) 
 
 
+;;; The next entry on the wish list is the clock tick handling function:
+
 ;; Data definitions
 
-; CarState is a Number 
+; WorldState is a Number
 ; the number of pixels between the left border and the car 
 
 ;; Functions
 
 ;; clock ticks
-;; CarState -> CarState
-; the clock ticked; move the car by three pixels 
+;; WorldState -> WorldState
+; the clock ticked; move the car by 3 pixels
 ; example:  
 ; given: 20, expected 23 
 ; given: 78, expected 81 
 ;(define (tock cs) cs) ;stub
-(define (tock cs) (+ cs SCALE))
+(define (tock ws)
+  (+ ws 3))
+
+(check-expect (tock 20) 23)
+(check-expect (tock 78) 81)
+
+;; Ex. 42:
+;; Formulate the examples as BSL tests.
 
 
-;; keyboard handling
-; CarState String -> CarState
-
-;; mouse clicks
-;; CarState Number Number String -> CarState
+;;; Second wishlist item:
 
 ;; rendering
-;; CarState -> Image
-; place the car into a scene, according to the given world state 
+;; WorldState -> Image
+; place the car into the BACKGROUND scene,
+;; according to the given world state
+
+;(define (render ws) BACKGROUND) ;stub
+
+(define (render ws)
+  (place-image CAR ws Y-CAR BACKGROUND))
+
 (check-expect (render 50) 
               (place-image 
                CAR 
@@ -76,37 +89,33 @@
               (place-image 
                CAR 
                100 Y-CAR 
-               BACKGROUND) )
+               BACKGROUND))
 
-;(define (render cs) (empty-scene 300 50)) ;stub
-(define (render cs) 
-  (place-image CAR cs Y-CAR BACKGROUND))
-
-;; end -- ex. 33
-;; CarState -> Boolean
+;; Ex. 43:
+;; Assemble into a working program
+;; end
+;; WorldState -> Boolean
 ;; end car simulation when car reaches end of world
-(check-expect (end? 0) false)
-(check-expect (end? 100) false)
-(check-expect (end? W-WIDTH) true)
+(check-expect (end? 0) #false)
+(check-expect (end? 100) #false)
+(check-expect (end? (+ W-WIDTH (/ (image-width CAR) 2))) #true)
 
-(define (end? cs) (= cs W-WIDTH))
+(define (end? ws)
+  (>= ws (+ W-WIDTH (/ (image-width CAR) 2))))
 
-; main : CarState -> CarState 
-; launch the program from some initial state  
-(define (main cs) 
-   (big-bang cs 
+;; main : WorldState -> WorldState
+;; launch the program from some initial state
+;; run: (main 0)
+(define (main ws)
+   (big-bang ws
              (on-tick tock) 
              (to-draw render)
              (stop-when end?)))
 
-
-
-;; Exercise 33
-;; Get world working and run
 ;(main 0)
 
 
-;; Exercise 34
+;; Ex. 45a:
 ;; In the original program WS represented pixels between the left border 
 ;; and the car so you do translation in the on-tick function
 ;; In this program the WS represents the number of ticks sinces the program
@@ -114,15 +123,14 @@
 ;; See animationstate.rkt
 
 
-;; Exercise 35
+;; Ex 45b.
 ;; See sinefunction.rck
 
 
 ;; Of Mice and Characters example
 ;; See allkeys.rkt
 
-
-;; Exercise 36
+;; Exercise 46
 ;; See allkeys.rkt
 
 

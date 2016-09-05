@@ -61,3 +61,134 @@
    - a meaningful name for the function
    - a signature
    - a purpose statement.
+
+
+* World Programs
+
+** Signatures of world programs
+; WorldState: a data definition for a class of data that
+; represents the state of the world (cw)
+
+; render: WorldState -> Image
+; when needed, big-bang obtains the image of the current
+; state of the world by evaluating (render cw)
+
+; clock-tick-handler: WorldState -> WorldState
+; for each tick of the clock, big-bang obtains the next
+; state of the world from (clock-tick-handler cw)
+
+; key-stroke-handler: WorldState String -> WorldState
+; for each key stroke, big-bang obtains the next stat
+; from (key-stroke-handler cw ke) where ke is the key
+; stroke to obtain the new world state
+
+; mouse-event-handler:
+;   WorldState Number Number String -> WorldState
+; for each mouse gesture, big-bang obtains the next state
+; from (mouse-event-handler cw x y me) where x and y are
+; the coordinates of the event and me is its description
+
+; end?: WorldState -> Boolean
+; when needed, big-bang evaluates (end? cw) to determine
+; whether the program should stop
+
+** Design Recipe
+*** Define unchanging propertes
+       For all those properties of the world that remain the same over time
+         and are needed to render it as an Image, introduce constants. In BSL,
+         we specify such constants via definitions. For the purpose of world
+         programs, we distinguish between two kinds of constants:
+
+       “Physical” constants describe general attributes of objects in the world,
+          such as the speed or velocity of an object, its color, its height,
+          its width, its radius, and so forth. Of course these constants don’t
+          really refer to physical facts, but many are analogous to physical
+          aspects of the real world.
+
+        In the context of our sample problem, the radius of the car’s wheels and
+          the distance between the wheels are such “physical” constants:
+
+            (define WIDTH-OF-WORLD 200)
+
+            (define WHEEL-RADIUS 5)
+            (define WHEEL-DISTANCE (* WHEEL-RADIUS 5))
+
+        Note how the second constant is computed from the first.
+
+        - Graphical constants are images of objects in the world. The program
+           composes them into images that represent the complete state
+        of the world.
+
+        Here are graphical constants for wheel images of our sample car:
+
+            (define WHEEL
+              (circle WHEEL-RADIUS "solid" "black"))
+            We suggest you experiment in DrRacket’s interaction area to develop
+              such graphical constants.
+            (define SPACE
+              (rectangle ... WHEEL-RADIUS ... "white"))
+            (define BOTH-WHEELS
+              (beside WHEEL SPACE WHEEL))
+
+        Graphical constants are usually computed, and the computations tend to
+          involve physical constants and other images.
+
+    It is good practice to annotate constant definitions with a comment that
+      explains what they mean.
+
+*** Define the world state
+    Those properties that change over time—in reaction to clock ticks,
+      key strokes, or mouse actions—give rise to the current state of
+      the world. Your task is to develop a data representation for all
+      possible states of the world. The development results in a data
+      definition, which comes with a comment that tells readers how to
+      represent world information as data and how to interpret data as
+      information about the world.
+
+    Choose simple forms of data to represent the state of the world.
+
+    For the running example, it is the car’s distance to the left margin that
+      changes over time. While the distance to the right margin changes, too,
+      it is obvious that we need only one or the other to create an image. A
+      distance is measured in numbers, so the following is an adequate
+      data definition:
+
+        ; A WorldState is a Number.
+        ; interpretation the number of pixels between
+        ; the left border of the scene and the car
+
+    An alternative is to count the number of clock ticks that have passed and
+      to use this number as the state of the world. We leave this design
+      variant as an exercise.
+
+*** Design the functions
+   Once you have a data representation for the state of the world, you need
+     to design a number of functions so that you can form a valid big-bang
+     expression.
+
+    To start with, you need a function that maps any given state into an image
+    so that big-bang can render the sequence of states as images:
+
+        ; render
+
+    Next you need to decide which kind of events should change which aspects of
+      the world state. Depending on your decisions, you need to design some or
+      all of the following three functions:
+
+        ; clock-tick-handler
+        ; key-stroke-handler
+        ; mouse-event-handler
+
+*** Define a main function
+    Finally, if the problem statement suggests that the program should stop if
+      the world has certain properties, you must design
+
+        ; end?
+
+    For the generic signatures and purpose statements of these functions,
+      see figure 21. Adapt these generic purpose statements to the particular
+      problems you solve, so that readers know what they compute.
+
+    In short, the desire to design an interactive program automatically creates
+      several initial entries for your wish list. Work them off one by one and
+      you get a complete world program.
