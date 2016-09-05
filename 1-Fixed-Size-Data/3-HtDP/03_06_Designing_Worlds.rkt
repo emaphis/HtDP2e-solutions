@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-intermediate-reader.ss" "lang")((modname 03_01_Designing_Worlds) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-intermediate-reader.ss" "lang")((modname 03_06_Designing_Worlds) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e 3 How to Design Programs
 ;; 3.6 Designing World Programs
 ;; Exercises 41-46
@@ -20,17 +20,17 @@
 ;(define SCALE 3)
 
 (define WHEEL-RADIUS 5)  ; single point of control
-(define WHEEL-DISTANCE (* WHEEL-RADIUS 5)) 
-(define BODY-LENGTH (+ WHEEL-DISTANCE (* 6 WHEEL-RADIUS))) 
+(define WHEEL-DISTANCE (* WHEEL-RADIUS 5))
+(define BODY-LENGTH (+ WHEEL-DISTANCE (* 6 WHEEL-RADIUS)))
 (define BODY-HEIGHT (* WHEEL-RADIUS 3))
 
 ;; Graphical Constants
 (define WHEEL (circle WHEEL-RADIUS "solid" "black"))
 (define BODY
-  (above 
-    (rectangle (/ BODY-LENGTH 2) (/ BODY-HEIGHT 2) 
-               "solid" "red") 
-    (rectangle BODY-LENGTH BODY-HEIGHT "solid" "red"))) 
+  (above
+    (rectangle (/ BODY-LENGTH 2) (/ BODY-HEIGHT 2)
+               "solid" "red")
+    (rectangle BODY-LENGTH BODY-HEIGHT "solid" "red")))
 (define SPC (rectangle WHEEL-DISTANCE WHEEL-RADIUS
                        "solid" "transparent"))
 
@@ -39,7 +39,7 @@
                    (beside WHEEL SPC WHEEL)))
 
 (define Y-CAR (- W-HEIGTH (/ (image-height CAR) 2)))
-(define BACKGROUND (empty-scene W-WIDTH W-HEIGTH)) 
+(define BACKGROUND (empty-scene W-WIDTH W-HEIGTH))
 
 
 ;;; The next entry on the wish list is the clock tick handling function:
@@ -47,16 +47,16 @@
 ;; Data definitions
 
 ; WorldState is a Number
-; the number of pixels between the left border and the car 
+; the number of pixels between the left border and the car
 
 ;; Functions
 
 ;; clock ticks
 ;; WorldState -> WorldState
 ; the clock ticked; move the car by 3 pixels
-; example:  
-; given: 20, expected 23 
-; given: 78, expected 81 
+; example:
+; given: 20, expected 23
+; given: 78, expected 81
 ;(define (tock cs) cs) ;stub
 (define (tock ws)
   (+ ws 3))
@@ -80,15 +80,15 @@
 (define (render ws)
   (place-image CAR ws Y-CAR BACKGROUND))
 
-(check-expect (render 50) 
-              (place-image 
-               CAR 
-               50 Y-CAR 
+(check-expect (render 50)
+              (place-image
+               CAR
+               50 Y-CAR
                BACKGROUND))
-(check-expect (render 100)               
-              (place-image 
-               CAR 
-               100 Y-CAR 
+(check-expect (render 100)
+              (place-image
+               CAR
+               100 Y-CAR
                BACKGROUND))
 
 ;; Ex. 43:
@@ -108,7 +108,7 @@
 ;; run: (main 0)
 (define (main ws)
    (big-bang ws
-             (on-tick tock) 
+             (on-tick tock)
              (to-draw render)
              (stop-when end?)))
 
@@ -137,19 +137,6 @@
 ;; AllMouseEvents example
 ;; Figure 9: A mouse event recorder
 ;; See allmouse.rkt
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 2.3.7 Virtual Pet Worlds
-
-;; Exercise 37 VirtualPet
-;; See virtualpet.rkt
-
-;; Exercise 38 Improvements
-;; See virtualpet.rkt
-
-;; Exercise 39 Pet Guage
-;; See virtualpet2.rkt
 
 
 

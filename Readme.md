@@ -34,6 +34,9 @@ You owe it to youself to work through your own solutions first before you look a
     anitmationstate.rkt                Ex.  45a
     simefunction.rkt                   Ex.  45b
     allkeys.rkt                        Ex.  46
+    03_07_Virtualpet                   Ex.  47
+    03_07_Virtualpet1                  Ex.  48
+    03_07_Virtualpet2                  Ex.  49
 
   4-Intervals
     04_01_Programming_Conditionls      Ex.  40-41

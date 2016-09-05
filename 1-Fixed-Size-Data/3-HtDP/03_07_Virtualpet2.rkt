@@ -1,9 +1,9 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-intermediate-reader.ss" "lang")((modname virtualpet2) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ())))
+#reader(lib "htdp-intermediate-reader.ss" "lang")((modname 03_07_Virtualpet2) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; 2.3.7 Virtual Pet Worlds
 
-;; Exercise 39 Pet Guage
+;; Exercise 49 Pet Guage
 
 (require 2htdp/image)
 (require 2htdp/universe)
@@ -14,11 +14,11 @@
 ;; Constants:
 
 
-; graphical constants 
+; graphical constants
 (define W-WIDTH 110)
 (define W-HEIGHT 30)
 (define G-HEIGHT 10)
-(define MT (empty-scene W-WIDTH W-HEIGHT)) 
+(define MT (empty-scene W-WIDTH W-HEIGHT))
 
 
 ;; =================
@@ -37,15 +37,13 @@
 
 ;; CS -> CS
 ;; start the world with (main 100)
-;; 
+;;
 (define (main cs)
   (big-bang cs                         ; CS
             (on-tick   tock)           ; CS -> CS
             (to-draw   render)         ; CS -> Image
-   ;         (stop-when ...)      ; CS -> Boolean
-   ;         (on-mouse  ...)      ; CS Integer Integer MouseEvent -> CS
             (on-key    cat-attention)  ; CS KeyEvent -> CS
-            ))  
+            ))
 
 ;; CS -> CS
 ;; produce the next CS countdown from 100
@@ -54,7 +52,7 @@
 (check-expect (tock 50) 49.9)
 (check-expect (tock 100) 99.9)
 
-(define (tock cs) 
+(define (tock cs)
   (cond [(<= cs 0) 0]
         [(> cs 100) 100]
         [else (- cs 0.1)]))
@@ -66,9 +64,9 @@
                            (rectangle 50 G-HEIGHT "solid" "red") 
                            5 10 "left" "bottom"
                            MT))
-(define (render cs) 
+(define (render cs)
   (place-image/align
-   (rectangle cs G-HEIGHT "solid" "red") 
+   (rectangle cs G-HEIGHT "solid" "red")
    5 10 "left" "bottom"
    MT))
 
