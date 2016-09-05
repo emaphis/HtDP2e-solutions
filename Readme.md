@@ -28,7 +28,8 @@ You owe it to youself to work through your own solutions first before you look a
 
   3-HtDP
     03_01_Designing_Functions          Ex.  35
-    03_06_Desinging_Worlds             Ex.  32-39
+    03_01_Finger_Exercises             Ex.  36-40
+    03_06_Desinging_Worlds             Ex.
 
   4-Intervals
     04_01_Programming_Conditionls      Ex.  40-41

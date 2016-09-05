@@ -1,8 +1,7 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname chp1_03_1) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-;; HtDP 2e 2.3 How to Design Programs
-
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname 03_01_Designing_Functions) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+;; HtDP 2e 3.1 How to Design Programs
 
 (require 2htdp/image)
 
@@ -13,7 +12,7 @@
 ; Also programs weren't designed to be modified so that created more work.
 
 
-;; 2.3.1 Designing Functions
+;; 3.1 Designing Functions
 
 ;; Simple data types: Number, String, Image, Boolean
 
@@ -55,57 +54,6 @@
 (define (area-of-square len)
   (sqr len))
 
-;; 2.3.2 Finger Exercises
-
-;; Exercise 27
-;; String -> String
-;; Given a string extract first charcter
-(check-expect (string-first "hello") "h")
-
-;;(define (string-first str) "") ;stub
-
-(define (string-first str)
-  (substring str 0 1))
-
-
-;; Exercise 28
-;; String -> String
-;; Given a string extract last charater
-;; given: "hello", expect: "o"
-(check-expect (string-last "hello") "o")
-;;(define (string-last str) "") ;stub
-
-(define (string-last str)
-  (substring str (- (string-length str) 1)))
-
-
-;; Exercise 29
-;; Image -> Number
-;; Given an image return area of image
-(check-expect (image-area (square 10 "solid" "red")) 100)
-
-(define (image-area img)
-  (* (image-height img) (image-width img)))
-
-
-;; Exercise 30
-;; String -> String
-;; Given a string return all but first char
-;; given: "hello", expect "ello"
-(check-expect (string-rest "hello world") "ello world")
-
-(define (string-rest str)
-  (substring str 1))
-
-
-;; Exercise 31
-;; String -> String
-;; Given a string remove last char
-;; given "hello", expect: "hell"
-(check-expect (string-remove-last "hello") "hell")
-
-(define (string-remove-last str)
-  (substring str 0 (- (string-length str) 1)))
 
 
 

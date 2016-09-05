@@ -1,0 +1,57 @@
+* The Process
+
+** Express how you wish to represent information as data, A one-line comment suffices:
+
+   ; We use numbers to represent centimeters
+
+** Write down a signature, a purpose statement and a function header.
+
+*** A function signature is a comment that tells the readers of your desing:
+    - How many inputs
+    - to which classes do the inputs belong
+    - What kind of result does it produce
+
+    ; String -> Number
+    ; Temperature -> String
+    ; Number String Image -> Image
+
+*** A purpose statement is comment that summarizes the purpose of the function
+    in a single line
+    - what does the function compute?
+    - A multi-function program should come with a purpose statement
+
+*** Header (stub) is a function definitions with one parameter for each input,
+    the body of the function can be any data (simple) of the output class
+    - it is often useful to employ the parameter names to clarify what is computed.
+
+; Number String Image -> Image 
+; adds s to img,
+; y pixels from the top and 10 from the left 
+(define (add-image y s img)
+  (empty-scene 100 100))
+
+
+** Illustrate the signature and the purpose statement with some examples.
+
+; Number -> Number
+; computes the area of a square with side len 
+; given: 2, expect: 4
+; given: 7, expect: 49
+(define (area-of-square len) 0)
+
+** Take inventory of the givens and what we need to compute
+   - This step produces a function template. (could be part of the data-definitons)
+
+(define (area-of-square len) ; template
+   (... len ...))
+
+** Now it's time to code:
+; Number -> Number
+; computes the area of a square with side len 
+; given: 2, expect: 4
+; given: 7, expect: 49
+(define (area-of-square len)
+  (sqr len))
+
+
+** Test the function on the given examples
