@@ -24,12 +24,11 @@
 ;; =================
 ;; Data definitions:
 
-;; CS is a Natural
-;; interp. the cat's happiness [0, 100]
+;; CS is a Number
+;; interp. the cat's happiness
 (define CS1 0)
 (define CS2 50)
 (define CS3 100)
-
 
 
 ;; =================

@@ -1,34 +1,16 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-intermediate-reader.ss" "lang")((modname ufo1) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ())))
+#reader(lib "htdp-intermediate-reader.ss" "lang")((modname 04_04_Ufo) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e  -- Enumerations and Intervals
-;; 2.4.4 Intervals
-;; ufo1.rkt  ufo example
+;; 4.4 Intervals
+;; ufo example
 
 (require 2htdp/image)
 (require 2htdp/universe)
 
 
-;; Data
-
-; WorldState is a Number  
-; interp. height of UFO (from top) 
-
-;; constants:  
-(define WIDTH 300) 
-(define HEIGHT 100) 
-(define CLOSE (/ HEIGHT 3)) 
-
-;; visual constants:  
-(define MT (empty-scene WIDTH HEIGHT)) 
-(define UFO 
-  (overlay (circle 10 "solid" "green") 
-           (rectangle 40 2 "solid" "green"))) 
-
-;; Data
-
-; WorldState is a Number  
-; interp. height of UFO (from top) 
+; WorldState is a Number
+; interperatation: number of pixels between the top and the UFO
 
 ; A WorldState falls into one of three intervals:  
 ; – between 0 and CLOSE 
@@ -40,7 +22,31 @@
     [(and (< CLOSE ws) (<= ws HEIGHT)) (... ws)] 
     [(> ws HEIGHT) (...)])) 
 
+
+;; constants:
+(define WIDTH 300)
+(define HEIGHT 100)
+(define CLOSE (/ HEIGHT 3))
+
+;; visual constants:
+(define MTSCN (empty-scene WIDTH HEIGHT))
+
+(define UFO
+  (overlay (circle 10 "solid" "green")
+           (rectangle 40 2 "solid" "green")))
+
+
+
 ;; functions
+
+; run program
+; WorldState -> WorldState
+;; run: (main 0)
+(define (main y0)
+  (big-bang y0
+            [on-tick nxt .2]
+            [to-draw render]))
+
 
 ;; WorldState -> WorldState 
 ;; compute next location of UFO  
@@ -52,22 +58,16 @@
 
 
 ; WorldState -> Image 
-; place UFO at given height into the center of MT 
+; place UFO at given height into the center of MTSCN
 
 (check-expect (render 11) 
-              (place-image UFO (/ WIDTH 2) 11 MT)) 
+              (place-image UFO (/ WIDTH 2) 11 MTSCN))
 
 (define (render y) 
-  (place-image UFO (/ WIDTH 2) y MT)) 
+  (place-image UFO (/ WIDTH 2) y MTSCN))
 
 
-; run program run  
-; WorldState -> WorldState
-;; run: (main 0)
-(define (main y0) 
-  (big-bang y0 (on-tick nxt) (to-draw render))) 
-
-
+;; Sample Problem -- Status Line
 
 ; WorldState -> Image 
 ; add a status line to the scene create by render   
@@ -100,4 +100,6 @@
 
 ; WorldState -> WorldState 
 (define (main1 y0) 
-  (big-bang y0 (on-tick nxt) (to-draw render/status))) 
+  (big-bang y0
+            [on-tick nxt .2]
+            [to-draw render/status]))

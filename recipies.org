@@ -192,3 +192,22 @@
     In short, the desire to design an interactive program automatically creates
       several initial entries for your wish list. Work them off one by one and
       you get a complete world program.
+
+* conditionals
+
+(define (next traffic-light-state)
+  (cond
+    [(string=? "red" traffic-light-state) "green"]
+    [(string=? "green" traffic-light-state) "yellow"]
+    [(string=? "yellow" traffic-light-state) "red"]))
+
+    always use cond for situations when we wish to remind the reader of our code
+    that some distinct situations come directly from data definitions.
+
+** else expression
+(cond
+  [ConditionExpression1 ResultExpression1]
+  [ConditionExpression2 ResultExpression2]
+  ....
+  [else DefaultResultExpression])
+

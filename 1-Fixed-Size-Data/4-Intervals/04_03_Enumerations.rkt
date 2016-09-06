@@ -1,30 +1,26 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname chapter_02_04_03) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f ())))
-;; HtDP 2e 2.4 Intervals, Enumerations, etc.
-;; 2.4.3 Enumerations
-;; Exercises 42, 43
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname 04_03_Enumerations) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+;; HtDP 2e 1.4 Intervals, Enumerations, etc.
+;; 4.3 Enumerations
+;; Exercises 52,53
 
 (require 2htdp/image)
 (require 2htdp/universe)
 
-;; Traffic Light simulation
-
-;; =================
-;; Constants: 
-
-; graphical constants 
-(define W-WIDTH 100)
-(define W-HEIGHT 100)
-(define DX (/ W-WIDTH 2))
-(define DY (/ W-HEIGHT 2))
-(define MT (empty-scene W-WIDTH W-HEIGHT)) 
-
-;; =================
-;; Data definitions:
+; A MouseEvt is one of these Strings:
+; – "button-down"
+; – "button-up"
+; – "drag"
+; – "move"
+; – "enter"
+; – "leave"
 
 
-; A TrafficLight shows one of three colors:
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; A traffic light sample
+
+; A TrafficLight shows one of three Strings:
 ; – "red"
 ; – "green"
 ; – "yellow"
@@ -32,16 +28,13 @@
 ; bulb is currently turned on
 
 
-
-;; =================
-;; Functions:
-
+;; a function consumming TrafficLight
 
 ; TrafficLight -> TrafficLight
 ; given state s, determine the next state of the traffic light
 (check-expect (traffic-light-next "red") "green")
-(check-expect (traffic-light-next "green") "yellow")  ; ex. 42
-(check-expect (traffic-light-next "yellow") "red")    ; ex. 42
+(check-expect (traffic-light-next "green") "yellow")  ; Ex. 52
+(check-expect (traffic-light-next "yellow") "red")    ; Ex. 52
 
 (define (traffic-light-next s)
   (cond
@@ -50,10 +43,24 @@
     [(string=? "yellow" s) "red"]))
 
 
-;; Exercise 42 -- complete the tests
+;; Ex. 52: complete the tests -- see above.
 
 
-;; Exercise 43:
+;; Ex. 53:
+;; Design a big-bang program that simulates a traffic light for
+;; a given duration. The program renders the state of a traffic light
+;; as a solid circle of the appropriate color, and it changes state
+;; on every clock tick.
+;; What is the most appropriate initial state? Ask your engineering friends
+
+
+; graphical constants
+(define W-WIDTH 100)
+(define W-HEIGHT 100)
+(define DX (/ W-WIDTH 2))
+(define DY (/ W-HEIGHT 2))
+(define MT (empty-scene W-WIDTH W-HEIGHT))
+
 
 ;; TraficLight -> Image
 ;; given state s, return color light
@@ -64,11 +71,11 @@
 
 
 ;; TraficLight -> TraficLight
-;; start the world with ...
+;; start the world with (main "yellow") -- to start red.
 ;; 
 (define (main ws)
   (big-bang ws                   ; TraficLight
-            (on-tick   tock)     ; TraficLight -> TraficLight
+            (on-tick   tock 3)   ; TraficLight -> TraficLight (every 3 seconds)
             (to-draw   render)   ; TraficLight -> Image
             ))
 
@@ -91,3 +98,61 @@
   (place-image (display-light ws) DX DY MT))
 
 
+;;; Enumerations can be specified by an English sentence:
+
+; A 1String is a String of length 1,
+; including
+; – "\\" (the backslash),
+; – " " (the space bar),
+; – "\t" (tab),
+; – "\r" (return), and
+; – "\b" (backspace).
+; interpretation represents keys on the keyboard
+
+;; You know that such a data definition is proper if you can describe all of
+;; its elements with a BSL test.
+
+;; (= (string-length s) 1)
+
+;; Can use a definition in another definition:
+; A KeyEvent is one of:
+; – 1String
+; – "left"
+; – "right"
+; – "up"
+; – "down"
+; – ...
+
+;; a key-event template
+; WorldState KeyEvent -> ...
+(define (handle-key-events w ke)
+  (cond
+    [(= (string-length ke) 1) ...]  ; regular char's
+    [(string=? "left" ke) ...]
+    [(string=? "right" ke) ...]
+    [(string=? "up" ke) ...]
+    [(string=? "down" ke) ...]
+    ...))
+
+
+;;; Figure 24: Conditional functions and special enumerations
+
+; A Position is a Number.
+; interpretation distance between the left margin and the ball
+
+; Position KeyEvent -> Position
+; computes the next location of the ball
+
+(check-expect (keh 13 "left") 8)
+(check-expect (keh 13 "right") 18)
+(check-expect (keh 13 "a") 13)
+
+(define (keh p k)
+  (cond
+    [(= (string-length k) 1)
+     p]
+    [(string=? "left" k)
+     (- p 5)]
+    [(string=? "right" k)
+     (+ p 5)]
+    [else p]))
