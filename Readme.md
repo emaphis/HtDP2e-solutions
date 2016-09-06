@@ -68,9 +68,9 @@ You owe it to youself to work through your own solutions first before you look a
 
     04_04_Ufo
 
-    04_05_Itemizations                 Ex.
+    04_05_Itemizations                 Ex. 55-58
 
-    rocketlaunch
+    rocketlaunch.rkt
 
 
 I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)

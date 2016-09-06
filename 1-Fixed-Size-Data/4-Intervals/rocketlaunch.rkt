@@ -69,7 +69,7 @@
 (check-expect
  (show -2)
  (place-image (text "-2" 20 "red")
-              50 (* 3/4 WIDTH)
+              10 (* 3/4 WIDTH)
               (place-image ROCKET
                            50 (- HEIGHT (/ (image-height ROCKET) 2))
                            BACKG)))
@@ -142,4 +142,4 @@
 ; LRCD -> LRCD
 ; run with: (main2 "")
 (define (main2 s)
-  (big-bang s (on-tick fly) (to-draw show) (on-key launch))) 
+  (big-bang s (on-tick fly .5) (to-draw show) (on-key launch)))
