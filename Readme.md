@@ -72,6 +72,8 @@ You owe it to youself to work through your own solutions first before you look a
 
     rocketlaunch.rkt
 
+    04_06_Designing_Itemizations       Ex. 60
+
 
 I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)
 See the 'Realm-of-Racket directory.
