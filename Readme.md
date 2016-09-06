@@ -10,38 +10,67 @@ You owe it to youself to work through your own solutions first before you look a
 
 #Index
 
-  File           Excercises
+  File                                 Excercises
 
 0-Prologue
+
   0_rocket       rocket example
 
 1-Fixed-Size-Data
+
   1-Arithmetic
+
     01_01_Arithmetic                   Ex.   3-12
 
   2-Functions and programs
+
     02_01_Functions                    Ex.  13-22
+
     02_02_Computing                    Ex.  23-28
+
     02_03_Composing                    Ex.  29-31
+
     02_04_Global                       Ex.  32
+
     02_05_Programs                     Ex.  33,34
 
   3-HtDP
+
     03_01_Designing_Functions          Ex.  35
+
     03_02_Finger_Exercises             Ex.  36-40
+
     03_05_On_Testing                   Ex.
+
     03_06_Desinging_Worlds             Ex.  41-46
+
     anitmationstate.rkt                Ex.  45a
+
     simefunction.rkt                   Ex.  45b
+
     allkeys.rkt                        Ex.  46
+
     03_07_Virtualpet                   Ex.  47
+
     03_07_Virtualpet1                  Ex.  48
+
     03_07_Virtualpet2                  Ex.  49
 
   4-Intervals
-    04_01_Programming_Conditionls      Ex.  40-41
-    04_02_Enumerations                 Ex.  42-43
-    04_04_Intervals                    Ex.  44-51
+
+    04_01_Programming_Conditionals
+
+    04_02_Computing_Conditionaly       Ex.  50, 51
+
+    04_03_Enumerations                 Ex.  52, 53
+
+    04_04_Intervals                    Ex.  54
+
+    04_04_Ufo
+
+    04_05_Itemizations                 Ex.
+
+    rocketlaunch
 
 
 I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)
