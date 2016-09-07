@@ -74,8 +74,19 @@ You owe it to youself to work through your own solutions first before you look a
 
     04_06_Designing_Itemizations       Ex. 60
 
+    04_07_Finite_State_Worlds          Ex. 61-64
+
+    Trafficlight                       Ex. 61
+
+    Trafficlight2                      Ex. 62
+
+    Trafficlight3                      Ex. 63
+
+    doorstate                          Ex. 64
+
 
 I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)
 See the 'Realm-of-Racket directory.
 
 Have fun.
+x
