@@ -1,8 +1,9 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname chp1_02_4) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname 02_04_Global) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e 2.3 Functions
 ;; 2.2.4 Global Constants
+;; Exercise 30
 
 (require 2htdp/image)
 
@@ -28,7 +29,7 @@
 (define MID-WIDTH (/ WIDTH 2))
 (define MID-HEIGHT (/ HEIGHT 2))
 
-;; Ex. 32:
+;; Ex. 30:
 ;; Define constants for the price optimization program so that the price
 ;; sensitivity of attendance (15 people for every 10 cents) becomes a computed constant.
 (define ATTENDEES 15)

@@ -3,12 +3,12 @@
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname 03_02_Finger_Exercises) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e 3 How to Design Functions
 ;; 3.2 Finger Exercises: Functions
+;; Exercises 34-38
 
- ;; Exercises 36-40
 (require 2htdp/image)
 
 
-;; Ex. 36;
+;; Ex. 34
 ;; Design the function string-first, which extracts the first character from
 ;; a non-empty string. Don’t worry about empty strings.
 
@@ -25,7 +25,7 @@
 (check-expect (string-first "hello world") "h")
 
 
-;; Ex. 37:
+;; Ex. 35:
 ;; Design the function string-last, which extracts the last character from a
 ;; non-empty string. image
 
@@ -43,7 +43,7 @@
 (check-expect (string-last "hello world") "d")
 
 
-;; Ex. 38:
+;; Ex. 36:
 ;; Design the function image-area, which counts the number of pixels in a
 ;; given image.
 
@@ -57,7 +57,7 @@
 (check-expect (image-area (square 10 "solid" "red")) 100)
 
 
-;; Ex. 39:
+;; Ex. 37:
 ;; Design the function string-rest, which produces a string like the given
 ;; one with the first character removed.
 
@@ -73,7 +73,7 @@
 (check-expect (string-rest "hello world") "ello world")
 
 
-;; Ex> 40:
+;; Ex> 48:
 ;; Design the function string-remove-last, which produces a string like the
 ;; given one with the last character removed.
 

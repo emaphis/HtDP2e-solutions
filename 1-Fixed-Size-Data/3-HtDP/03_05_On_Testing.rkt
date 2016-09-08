@@ -3,20 +3,17 @@
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname 03_05_On_Testing) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e 3 How to Design Functions
 ;; 3.5 On Testing
+;; Exercises 36-40
 
- ;; Exercises 36-40
 (require 2htdp/image)
 
 
 ; Number -> Number
 ; convert Fahrenheit temperatures to Celsius temperatures
-; given 32, expect 0
-; given 212, expect 100
-; given -40, expect -40
-
-(define (f2c f)
-  (* 5/9 (- f 32)))
 
 (check-expect (f2c -40) -40)
 (check-expect (f2c 32) 0)
 (check-expect (f2c 212) 100)
+
+(define (f2c f)
+  (* 5/9 (- f 32)))

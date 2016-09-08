@@ -62,7 +62,7 @@
 
 * World Programs
 
-** Signatures of world programs
+** Signatures of world programs - 3.6
 ; WorldState: a data definition for a class of data that
 ; represents the state of the world (cw)
 

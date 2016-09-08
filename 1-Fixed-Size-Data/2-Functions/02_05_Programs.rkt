@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname chp1_02_5) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname 02_05_Programs) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e 2.2 Functions
 ;; 2.2.4 Programs
 ;; Ex 33,34
@@ -47,9 +47,10 @@
 ;"100"
 
 
-;; Ex. 33:
-;; 33. Recall the letter program from Composing Functions.
-;; Here is how to launch the program and have it write its output to the interactions area: 
+;; Ex. 31:
+;; Recall the letter program from Composing Functions.
+;; Here is how to launch the program and have it write its output to the
+;; interactions area: 
 
 ;; Letter sample -- function composition
 ;; defined last section
@@ -109,9 +110,9 @@
 (require 2htdp/image)
 (require 2htdp/universe)
 
-;; Ex 34:
+;; Ex 32:
 
-;; Tem different events varius interactive programs will have to deal with:
+;; Ten different events varius interactive programs will have to deal with:
 ;; Eye movements, skin temperature, heart rate, screan touches, car speeds, car postions,
 ;; incomming messages.
 

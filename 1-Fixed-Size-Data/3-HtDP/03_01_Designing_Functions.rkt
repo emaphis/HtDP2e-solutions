@@ -1,11 +1,13 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname 03_01_Designing_Functions) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-;; HtDP 2e 3.1 How to Design Programs
+;; HtDP 2e - 3 How to Design Programs
+;; 3.1 Desgining Funtions
+;; Exercises: 33
 
 (require 2htdp/image)
 
-;; Ex. 35:
+;; Ex. 33:
 ;; Research the “year 2000” problem and what it meant for software developers.
 
 ; It was a lot of work becuase programs weren't desinged for the long term
@@ -22,8 +24,7 @@
 ;; interp. represents degrees Celsius
 
 ; 102 is a dTtemperature because it is a number
-; "cold" is not a Temperature, it is a String
-
+; "cold" is not a Te
 ;; Number -> Number
 ;; produce temperature in Celsius given a temparature in Fahrenheit
 (define (f2c f)

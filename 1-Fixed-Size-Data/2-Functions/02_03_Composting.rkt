@@ -3,7 +3,7 @@
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname 02_03_Composting) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e 2.3 Functions
 ;; 2.2.3 Composiiing Functions
-;; Exercises
+;; Exercises 27-29
 (require 2htdp/image)
 
 #|
@@ -57,7 +57,7 @@
   (- (revenue ticket-price)
      (cost ticket-price)))
 
-;; Ex. 29:
+;; Ex. 27:
 ;; Collect all definitions in DrRacket’s definitions area and change them so
 ;; that all magic numbers are refactored into constant definitions
 (define START-ATTENDEES 120)
@@ -83,7 +83,7 @@
   (- (revenue ticket-price)
      (cost ticket-price)))
 
-;; Ex. 30:
+;; Ex. 28:
 ;; Determine the potential profit for these ticket prices: $1, $2, $3, $4, and $5.
 ;; Which price should the owner of the movie theater choose to maximize his profits?
 ;; Determine the best ticket price to a dime.
@@ -118,7 +118,7 @@
 (check-expect (profit2 5.00) (profit 5.00))
 
 
-;; Exercise 31:
+;; Exercise 29:
 ;; new fixed cost per attendee schedule
 
 ;; a. well factored program

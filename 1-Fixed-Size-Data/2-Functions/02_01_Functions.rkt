@@ -1,8 +1,8 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname chp1_02_1) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname 02_01_Functions) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e 1.2 Functions and programs
-;; exercises 13-22
+;; exercises 11-20
 ;; I'm using check-expets  early to easily show examples/
 (require 2htdp/image)
 
@@ -42,7 +42,7 @@
 (check-expect (opening "Matthew" "Krishnamurthi") "Dear Matthew,")
 
 
-;; Ex. 13:
+;; Ex. 11:
 ;; Define a function that consumes two numbers, x and y, and that
 ;; computes the distance of point (x,y) to the origin.
 ;; based on ex. 1
@@ -53,7 +53,7 @@
 (check-expect (distance 3 4) 5)
 
 
-;; Ex. 14:
+;; Ex. 12:
 ;; Define the function cvolume, which accepts the length of a side of
 ;; an equilateral cube and computes its volume. If you have time, consider
 ;; defining csurface, too.
@@ -72,9 +72,9 @@
 (check-expect (csurface 2) (* 4 6))
 
 
-;; Ex. 15:
-;;  Define the function string-last, which extracts the last 1String from
-;; a non-empty string. Don’t worry about empty strings. image
+;; Ex. 13:
+;; Define the function string-first, which extracts the first 1String from a
+;; non-empty string. Don’t worry about empty strings. 
 (define (string-first str)
   (substring str 0 1))
 
@@ -82,7 +82,7 @@
 (check-expect (string-first "string") "s")
 
 
-;; Ex. 16:
+;; Ex. 14:
 ;; Define the function string-last, which extracts the last 1String from
 ;; a non-empty string. Don’t worry about empty strings.
 (define (string-last str)
@@ -92,12 +92,12 @@
 (check-expect (string-last "hello world") "d")
 
 
-;; Ex. 17
+;; Ex. 15
 ;; Define ==>. The function consumes two Boolean values, call them sunny
 ;; and friday. Its answer is #true if sunny is false or friday is true.
 ;; Note Logicians call this Boolean operation implication, and they use the
 ;; notation sunny => friday for this purpose. image
-;; based on ex 9 -- bool imply function
+;; based on ex 7 -- bool imply function
 (define (==> p q)
   (or (not p) q))
 
@@ -107,9 +107,9 @@
 (check-expect (==> #false #false) #true)
 
 
-;; Ex. 18:
+;; Ex. 16:
 ;; Define the function image-area, which counts the number of pixels in a given image.
-;; based on ex. 7
+;; based on ex. 5
 (define (image-area img)
   (* (image-height img) (image-width img)))
 
@@ -117,11 +117,11 @@
 (check-expect (image-area (rectangle 10 20 "solid" "red")) 200)
 
 
-;; Ex. 19:
+;; Ex. 17:
 ;; Define the function image-classify, which consumes an image and produces
 ;; "tall" if the image is taller than wide, "wide" if it is wider than tall,
 ;; or "square" if its width and height are the same.
-;; based on ex. 10
+;; based on ex. 8
 (define (image-classify img)
   (if (> (image-height img) (image-width img))
     "tall"
@@ -137,10 +137,10 @@
 (check-expect (image-classify SQUARE) "square")
 
 
-;; Ex. 20
+;; Ex. 18
 ;; Define the function string-join, which consumes two strings and
 ;; appends them with "_" in between.
-;; based on ex. 4
+;; based on ex. 2
 (define (string-join prefix suffix)
   (string-append prefix "_" suffix))
 
@@ -148,11 +148,11 @@
 (check-expect (string-join "hello" "world") "hello_world")
 
 
-;; Exercise 21
+;; Exercise 19
 ;; Define the function string-insert, which consumes a string str plus
 ;; a number i and inserts "_" at the ith position of str. Assume i is
 ;; a number between 0 and the length of the given string (inclusive).
-;; based on ex. 5
+;; based on ex. 3
 (define (string-insert str i)
   (string-append (substring str 0 i) "_" (substring str i)))
 
@@ -163,12 +163,12 @@
 (check-expect (string-insert "" 0) "_")
 
 
-;; Exercise 22
+;; Exercise 20
 ;; Define the function string-delete, which consumes a string plus a number
 ;; i and deletes the ith position from str. Assume i is a number between 0
 ;; (inclusive) and the length of the given string (exclusive).
 ;; Can string-delete deal with empty strings?
-;; based on ex. 6
+;; based on ex. 4
 (define (string-delete str i)
   (string-append (substring str 0 i) (substring str (+ i 1))))
 

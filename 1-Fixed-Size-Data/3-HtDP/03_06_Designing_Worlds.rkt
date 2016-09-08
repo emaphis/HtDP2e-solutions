@@ -3,14 +3,14 @@
 #reader(lib "htdp-intermediate-reader.ss" "lang")((modname 03_06_Designing_Worlds) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e 3 How to Design Programs
 ;; 3.6 Designing World Programs
-;; Exercises 41-46
+;; Exercises 39-44
 
 (require 2htdp/image)
 (require 2htdp/universe)
 
 ;; Car sample world
 
-;; Ex. 41:
+;; Ex. 39:
 ;; Develop your favorite image of an automobile so that WHEEL-RADIUS
 ;; remains the single point of control.
 
@@ -64,9 +64,9 @@
 (check-expect (tock 20) 23)
 (check-expect (tock 78) 81)
 
-;; Ex. 42:
-;; Formulate the examples as BSL tests.
 
+;; Ex. 40:
+;; Formulate the examples as BSL tests.
 
 ;;; Second wishlist item:
 
@@ -91,7 +91,7 @@
                100 Y-CAR
                BACKGROUND))
 
-;; Ex. 43:
+;; Ex. 41:
 ;; Assemble into a working program
 ;; end
 ;; WorldState -> Boolean
@@ -115,7 +115,7 @@
 ;(main 0)
 
 
-;; Ex. 45a:
+;; Ex. 43a:
 ;; In the original program WS represented pixels between the left border 
 ;; and the car so you do translation in the on-tick function
 ;; In this program the WS represents the number of ticks sinces the program
@@ -123,14 +123,14 @@
 ;; See animationstate.rkt
 
 
-;; Ex 45b.
+;; Ex 43b.
 ;; See sinefunction.rck
 
 
 ;; Of Mice and Characters example
 ;; See allkeys.rkt
 
-;; Exercise 46
+;; Ex. 44
 ;; See allkeys.rkt
 
 
