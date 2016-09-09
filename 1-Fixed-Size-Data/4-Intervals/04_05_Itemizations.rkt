@@ -1,9 +1,9 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname 04_05_Itemizations) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-;; HtDP 2e  Enumerations, Intervals, Itemizations
+;; HtDP 2e - 4 Enumerations, Intervals, Itemizations
 ;; 4.5 Itemizations
-;; Exercises: 55-58
+;; Exercises: 53-57
 
 (require 2htdp/image)
 (require 2htdp/universe)
@@ -46,7 +46,7 @@
 ;; Sample problem - rocket launch
 ;; See rocketlaunch.rkt
 
-;; Ex. 55:
+;; Ex. 53:
 ;; In some way it is best to draw some world scenarios and to represent
 ;; them with data and, conversely, to pick some data examples and to
 ;; draw pictures that match them. Do so for the LR definition, including
@@ -61,14 +61,15 @@
 (define BACKG  (empty-scene WIDTH HEIGHT))
 (define ROCKET (rectangle 5 30 "solid" "red")) ; use your favorite image
 
-;(define CENTER (- HEIGHT (/ (image-height ROCKET) 2)))
-(define CENTER (/ (image-height ROCKET) 2))
+(define CENTER (- HEIGHT (/ (image-height ROCKET) 2)))
 
-;; A LR (short for: launching rocket) is one of:
-;; – "resting"
-;; – non-negative number
-;; interp. "resting is a rocket on the ground
-;; the number denotes the height of a rocket in flight
+
+; A LR (short for: launching rocket) is one of:
+; – "resting"
+; – nonnegative number
+; interpretation a grounded rocket, in count-down mode,
+; a number denotes the number of pixels between the
+; top of the canvas and the rocket (its height)
 
 ;; sample data FOR LR
 (define LR1 "resting")
@@ -87,6 +88,7 @@
 (place-image ROCKET 50 (trans LR3) BACKG)  ; almost half way
 (place-image ROCKET 50 (trans LR4) BACKG)  ; almost all the way
 (place-image ROCKET 50 (trans LR5) BACKG)  ; all the way up
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Rocket Launch with countdown using Itemizations
@@ -122,16 +124,12 @@
 ; renders the state as a resting or flying rocket
 
 (check-expect (show "resting")
-              (place-image ROCKET
-                           10 (- HEIGHT CENTER)
-                           BACKG))
+              (place-image ROCKET 10 CENTER BACKG))
 
 (check-expect (show -2)
               (place-image (text "-2" 20 "red")
                            10 (* 3/4 WIDTH)
-                           (place-image ROCKET
-                                        10 (- HEIGHT CENTER)
-                                        BACKG)))
+                           (place-image ROCKET 10 CENTER BACKG)))
 
 (check-expect (show HEIGHT)
               (place-image ROCKET 10 (- HEIGHT CENTER) BACKG))
@@ -159,7 +157,7 @@
      (place-image ROCKET 10 (- x CENTER) BACKG)]))
 
 
-;; Ex. 56:
+;; Ex. 54:
 ;; Why is (string=? "resting" x) incorrect as the first condition in
 ;; show? Conversely, formulate a completely accurate condition, that is,
 ;; a Boolean expression that evaluates to #true precisely when x belongs
@@ -170,7 +168,7 @@
 ;; a better test   (and (string? x) (string=? "resting" x)
 
 
-;; Ex. 57:
+;; Ex. 55:
 ;; Integer -> Image
 ;; render the rocket image at a given height
 (check-expect (render-rocket 10)
@@ -244,7 +242,7 @@
     [on-key launch]))
 
 
-;; Ex. 58:
+;; Ex. 56:
 ;; Define main2 so that you can launch the rocket and watch it lift off.
 ;; Read up on the on-tick clause to determine the length of one tick
 ;; and how to change it.
@@ -255,5 +253,11 @@
   (big-bang s
             [on-tick fly .3]
             [to-draw show]
-            on-key launch)))
-;; See rocketlaunch.rkt
+            [on-key launch]))
+
+
+;; Ex 57:
+;; Recall that the word “height” forced us to choose one of two possible
+;; interpretation. Now that you have solved the exercises in this section,
+;; solve them again using the first interpretation of the word.
+;; Compare and contrast the solutions.
