@@ -73,7 +73,7 @@
 (check-expect (string-rest "hello world") "ello world")
 
 
-;; Ex> 48:
+;; Ex. 38:
 ;; Design the function string-remove-last, which produces a string like the
 ;; given one with the last character removed.
 

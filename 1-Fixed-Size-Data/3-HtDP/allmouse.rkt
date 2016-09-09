@@ -2,9 +2,11 @@
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-intermediate-reader.ss" "lang")((modname allmouse) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e - 3 How to Design Programs
-;; 2.3.6 Designing World Programs
-;; AllMouseEvts is an element of Image.  
-;; Figure 9: A mouse event recorder
+;; 3.6 Designing World Programs
+;; AllMouseEvts is an element of Image.
+
+;; http://www.ccs.neu.edu/home/matthias/notes/notes/note_mice-and-chars.html
+;; Figure 3: A mouse event recorder
 
 (require 2htdp/image)
 (require 2htdp/universe)
@@ -13,7 +15,17 @@
 (define MT (empty-scene 100 100)) 
   
 
-; clack : AllMouseEvts Number Number String -> AllMouseEvts 
+;; PositiveNumber -> Image
+;; records all mouse events for the specifiec time interval
+;; start the world with: (main 10) for 10 sectonds
+(define (main duration)
+  (big-bang MT
+            [to-draw   show]
+            [on-tick do-nothing 1 duration]
+            [on-mouse   clack]))
+
+
+; AllMouseEvts Number Number String -> AllMouseEvts
 ; add a dot at (x,y) to ws  
   
 (check-expect 
@@ -30,8 +42,8 @@
 
 
 
-; show : AllMouseEvts -> AllMouseEvts  
-; just reveal the current world state  
+; AllMouseEvts -> AllMouseEvts
+; reveals the current world state (becuase it is an image)
   
 (check-expect (show MT) MT) 
   
@@ -39,10 +51,5 @@
   ws) 
 
 
-;; AllMouseEvts -> AllMouseEvts
-;; start the world with: (main MT)
-;; 
-(define (main ws)
-  (big-bang ws                        ; AllMouseEvts
-            (to-draw   show)          ; AllMouseEvts -> Image
-            (on-mouse   clack)))      ; AllMouseEvts KeyEvent -> AllKeys
+; AllMouseEvts -> AllMouseEvts
+(define (do-nothing ws) ws)

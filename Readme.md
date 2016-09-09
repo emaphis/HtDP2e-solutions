@@ -48,11 +48,18 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
 
     03_06_Desinging_Worlds             Ex.  39-44
 
+    righthand.rkt                      Ex.  42
+
     anitmationstate.rkt                Ex.  43a
 
     sinefunction.rkt                   Ex.  43b
 
-    allkeys.rkt                        Ex.  44
+    allkeys.rkt                        Ex.
+
+    allmouse.rkt                       Ex.
+
+    carkeys.rkt                        Ex.  44
+
 
     03_07_Virtualpet                   Ex.  47
 
@@ -64,7 +71,7 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
 
     04_01_Programming_Conditionals
 
-    04_02_Computing_Conditionaly       Ex.  50, 51
+    04_02_Computing_Conditionaly       Ex.  48, 49
 
     04_03_Enumerations                 Ex.  52, 53
 

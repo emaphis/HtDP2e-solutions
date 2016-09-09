@@ -3,7 +3,7 @@
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname 04_02_Computing_Conditionaly) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e 1.4 Intervals, Enumerations, etc.
 ;; 4.2 Computing Conditionally
-;; Exercises 50,51
+;; Exercises 48,49
 
 (require 2htdp/image)
 
@@ -13,32 +13,27 @@
 ; compute the reward level from the given score s
 (define (reward s)
   (cond
-    [(<= 0 s 10)
-     "bronze"]
-    [(and (< 10 s) (<= s 20))
-     "silver"]
+    [(<= 0 s 10) "bronze"]
+    [(and (< 10 s) (<= s 20)) "silver"]
     [else "gold"]))
 
 ;; evaluation:
 (reward 3)
 
 (cond
-  [(<= 0 3 10)
-   "bronze"]
-  [(and (< 10 3) (<= 3 20))
-   "silver"]
+  [(<= 0 3 10) "bronze"]
+  [(and (< 10 3) (<= 3 20)) "silver"]
   [else "gold"])
 
 (cond
   [#true "bronze"]
-  [(and (< 10 3) (<= 3 20))
-   "silver"]
+  [(and (< 10 3) (<= 3 20)) "silver"]
   [else "gold"])
 
 "bronze"
 
 
-;; Ex. 50:
+;; Ex. 48:
 ;; Enter the definition of reward followed by (reward 18) into the
 ;; definitions area of DrRacket and use the stepper to find out how
 ;; DrRacket evaluates applications of the function.
@@ -46,31 +41,25 @@
 (reward 18)
 
 (cond
-  [(<= 0 18 10)
-   "bronze"]
-  [(and (< 10 18) (<= 18 20))
-   "silver"]
+  [(<= 0 18 10) "bronze"]
+  [(and (< 10 18) (<= 18 20)) "silver"]
   [else "gold"])
 
 (cond
   [#false "bronze"]
-  [(and (< 10 18) (<= 18 20))
-   "silver"]
+  [(and (< 10 18) (<= 18 20)) "silver"]
   [else "gold"])
 
 (cond
-  [(and (< 10 18) (<= 18 20))
-   "silver"]
+  [(and (< 10 18) (<= 18 20)) "silver"]
   [else "gold"])
 
 (cond
-  [(and #true (<= 18 20))
-   "silver"]
+  [(and #true (<= 18 20)) "silver"]
   [else "gold"])
 
 (cond
-  [(and #true #true)
-   "silver"]
+  [(and #true #true) "silver"]
   [else "gold"])
 
 (cond
@@ -79,7 +68,7 @@
 
 "silver"
 
-;; Ex. 51:
+;; Ex. 49:
 ;; (- 200 (cond [(> y 200) 0] [else y]))
 ;; Use the stepper to evaluate the expression for y as 100 and 210.
 
