@@ -61,11 +61,11 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
     carkeys.rkt                        Ex.  44
 
 
-    03_07_Virtualpet                   Ex.  47
+    03_07_Virtualpet                   Ex.  45
 
-    03_07_Virtualpet1                  Ex.  48
+    03_07_Virtualpet1                  Ex.  46
 
-    03_07_Virtualpet2                  Ex.  49
+    03_07_Virtualpet2                  Ex.  47
 
   4-Intervals
 

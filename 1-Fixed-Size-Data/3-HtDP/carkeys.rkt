@@ -90,10 +90,10 @@
 ;; end car simulation when car reaches end of world
 (check-expect (end? 0) #false)
 (check-expect (end? 100) #false)
-(check-expect (end? (+ W-WIDTH (/ (image-width CAR) 2))) #true)
+(check-expect (end? (+ WIDTH-OF-WORLD (/ (image-width CAR) 2))) #true)
 
 (define (end? ws)
-  (>= ws (+ W-WIDTH (/ (image-width CAR) 2))))
+  (>= ws (+ WIDTH-OF-WORLD (/ (image-width CAR) 2))))
 
 ;; WorldState Number Number String -> WorldState
 ;; places the car at the x-coordinate
