@@ -1,9 +1,9 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname 04_07_Finite_State_Worlds) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-;; HtDP 2e  Enumerations, Intervals, Itemizations
+;; HtDP 2e - 4 Enumerations, Intervals, Itemizations
 ;; 4.4 Finite State Worlds
-;; Exercises: 61-64
+;; Exercises: 59-62
 
 ;; Finite state machines
 
@@ -24,12 +24,13 @@
         [(string=? tl "green") (... tl)]))
 
 
-;; Ex. 61:
+;; Ex. 59:
 ;; Finish the design of a world program that simulates the
 ;; traffic light FSA.
 ;; see trafficlight.rkt
 
-;; Ex. 62:  see trafficlight2.rkt
+
+;; Ex. 60:  see trafficlight2.rkt
 ;; An alternative data representation for a traffic light program
 ;; may use numbers instead of strings:
 ;; Does the tl-next function convey its intention more clearly than
@@ -41,7 +42,7 @@
 ;; representation of colors using strings is much more convenient.
 
 
-;; Ex. 63:   See trafficlight3.rkt
+;; Ex. 61:   See trafficlight3.rkt
 ;; Change the program using constamts
 
 ;; Door state example:
@@ -63,5 +64,5 @@
 ; – OPEN
 
 
-;; Exercise 64
+;; Exercise 62
 ;; see doorstate.rkt

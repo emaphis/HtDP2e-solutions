@@ -1,10 +1,10 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname trafficlight) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-;; HtDP 2e - 4 - Enumerations and Intervals
+;; HtDP 2e - 4 Enumerations and Intervals
 ;; 4.7 Finite State Worlds
 
-;; Ex 61:
+;; Ex 59:
 ;; Finish the design of a world program that simulates the
 
 (require 2htdp/image)

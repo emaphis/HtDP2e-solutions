@@ -3,7 +3,7 @@
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname 04_04_intervals) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e - 4 Enumerations, Intervals, Itemizations
 ;; 4.4 Intervals
-;; Exercises: 54-
+;; Exercises: 52
 
 ;; for ufo example see: 04_04_Ufo.rkt
 

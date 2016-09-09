@@ -1,9 +1,14 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-intermediate-reader.ss" "lang")((modname doorstate) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-;; HtDP 2e - 2.4 - Enumerations and Intervals
+;; HtDP 2e - 4 Enumerations and Intervals
 ;; 4.7 Finite State Machines
-;; Ex 64.
+;; Ex 62.
+
+
+;; During a door simulation the “open” state is barely visible. Modify
+;; door-simulation so that the clock ticks once every three seconds.
+;; Re-run the simulation. 
 
 ;; door state example  (state machine)
 

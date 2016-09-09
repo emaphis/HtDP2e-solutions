@@ -2,12 +2,13 @@
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-intermediate-reader.ss" "lang")((modname trafficlight3) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 
-;; HtDP 2e - 4 - Enumerations and Intervals
+;; HtDP 2e - 4 Enumerations and Intervals
 ;; 4.7 Finite State Worlds
 
-;; Ex 62:
-;; An alternative data representation for a traffic light
-;; program may use numbers instead of strings:
+;; Ex 61:
+;; programs must define constants and use names instead of actual constants.
+;; In this spirit, a data definition for traffic lights introduces must use
+;; constants, too:
 
 (require 2htdp/image)
 (require 2htdp/universe)

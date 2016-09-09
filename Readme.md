@@ -73,27 +73,27 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
 
     04_02_Computing_Conditionaly       Ex.  48, 49
 
-    04_03_Enumerations                 Ex.  52, 53
+    04_03_Enumerations                 Ex.  50, 51
 
-    04_04_Intervals                    Ex.  54
+    04_04_Intervals                    Ex.  52
 
     04_04_Ufo
 
-    04_05_Itemizations                 Ex. 55-58
+    04_05_Itemizations                 Ex. 53-57
 
     rocketlaunch.rkt
 
-    04_06_Designing_Itemizations       Ex. 60
+    04_06_Designing_Itemizations       Ex. 58
 
-    04_07_Finite_State_Worlds          Ex. 61-64
+    04_07_Finite_State_Worlds          Ex. 59-62
 
-    Trafficlight                       Ex. 61
+    Trafficlight                       Ex. 59
 
-    Trafficlight2                      Ex. 62
+    Trafficlight2                      Ex. 60
 
-    Trafficlight3                      Ex. 63
+    Trafficlight3                      Ex. 61
 
-    doorstate                          Ex. 64
+    doorstate                          Ex. 62
 
 
 I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)

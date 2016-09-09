@@ -1,7 +1,7 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname 04_02_Computing_Conditionaly) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-;; HtDP 2e 1.4 Intervals, Enumerations, etc.
+;; HtDP 2e - 4 Intervals, Enumerations, etc.
 ;; 4.2 Computing Conditionally
 ;; Exercises 48,49
 

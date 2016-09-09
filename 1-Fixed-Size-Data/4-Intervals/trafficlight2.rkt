@@ -1,10 +1,10 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-intermediate-reader.ss" "lang")((modname trafficlight2) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-;; HtDP 2e - 4 - Enumerations and Intervals
+;; HtDP 2e - 4 Enumerations and Intervals
 ;; 4.7 Finite State Worlds
 
-;; Ex 62:
+;; Ex 60:
 ;; An alternative data representation for a traffic light
 ;; program may use numbers instead of strings:
 

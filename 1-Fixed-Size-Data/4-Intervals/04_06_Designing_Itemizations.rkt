@@ -1,9 +1,9 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname 04_06_Designing_Itemizations) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-;; HtDP 2e  Enumerations, Intervals, Itemizations
+;; HtDP 2e - 4 Enumerations, Intervals, Itemizations
 ;; 4.6 Designing with Itemizations
-;; Exercises: 60
+;; Exercise: 58
 
 
 ;; Sales tax example
@@ -62,7 +62,7 @@
     [(>= p 10000) (* 0.08 p)]))
 
 
-;; Ex. 60:
+;; Ex. 58:
 ;; Introduce constant definitions that separate the intervals for low
 ;; prices and luxury prices from the others so that the legislator in
 ;; Tax Land can easily raise the taxes even more.

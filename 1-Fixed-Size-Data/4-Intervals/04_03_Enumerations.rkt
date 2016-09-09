@@ -1,9 +1,9 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname 04_03_Enumerations) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-;; HtDP 2e 1.4 Intervals, Enumerations, etc.
+;; HtDP 2e - 4 Intervals, Enumerations, etc.
 ;; 4.3 Enumerations
-;; Exercises 52,53
+;; Exercises 50,51
 
 (require 2htdp/image)
 (require 2htdp/universe)
@@ -27,14 +27,21 @@
 ; interp. each element of TrafficLight represents which colored
 ; bulb is currently turned on
 
+#; ;template
+(define (fun-traffic-light tl)
+  (cond
+    [(string=? "red"tl) ...]
+    [(string=? "green" tl) ...]
+    [(string=? "yellow" tl) ...))
+
 
 ;; a function consumming TrafficLight
 
 ; TrafficLight -> TrafficLight
 ; given state s, determine the next state of the traffic light
 (check-expect (traffic-light-next "red") "green")
-(check-expect (traffic-light-next "green") "yellow")  ; Ex. 52
-(check-expect (traffic-light-next "yellow") "red")    ; Ex. 52
+(check-expect (traffic-light-next "green") "yellow")  ; Ex. 50
+(check-expect (traffic-light-next "yellow") "red")    ; Ex. 50
 
 (define (traffic-light-next s)
   (cond
@@ -43,10 +50,10 @@
     [(string=? "yellow" s) "red"]))
 
 
-;; Ex. 52: complete the tests -- see above.
+;; Ex. 50: complete the tests -- see above.
 
 
-;; Ex. 53:
+;; Ex. 51:
 ;; Design a big-bang program that simulates a traffic light for
 ;; a given duration. The program renders the state of a traffic light
 ;; as a solid circle of the appropriate color, and it changes state
@@ -98,6 +105,7 @@
   (place-image (display-light ws) DX DY MT))
 
 
+
 ;;; Enumerations can be specified by an English sentence:
 
 ; A 1String is a String of length 1,
@@ -135,7 +143,11 @@
     ...))
 
 
-;;; Figure 24: Conditional functions and special enumerations
+;;; Figure 20: Conditional functions and special enumerations
+
+;; Sample Problem: Design a key-event handler that moves a red dot left or
+;; right on a horizontal line in response to pressing the left and right
+;; arrow keys.
 
 ; A Position is a Number.
 ; interpretation distance between the left margin and the ball
