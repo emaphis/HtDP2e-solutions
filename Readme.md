@@ -95,6 +95,12 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
 
     doorstate                          Ex. 62
 
+  5-Adding-Structure
+
+    05_02_Computing_with posns         Ex. 63, 64
+
+    05_04_defining_structures          Ex. 65-68
+
 
 I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)
 See the 'Realm-of-Racket directory.
