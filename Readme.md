@@ -3,7 +3,7 @@
 # Spoiler Alert!
 
 Here are my solutions for the exercises in "How to Design Programs 2nd Edition".
-I've completed Exercises 1-51 so far.
+I've completed Exercises 1-85 so far.
 
 You owe it to youself to work through your own solutions first before you look at mine.  If for no other reason than my solutions being an examples of how not to do it, and it may corrunt your style. :-)
 
@@ -12,11 +12,11 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
 
 #Index
 
-  File                                 Excercises
+    File                               Excercises
 
 0-Prologue
 
-  0_rocket       rocket example
+    0_rocket.rkt                       Ex.
 
 1-Fixed-Size-Data
 
@@ -110,6 +110,9 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
     ufo1.rkt                           Ex. 75
 
     05_07_universe_of_data             Ex. 76-79
+
+    05_08_designing_with_structures    Ex. 80-
+
 
 I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)
 See the 'Realm-of-Racket directory.
