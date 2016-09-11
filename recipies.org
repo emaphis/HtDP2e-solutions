@@ -325,3 +325,6 @@
 
     What do you do when one of your test cases fails? Review at the end
     of Designing Functions concerning test failures.
+
+* Nested Structures
+  If a function deals with nested structures, develop one function per level of nesting.

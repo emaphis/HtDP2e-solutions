@@ -71,9 +71,9 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
 
     04_01_Programming_Conditionals
 
-    04_02_Computing_Conditionaly       Ex.  48, 49
+    04_02_Computing_Conditionaly       Ex.  48,49
 
-    04_03_Enumerations                 Ex.  50, 51
+    04_03_Enumerations                 Ex.  50,51
 
     04_04_Intervals                    Ex.  52
 
@@ -97,10 +97,19 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
 
   5-Adding-Structure
 
-    05_02_Computing_with posns         Ex. 63, 64
+    05_02_Computing_with posns         Ex. 63,64
 
     05_04_defining_structures          Ex. 65-68
 
+    05_05_computing_with_structures    Ex. 69-71
+
+    05_06_programming_with_structures  Ex. 72-75
+
+    reddot1.rkt                        Ex. 74
+
+    ufo1.rkt                           Ex. 75
+
+    05_07_universe_of_data             Ex. 76-79
 
 I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)
 See the 'Realm-of-Racket directory.
