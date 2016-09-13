@@ -194,5 +194,5 @@
 ; interpretation #false means the missile hasn't 
 ; been fired yet; a Posn means it is in flight
 
-(define MISSLE1 (make-weapon #false))
-(define DRONE2 (make-weapon (make-posn 30 56)))
+(define MISSLE1 #false)
+(define DRONE2  (make-posn 30 56))

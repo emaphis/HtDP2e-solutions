@@ -111,7 +111,7 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
 
     05_07_universe_of_data             Ex. 76-79
 
-    05_08_designing_with_structures    Ex. 80-
+    05_08_designing_with_structures    Ex. 80-82
 
 
 I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)
