@@ -134,9 +134,9 @@
 
 #;; template
 (define (fn-for-word3 w)
-  (... (word3-let1 w)
-       (word3-let2 w)
-       (word3-let3 w)))
+  (... (... (word3-let1 w))
+       (... (word3-let2 w))
+       (... (word3-let3 w))))
 
 
 ;; Ex. 79:

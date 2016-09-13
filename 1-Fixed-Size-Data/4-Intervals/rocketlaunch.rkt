@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-intermediate-reader.ss" "lang")((modname rocketlaunch) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname rocketlaunch) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e  -- Enumerations and Intervals
 ;; 4.5 Itemization
 ;; rocketlaunch.rkt  - rocket example
@@ -31,7 +31,6 @@
 ; top of the canvas and the rocket (its height)
 
 (define LRCD1 "resting") ; resting on the ground
-(define LRCD2 -3) ; start of countdown
 (define LRCD3 -2) ; middle of countdowm
 (define LRCD4 -1) ; end of coundown
 (define LRCD5 0)  ; launch !!!
