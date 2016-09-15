@@ -113,11 +113,19 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
 
     05_08_designing_with_structures    Ex. 80-82
 
-    05_00_stucture_in the world        Ex. 83-87
+    05_10_stucture_in the world        Ex. 83-87
 
     editor2.rkt                        Ex. 86
 
     editor3.rkt                        Ex. 87
+
+    05_11_more_virtual_pets            Ex. 88-93
+
+    cat4.rkt                           Ex. 91
+
+    chameleon1.rkt                     Ex. 92
+
+    chameleon2.rkt                     Ex. 92
 
 
 I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)
