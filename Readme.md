@@ -3,9 +3,12 @@
 # Spoiler Alert!
 
 Here are my solutions for the exercises in "How to Design Programs 2nd Edition".
+
+(http://www.ccs.neu.edu/home/matthias/HtDP2e/)
+
 I've completed Exercises 1-99 so far.
 
-You owe it to youself to work through your own solutions first before you look at mine.  If for no other reason than my solutions being an examples of how not to do it, and it may corrunt your style. :-)
+You owe it to youself to work through your own solutions first before you look at mine.  If for no other reason than my solutions being an examples of how not to do it, and it may corrupt your style. :-)
 
 Make sure you are using Stable Release dated after Aug 13, 2016, the exercise numbering has changed.
 
