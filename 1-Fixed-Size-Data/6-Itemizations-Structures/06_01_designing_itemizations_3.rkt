@@ -143,7 +143,7 @@
 
 (define XY-COORD1 (make-posn 20 10)) ; (20,10)
 
-(define XY-COORD1 (make-posn 5 15))  ; (5, 15)
+(define XY-COORD2 (make-posn 5 15))  ; (5, 15)
 
 #;
 (define (fn-for-coorindate c)

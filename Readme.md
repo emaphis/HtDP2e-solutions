@@ -6,7 +6,7 @@ Here are my solutions for the exercises in "How to Design Programs 2nd Edition".
 
 (http://www.ccs.neu.edu/home/matthias/HtDP2e/)
 
-I've completed Exercises 1-105 so far.
+I've completed Exercises 1-106 so far.
 
 You owe it to youself to work through your own solutions first before you look at mine.  If for no other reason than my solutions being an examples of how not to do it, and it may corrupt your style. :-)
 
@@ -116,13 +116,13 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
 
     05_08_designing_with_structures    Ex. 80-82
 
-    05_10_stucture_in the world        Ex. 83-87
+    05_09_structure_in the world       Ex. 83-87
 
     editor2.rkt                        Ex. 86
 
     editor3.rkt                        Ex. 87
 
-    05_11_more_virtual_pets            Ex. 88-93
+    05_11_virtual_pet3                 Ex. 88-93
 
     cat4.rkt                           Ex. 91
 
@@ -137,6 +137,8 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
     06_01_space_invader_2              Ex. 101-102
 
     06_01_designing_itemizations_3     Ex. 103-105
+
+    O6_02_106_cat_cham                 Ex. 106
 
 
 I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)
