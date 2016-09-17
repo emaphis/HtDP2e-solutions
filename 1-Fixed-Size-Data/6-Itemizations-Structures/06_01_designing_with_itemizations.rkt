@@ -3,7 +3,7 @@
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname 06_01_designing_with_itemizations) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e - 6 Itemizations and Structures
 ;; 6.1 Designing with Itemizations, Again
-;; Exercises: 94
+;; Exercises: 94-100
 
 ;; space invader simulation
 
@@ -12,7 +12,7 @@
 
 ;; Ex. 94:
 ;; Draw some sketches of what the game scenery looks like at various stages.
-;;Use the sketches to determine the constant and the variable pieces of the
+;; Use the sketches to determine the constant and the variable pieces of the
 ;; game. For the former, develop physical and graphical constants that describe
 ;; the dimensions of the world (canvas) and its objects. Also develop some
 ;; background scenery. Finally, create your initial scene from the constants
@@ -64,7 +64,7 @@
                                          BACKGROUND))))
 
 ;;;;;;;;;;;;;;;;;;;
-;; data definitons
+;; data definitions
 
 ; A UFO is a Posn.
 ; interpretation (make-posn x y) is the UFO's location
@@ -99,7 +99,7 @@
 
 (define MISSILE1 (make-posn 20 80))
 
-; Missle -> ???
+; Missile -> ???
 #; ;template for Missile
 (define (fn-for-missile m)
   (... (... (posn-x m))   ; Number
@@ -131,9 +131,9 @@
 ; Fired -> ???
 #; ;template for Fired
 (define (fn-for-fired f)
-  (... (fn-for-ufo (fired-ufo g))           ; UFO
-       (fn-for-tank (fired-tank g))         ; Tank
-       (fn-for-missile (fired-missile g)))) ; Missle
+  (... (fn-for-ufo (fired-ufo f))           ; UFO
+       (fn-for-tank (fired-tank f))         ; Tank
+       (fn-for-missile (fired-missile f)))) ; Missile
 
 
 ; A SIGS is one of:
@@ -168,7 +168,7 @@
               (fn-for-tank (aim-tank s)))]
         [(fired? s)
          (... (fn-for-ufo (fired-ufo s))
-              (fin-for-tank (fired-tank s))
+              (fn-for-tank (fired-tank s))
               (fn-for-missile (fired-missile s)))]))
 
 
@@ -398,8 +398,8 @@
 ;; of SIGS and produces another one.
 
 ;; Assumption:
-;; 'si-move-proper' will move the Missile and the UFO each tock, but not the
-;; Tank, The Tank only moves by keyboard controle
+;; 'si-move-proper' will move the Missile (if exists),the UFO andd the Tank
+;; each 'tock'
 ;; 'si-move' adds a random element to UFO move
 ;; (Random 3) results:
 ;; 0 - subtract JUMP from UFO-SPEED

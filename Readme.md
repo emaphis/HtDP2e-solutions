@@ -6,7 +6,7 @@ Here are my solutions for the exercises in "How to Design Programs 2nd Edition".
 
 (http://www.ccs.neu.edu/home/matthias/HtDP2e/)
 
-I've completed Exercises 1-99 so far.
+I've completed Exercises 1-105 so far.
 
 You owe it to youself to work through your own solutions first before you look at mine.  If for no other reason than my solutions being an examples of how not to do it, and it may corrupt your style. :-)
 
@@ -132,11 +132,14 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
 
   6-Itemizations-Structures
 
-    06_01_desinging_with_itemizations Ex. 94-(upto 99 so far)
+    06_01_desinging_with_itemizations  Ex.  94-100
+
+    06_01_space_invader_2              Ex. 101-102
+
+    06_01_designing_itemizations_3     Ex. 103-105
 
 
 I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)
 See the 'Realm-of-Racket directory.
 
 Have fun.
-
