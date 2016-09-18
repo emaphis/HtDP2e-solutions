@@ -49,17 +49,8 @@
 ;; =================
 ;; Functions:
 
-;; VCat -> VCat
-;; start the world with (happy-cat (make-vcat 1 30)
-;;
-(define (happy-cat vc)
-  (big-bang vc                      ; VCat
-            (on-tick tock)          ; VCat -> VCat
-            (to-draw render)        ; VCat -> Image
-            (on-key  cat-attention) ; VCat KeyEvent -> VCat
-            (stop-when unhappy?)    ; VCat -> Boolean -- added for Ex 90.
-            ))
-
+;; I discovered later on that when dealing with stuctures it's best to build
+;; early in the call chain rather then pass half built structs around.
 
 ;; VCat -> VCat
 ;; produce the next vcat state
@@ -68,54 +59,37 @@
 (check-expect (tock (make-vcat 10 0.0)) (make-vcat 13 0.0))
 
 (define (tock vc)
-  (tock-happy (tock-x-pos vc)))
+  (make-vcat (tock-x-pos (vcat-x-pos vc))
+             (tock-happy (vcat-happy vc))))
 
-;; VCat -> VCat
-;; update cat's x-pos, reset at edge of scene
-(check-expect (tock-x-pos (make-vcat 10 50)) (make-vcat 13 50))
-(check-expect (tock-x-pos (make-vcat W-WIDTH 50)) (make-vcat 0 50))
+;; Number -> Number
+;; update the x-pos, reset at edge of scene
+(check-expect (tock-x-pos 10) (+ 10 SPEED))
+(check-expect (tock-x-pos W-WIDTH) 0)
 
-(define (tock-x-pos vc)
-  (cond [(< (vcat-x-pos vc) W-WIDTH)
-         (make-vcat (+ (vcat-x-pos vc) SPEED) (vcat-happy vc))]
-        [else (make-vcat 0 (vcat-happy vc))]))
+(define (tock-x-pos xpos)
+  (cond [(< xpos W-WIDTH) (+ xpos SPEED)]
+        [else 0]))  ; reset
 
-;; VCat -> VCat
-;; update cat's happyness scale
+;; Number -> Number
+;; update the given happyness scale
 ;; range [0, 100]
-(check-expect (tock-happy (make-vcat 10 0.0)) (make-vcat 10 0.0))
-(check-expect (tock-happy (make-vcat 10 50.0)) (make-vcat 10 49.9))
-(check-expect (tock-happy (make-vcat 10 101.0)) (make-vcat 10 100.0))
+(check-expect (tock-happy  0.0) 0.0) ; can't get any unhappier.
+(check-expect (tock-happy 50.0) 49.9)
 
-(define (tock-happy vc)
-  (cond [(<= (vcat-happy vc) 0.0)
-         (make-vcat (vcat-x-pos vc) 0.0)]
-        [(> (vcat-happy vc) 100.0)
-         (make-vcat (vcat-x-pos vc) 100.0)]
-        [else
-         (make-vcat (vcat-x-pos vc) (- (vcat-happy vc) 0.1))]))
+(define (tock-happy hpy)
+  (cond [(> hpy 0.0) (- hpy 0.1)]
+        [else 0.0]))
 
 
 ;; VCat -> Image
 ;; render the cat and the happyness guage on the scene
 
-(check-expect (render (make-vcat 0 50.0))
+(check-expect (render (make-vcat 150 50.0))
               (place-image/align
                (rectangle (* 3 50.0) G-HEIGHT "solid" "red")
                5 10 "left" "top"
-               (place-image CAT 0 DY MT)))
-
-(check-expect (render (make-vcat 4 40.0))
-              (place-image/align
-               (rectangle (* 3 40.0) G-HEIGHT "solid" "red")
-               5 10 "left" "top"
-               (place-image CAT 4 DY MT)))
-
-(check-expect (render (make-vcat 7 30.0))
-              (place-image/align
-               (rectangle (* 3 30.0) G-HEIGHT "solid" "red")
-               5 10 "left" "top"
-               (place-image CAT 7 DY MT)))
+               (place-image CAT 150 DY MT)))
 
 (define (render vc)
   (place-image/align
@@ -166,6 +140,19 @@
 
 (define (unhappy? vc)
   (<= (vcat-happy vc) 0.0))
+
+
+;; VCat -> VCat
+;; start the world with (happy-cat (make-vcat 1 30)
+;;
+(define (happy-cat vc)
+  (big-bang vc                      ; VCat
+            (on-tick tock)          ; VCat -> VCat
+            (to-draw render)        ; VCat -> Image
+            (on-key  cat-attention) ; VCat KeyEvent -> VCat
+            (stop-when unhappy?)    ; VCat -> Boolean -- added for Ex 90.
+            ))
+
 
 
 ;; Ex. 91:
