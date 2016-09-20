@@ -2,10 +2,11 @@
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname 06_03_input_errors) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e - 6 Itemizations and Structures
-;; 6.3 Input Errors
-;; Exercises: 110-
+;; 6.3 Input Error
+;; Exercises: 110-113
 
 (require 2htdp/image)
+(require 2htdp/universe)
 
 ;; using predicates to protect programs from inappropriate input.
 
@@ -220,6 +221,7 @@
 
 
 ;;  Coordinate
+;; see editor3.rkt
 
 ; A Coordinate is one of:
 ; – a NegativeNumber
@@ -259,13 +261,16 @@
 ; – a VCat
 ; – a VCham
 
+
+;; Any -> Boolean
+;; is the given parameter a VCat or a VCham
+
 (check-expect (vanimal? (make-vcat 100 50)) #true)
 (check-expect (vanimal? (make-vcham 100 50 "blue")) #true)
 
 (check-expect (vanimal? 20) #false)
-(check-expect (vanimal? "flufy") #false)
+(check-expect (vanimal? "fluffy") #false)
 (check-expect (vanimal? (make-posn 10 30)) #false)
 
 (define (vanimal? v)
   (or (vcat? v) (vcham? v)))
-

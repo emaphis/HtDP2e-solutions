@@ -6,7 +6,7 @@ Here are my solutions for the exercises in "How to Design Programs 2nd Edition".
 
 (http://www.ccs.neu.edu/home/matthias/HtDP2e/)
 
-I've completed Exercises 1-113 so far.
+I've completed Exercises 1-114 so far.
 
 You owe it to yourself to work through your own solutions first before you look at mine.  If for no other reason than my solutions being an examples of how not to do it, and it may corrupt your style. :-)
 
@@ -147,6 +147,14 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
     109_finite_sm                      Ex. 109
 
     06_03_input_errors                 Ex. 110-113
+
+    06_04_checking_the_world           Ex. 114
+
+    06_04_space_invader_3              Ex. 114 a
+
+    06_04_cat_cham_3                   Ex. 114 b
+
+    06_04_editor_4                     Ex. 114 c
 
 
 I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)
