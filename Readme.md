@@ -6,7 +6,7 @@ Here are my solutions for the exercises in "How to Design Programs 2nd Edition".
 
 (http://www.ccs.neu.edu/home/matthias/HtDP2e/)
 
-I've completed Exercises 1-116 so far.
+I've completed Exercises 1-128 so far.
 
 You owe it to yourself to work through your own solutions first before you look at mine.  If for no other reason than my solutions being an examples of how not to do it, and it may corrupt your style. :-)
 
@@ -62,7 +62,6 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
     allmouse.rkt                       Ex.
 
     carkeys.rkt                        Ex.  44
-
 
     03_07_Virtualpet                   Ex.  45
 
@@ -157,6 +156,12 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
     06_04_editor_4                     Ex. 114 c
 
     06_05_equality_predicates          Ex. 115
+
+  Intermezzo-BSL
+
+    intermezzo-BSL                     Ex. 116-128
+
+
 
 
 I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)
