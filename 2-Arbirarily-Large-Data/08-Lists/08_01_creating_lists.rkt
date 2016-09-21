@@ -65,9 +65,11 @@
             (cons "orange"
                   (cons "yellow"
                         (cons "green"
-                              (cons "blue"
-                                    (cons "altraviolet"
-                                          '() )))))))
+                              (cons "cyan"
+                                    (cons "blue"
+                                          (cons "purple"
+                                                (cons "altraviolet"
+                                                      '() )))))))))
 
 
 ;;;;;;;;;;;;;;;;;;;;;
@@ -154,6 +156,11 @@
 ;; - '()
 ;; - (cons Boolean List-of-booleans)
 ;; interpretation: an arbitrarily long list of Booleans
+
+;; examples
+'()   ; empty list
+(cons #true '())  ; list of one
+(cons #true (cons #false '())) ; arbitrary length list
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

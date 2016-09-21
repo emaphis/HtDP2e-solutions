@@ -6,7 +6,7 @@ Here are my solutions for the exercises in "How to Design Programs 2nd Edition".
 
 (http://www.ccs.neu.edu/home/matthias/HtDP2e/)
 
-I've completed Exercises 1-128 so far.
+I've completed Exercises 1-134 so far.
 
 You owe it to yourself to work through your own solutions first before you look at mine.  If for no other reason than my solutions being an examples of how not to do it, and it may corrupt your style. :-)
 
@@ -166,6 +166,10 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
   8-Lists
 
     08_01_creating_lists               Ex. 129-131
+
+    08_03_programming_lists            Ex. 132-134
+
+    08_04_computing_lists              Ex.
 
 
 
