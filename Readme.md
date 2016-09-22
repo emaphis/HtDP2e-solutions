@@ -6,7 +6,7 @@ Here are my solutions for the exercises in "How to Design Programs 2nd Edition".
 
 (http://www.ccs.neu.edu/home/matthias/HtDP2e/)
 
-I've completed Exercises 1-136 so far.
+I've completed Exercises 1-148 so far.
 
 You owe it to yourself to work through your own solutions first before you look at mine.  If for no other reason than my solutions being an examples of how not to do it, and it may corrupt your style. :-)
 
@@ -174,6 +174,8 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
   9-Designing-Self-Referential
 
     09_01_designing_self_ref           Ex. 137-142
+
+    09_02_non_empty_lists              Ex. 143-148
 
 
 
