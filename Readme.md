@@ -171,6 +171,10 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
 
     08_04_computing_lists              Ex. 135-136
 
+  9-Designing-Self-Referential
+
+    09_01_designing_self_ref           Ex. 137-142
+
 
 
 I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)
