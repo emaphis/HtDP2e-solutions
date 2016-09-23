@@ -6,7 +6,7 @@ Here are my solutions for the exercises in "How to Design Programs 2nd Edition".
 
 (http://www.ccs.neu.edu/home/matthias/HtDP2e/)
 
-I've completed Exercises 1-155 so far.
+I've completed Exercises 1-159 so far.
 
 You owe it to yourself to work through your own solutions first before you look at mine.  If for no other reason than my solutions being an examples of how not to do it, and it may corrupt your style. :-)
 
@@ -182,6 +182,16 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
     09_03_153_lecture_hall             Ex. 153
 
     09_04_russian_dolls                Ex. 154, 155
+
+    09_05_lists_and_world              Ex. 156-159
+
+    09_05_156_shot_world1              Ex. 156
+
+    09_05_157_shot_world2              Ex. 157
+
+    09_05_158_shot_world3              Ex. 158
+
+    09_05_159_lecture_hall2            Ex. 159
 
 
 
