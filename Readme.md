@@ -193,6 +193,8 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
 
     09_05_159_lecture_hall2            Ex. 159
 
+    09_06_note_on_lists_sets           Ex. 160
+
 
 
 I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)
