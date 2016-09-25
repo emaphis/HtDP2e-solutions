@@ -6,7 +6,7 @@ Here are my solutions for the exercises in "How to Design Programs 2nd Edition".
 
 (http://www.ccs.neu.edu/home/matthias/HtDP2e/)
 
-I've completed Exercises 1-159 so far.
+I've completed Exercises 1-165 so far.
 
 You owe it to yourself to work through your own solutions first before you look at mine.  If for no other reason than my solutions being an examples of how not to do it, and it may corrupt your style. :-)
 
@@ -194,6 +194,21 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
     09_05_159_lecture_hall2            Ex. 159
 
     09_06_note_on_lists_sets           Ex. 160
+
+
+  10-More-on-Lists
+
+    10_01_producing_lists              Ex. 161-165
+
+    10_01_161_wages1                   Ex. 161
+
+    10_01_162_wages2                   Ex. 162
+
+    10_01_163_FTC                      Ex. 163
+
+    10_01_164_dollars_to_euros         Ex. 164
+
+    10_01_165_subst_robot              Ex. 165
 
 
 
