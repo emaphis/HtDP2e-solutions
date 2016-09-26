@@ -210,6 +210,14 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
 
     10_01_165_subst_robot              Ex. 165
 
+    10_02_structures_in_lists          Ex. 166-170
+
+    10_02_166a_Employees3              Ex. 166a
+
+    10_02_166b_Employees4              Ex. 166b
+
+
+
 
 
 I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)
