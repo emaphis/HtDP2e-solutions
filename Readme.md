@@ -6,22 +6,22 @@ Here are my solutions for the exercises in "How to Design Programs 2nd Edition".
 
 (http://www.ccs.neu.edu/home/matthias/HtDP2e/)
 
-I've completed Exercises 1-165 so far.
+I've completed Exercises 1-176 so far.
 
 You owe it to yourself to work through your own solutions first before you look at mine.  If for no other reason than my solutions being an examples of how not to do it, and it may corrupt your style. :-)
 
 Make sure you are using Stable Release dated after Aug 13, 2016, the exercise numbering has changed.
 
 
-#Index
+# Index
 
     File                               Exercises
 
-#0-Prologue
+# 0-Prologue
 
     0_rocket.rkt                       Ex.
 
-#1-Fixed-Size-Data
+# 1-Fixed-Size-Data
 
   1-Arithmetic
 
@@ -161,7 +161,7 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
 
     intermezzo-BSL                     Ex. 116-128
 
-#2-Arbitrarily-Large-Data
+# 2-Arbitrarily-Large-Data
 
   8-Lists
 
@@ -215,6 +215,8 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
     10_02_166a_Employees3              Ex. 166a
 
     10_02_166b_Employees4              Ex. 166b
+
+    10_03_lists_in_lists               Ex. 171-176
 
 
 
