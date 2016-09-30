@@ -107,18 +107,55 @@
                          (text (editor-post ed) TEXT-SIZE TEXT-COLOR))
                  MT))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Ex. 84:
+;; Design edit. The function consumes two inputs, an editor ed and
+;; a KeyEvent ke, and it produces another editor. Its task is to add
+;; a single-character KeyEvent ke to the end of the pre field of ed, unless ke
+;; denotes the backspace ("\b") key. In that case, it deletes the character
+;; immediately to the left of the cursor (if there are any). The function
+;; ignores the tab key ("\t") and the return key ("\r").
 
+;; The function pays attention to only two KeyEvents longer than one letter:
+;; "left" and "right". The left arrow moves the cursor one character to the
+;; left (if any), and the right arrow moves it one character to the right (if
+;; any). All other such KeyEvents are ignored.
+
+;; Develop a good number of examples for edit, paying attention to special
+;; cases. When we solved this exercise, we created 20 examples and turned all
+;; of them into tests.
+
+;; Hint Think of this function as consuming KeyEvents, a collection that is
+;; specified as an enumeration. It uses auxiliary functions to deal with the
+;; Editor structure. Keep a wish list handy; you will need to design
+;; additional functions for most of these auxiliary functions, such as
+;; string-first, string-rest, string-last, and string-remove-last. If you
+;; haven’t done so, solve the exercises in Functions.
 
 ; Editor KeyEvent -> Editor
 ; add or delete chars to the buffor or move the cursor around
 (check-expect (edit (make-editor "hel" "lo") "left")
               (make-editor "he" "llo"))
+(check-expect (edit (make-editor "" "hello") "left")
+              (make-editor "" "hello"))
+
 (check-expect (edit (make-editor "hel" "lo") "right")
               (make-editor "hell" "o"))
+(check-expect (edit (make-editor "hello" "") "right")
+              (make-editor "hello" ""))
+
 (check-expect (edit (make-editor "hel" "lo") "a")
               (make-editor "hela" "lo"))
+
 (check-expect (edit (make-editor "hel" "lo") "\b")
               (make-editor "he" "lo"))
+(check-expect (edit (make-editor "" "hello") "\b")
+              (make-editor "" "hello"))
+
+(check-expect (edit (make-editor "hel" "lo") "\t")
+              (make-editor "hel" "lo"))
+(check-expect (edit (make-editor "hel" "lo") "\r")
+              (make-editor "hel" "lo"))
 
 ;(define (edit ed ke) (make-editor "" "")) ;stub
 
@@ -127,6 +164,8 @@
         [(key=? ke "left")  (cursor-left ed)]
         [(key=? ke "right") (cursor-right ed)]
         [(key=? ke "\b")    (delete-left ed)]
+        [(key=? ke "\t") ed]
+        [(key=? ke "\r") ed]
         [(equal? (string-length ke) 1)
          (add-right ed ke)]
         [else ed])) ; ignore other key presses
