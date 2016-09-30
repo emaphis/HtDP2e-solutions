@@ -351,7 +351,7 @@
 
 ; main : String -> Editor
 ; launches the editor given some initial string
-; run with: (main (make-editor lla good)
+; run with: (main "hello world")
 (define (main s)
    (big-bang (create-editor s "")
      [on-key editor-kh]

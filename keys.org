@@ -1,0 +1,189 @@
+DrRacket Key Bindings
+
+* Moving Around
+
+    C-f : move forward one character
+
+    C-b : move backward one character
+
+    M-f : move forward one word
+
+    M-b : move backward one word
+
+    C-v : move forward one page
+
+    M-v : move backward one page
+
+    M-< : move to beginning of file
+
+    M-> : move to end of file
+
+    C-a : move to beginning of line (left)
+
+    C-e : move to end of line (right)
+
+    C-n : move to next line (down)
+
+    C-p : move to previous line (up)
+
+    M-C-f : move forward one S-expression
+
+    M-C-b : move backward one S-expression
+
+    M-C-u : move up out of an S-expression
+
+    M-C-d : move down into a nested S-expression
+
+    M-C-SPACE : select forward S-expression
+
+    M-C-p : match parentheses backward
+
+    M-C-left : move backwards to the nearest editor box
+
+    A-C-left : move backwards to the nearest editor box
+
+    M-C-right : move forward to the nearest editor box
+
+    A-C-right : move forward to the nearest editor box
+
+    M-C-up : move up out of an embedded editor
+
+    A-C-up : move up out of an embedded editor
+
+    M-C-down : move down into an embedded editor
+
+    A-C-down : move down into an embedded editor
+
+    C-C C-Z : move the cursor to the interactions window
+
+    C-F6 : move the cursor between different windows (usually the interactions and definitions windows, but also the search window and other editable portions of DrRacket). Also, search for “shift-focus” in the Show Active Keybindings menu’s window for more, platform-specific keybindings that have this functionality
+
+* Editing Operations
+
+    C-_ : undo
+
+    C-+ : redo
+
+    C-x u : undo
+
+    C-d : delete forward one character
+
+    C-h : delete backward one character
+
+    M-d : delete forward one word
+
+    M-DEL : delete backward one word
+
+    C-k : delete forward to end of line
+
+    M-C-k : delete forward one S-expression
+
+    M-w : copy selection to clipboard
+
+    C-w : delete selection to clipboard (cut)
+
+    C-y : paste from clipboard (yank)
+
+    C-t : transpose characters
+
+    M-t : transpose words
+
+    M-C-t : transpose sexpressions
+
+    M-C-m : toggle dark green marking of matching parenthesis
+
+    M-C-k : cut complete sexpression
+
+    M-( : wrap selection in parentheses
+
+    M-[ : wrap selection in square brackets
+
+    M-{ : wrap selection in curly brackets
+
+    M-S-L : wrap selection in (lambda () ...) and put the insertion point in the argument list of the lambda
+
+    C-c C-o : the sexpression following the insertion point is put in place of its containing sexpression
+
+    C-c C-e : the first and last characters (usually parentheses) of the containing expression are removed
+
+    C-c C-l : wraps a let around the sexpression following the insertion point and puts a printf in at that point (useful for debugging).
+
+    M-o : toggle overwrite mode
+
+    C-x r a : Adjust nearby ASCII art rectangles (that use +, -, or |) to use Unicode characters.
+
+    For example, if the insertion point is next to this rectangle:
+
+    +-+
+
+    | |
+
+    +-+
+    then the keystroke will turn it into this one:
+
+    ╔═╗
+
+    ║ ║
+
+    ╚═╝
+    Similarly, if the rectangle near the insertion point has mixed Unicode and ASCII, it will all be converted to the Unicode characters.
+
+    C-x r w : Widen the nearby ASCII art rectangles.
+
+    For example, if the insertion point is just to the left of the middle line of this rectangle:
+
+    ╔═╦══╗
+
+    ║ ║ ║
+
+    ╠═╬══╣
+
+    ║ ║ ║
+
+    ╚═╩══╝
+    then the keystroke will turn it into this one:
+
+    ╔══╦══╗
+
+    ║ ║ ║
+
+    ╠══╬══╣
+
+    ║ ║ ║
+
+    ╚══╩══╝
+
+    C-x r c : Centers the contents of the current line inside the enclosing cell of the enclosing ASCII art rectangle.
+
+* File Operations
+
+    C-x C-s : save file
+
+    C-x C-w : save file under new name
+
+* Search
+
+    C-s : search for string forward
+
+    C-r : search for string backward
+
+* Evaluation
+
+    F5 : Run
+
+* Documentation
+
+    f1 : Search in the documentation for the words near the insertion point
+
+    f2 : Reveal the blue box for the identifier at the insertion point (requires background check syntax to be enabled, or normal check syntax to have been run).
+
+* Interactions
+
+The interactions window has all of the same keyboard shortcuts as the definitions window plus a few more:
+
+    M-p : bring the previously entered expression down to the prompt
+
+    M-n : bring the expression after the current expression in the expression history down to the prompt
+
+    M-h : Show the current expression history in a separate window
+
