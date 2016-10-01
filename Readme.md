@@ -6,11 +6,16 @@ Here are my solutions for the exercises in "How to Design Programs 2nd Edition".
 
 (http://www.ccs.neu.edu/home/matthias/HtDP2e/)
 
-I've completed Exercises 1-180 so far.
+I've completed Exercises 1-185 so far.
 
 You owe it to yourself to work through your own solutions first before you look at mine.  If for no other reason than my solutions being an examples of how not to do it, and it may corrupt your style. :-)
 
 Make sure you are using Stable Release dated after Aug 13, 2016, the exercise numbering has changed.
+
+I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)
+See the 'Realm-of-Racket directory. I may try SICP someday also.
+
+Have fun.
 
 
 # Index
@@ -220,9 +225,7 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
 
     10_04_graphical_editor_revisited   Ex. 177-180
 
+  11-Design-Composition
 
+    11_01_the_list_function            Ex. 181-185
 
-I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)
-See the 'Realm-of-Racket directory.
-
-Have fun.
