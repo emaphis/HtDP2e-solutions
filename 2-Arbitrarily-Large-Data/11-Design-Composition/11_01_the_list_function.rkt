@@ -108,7 +108,7 @@
 
 ;; Ex. 185:
 ;; You know about first and rest from BSL, but BSL+ comes with even more
-;; selectors than that. Determine the values of the following expressions: 
+;; selectors than that. Determine the values of the following expressions:
 ;; Find out from the documentation whether third and fourth exist.
 
 (check-expect (first (list 1 2 3))

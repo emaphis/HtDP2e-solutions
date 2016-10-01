@@ -6,7 +6,7 @@ Here are my solutions for the exercises in "How to Design Programs 2nd Edition".
 
 (http://www.ccs.neu.edu/home/matthias/HtDP2e/)
 
-I've completed Exercises 1-185 so far.
+I've completed Exercises 1-190 so far.
 
 You owe it to yourself to work through your own solutions first before you look at mine.  If for no other reason than my solutions being an examples of how not to do it, and it may corrupt your style. :-)
 
@@ -228,4 +228,11 @@ Have fun.
   11-Design-Composition
 
     11_01_the_list_function            Ex. 181-185
+
+    11_03_functions_that_recur         Ex. 186-190
+
+    11_03_187_game_player1             Ex. 187
+
+    11_03_188_email1                   Ex. 188
+
 
