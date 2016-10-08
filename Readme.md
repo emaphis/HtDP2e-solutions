@@ -6,7 +6,7 @@ Here are my solutions for the exercises in "How to Design Programs 2nd Edition".
 
 (http://www.ccs.neu.edu/home/matthias/HtDP2e/)
 
-I've completed Exercises 1-194 so far.
+I've completed Exercises 1-198 so far.
 
 You owe it to yourself to work through your own solutions first before you look at mine.  If for no other reason than my solutions being an examples of how not to do it, and it may corrupt your style. :-)
 
@@ -236,3 +236,7 @@ Have fun.
     11_03_188_email1                   Ex. 188
 
     11_04_functions_that_generalize    Ex. 191-194
+
+  12-Projects-Lists
+
+    12_01_dictionaries                 Ex. 195-198

@@ -101,7 +101,7 @@
                10 10 30 10 "red"))
 
 ;; Ex. 191:
-;; Adapt the second example for the render-poly function to connect-dots. 
+;; Adapt the second example for the render-poly function to connect-dots.
 
 (check-expect (connect-dots MT square-p)
               (scene+line
