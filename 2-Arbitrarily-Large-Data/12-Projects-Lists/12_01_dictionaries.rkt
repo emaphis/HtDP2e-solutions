@@ -3,7 +3,7 @@
 #reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname 12_01_dictionaries) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e - 12 Projects: Lists
 ;; 12.1 Real-world Data: Dictionaries
-;; Exercises: 195-
+;; Exercises: 195-198
 
 (require 2htdp/batch-io)
 ;(require 2htdp/image)
