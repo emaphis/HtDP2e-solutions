@@ -6,7 +6,7 @@ Here are my solutions for the exercises in "How to Design Programs 2nd Edition".
 
 (http://www.ccs.neu.edu/home/matthias/HtDP2e/)
 
-I've completed Exercises 1-198 so far.
+I've completed Exercises 1-208 so far.
 
 You owe it to yourself to work through your own solutions first before you look at mine.  If for no other reason than my solutions being an examples of how not to do it, and it may corrupt your style. :-)
 
@@ -242,3 +242,5 @@ Have fun.
     12_01_dictionaries                 Ex. 195-198
 
     12_01_198_word_count               Ex. 198
+
+    12_02_iTunes                       Ex. 199-208

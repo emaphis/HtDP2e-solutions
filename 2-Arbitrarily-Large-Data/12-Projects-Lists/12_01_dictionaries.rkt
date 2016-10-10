@@ -85,6 +85,7 @@
 ;; Dictionary with the former as the first letter. Once your function is
 ;;  designed, determine how many words appear for all letters in your
 ;; computer’s dictionary
+;; see exercise 204
 
 ; Lol is a List-of-Letters
 ; Los is a List-of-Strings
