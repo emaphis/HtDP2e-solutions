@@ -6,7 +6,7 @@ Here are my solutions for the exercises in "How to Design Programs 2nd Edition".
 
 (http://www.ccs.neu.edu/home/matthias/HtDP2e/)
 
-I've completed Exercises 1-211 so far.
+I've completed Exercises 1-214 so far.
 
 You owe it to yourself to work through your own solutions first before you look at mine.  If for no other reason than my solutions being an examples of how not to do it, and it may corrupt your style. :-)
 
@@ -245,4 +245,4 @@ Have fun.
 
     12_02_iTunes                       Ex. 199-208
 
-    12_03_word_games_composition       Ex. 209-211
+    12_03_word_games_composition       Ex. 209-214
