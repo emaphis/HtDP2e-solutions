@@ -3,8 +3,9 @@
 # Spoiler Alert!
 
 Here are my solutions for the exercises in "How to Design Programs 2nd Edition".
+HTDP is still the best method to learn basic programming for motivated people. It's also a great intoduction to   
 
-(http://www.ccs.neu.edu/home/matthias/HtDP2e/)
+The book: (https://htdp.org/)
 
 I've completed Exercises 1-214 so far.
 
@@ -15,24 +16,30 @@ Make sure you are using Stable Release dated after Aug 13, 2016, the exercise nu
 I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)
 See the 'Realm-of-Racket directory. I may try SICP someday also.
 
+NOTE:
+As of January 2021, Im refactoring this repository for two main reasons
+1 I followed a beta version of the book, so exercises and examples have chnaged.  So, I'm reviewing my solutions and examp;es.
+2 I'm refactoring my code repository to make it more organized and to have information easier to find.  Book examples and notes will be in book.rkt files under their repsective section directories. Intermezzos will go under their own directory  I'll put each exercise in it's own file. I'm also going to use text format files Instead of DrRacket specific file format.
+
+I just may complet the rest of the exercises given time.
+
 Have fun.
 
+## Index
 
-# Index
+   Directory                           Exercises
 
-    File                               Exercises
-
-# 0-Prologue
+## 0-Prologue
 
     0_rocket.rkt                       Ex.
 
-# 1-Fixed-Size-Data
+## 1-Fixed-Size-Data
 
-  1-Arithmetic
+  01-Arithmetic
 
     01_01_Arithmetic                   Ex.   1-10
 
-  2-Functions and programs
+  02-Functions and programs
 
     02_01_Functions                    Ex.  11-20
 
@@ -46,7 +53,7 @@ Have fun.
 
     first.rkt
 
-  3-HtDP
+  03-HtDP
 
     03_01_Designing_Functions          Ex.  33
 
@@ -74,7 +81,7 @@ Have fun.
 
     03_07_Virtualpet2                  Ex.  47
 
-  4-Intervals
+  04-Intervals
 
     04_01_Programming_Conditionals
 
@@ -102,7 +109,7 @@ Have fun.
 
     doorstate                          Ex. 62
 
-  5-Adding-Structure
+  05-Adding-Structure
 
     05_02_Computing_with posns         Ex. 63,64
 
@@ -134,7 +141,7 @@ Have fun.
 
     chameleon2.rkt                     Ex. 92
 
-  6-Itemizations-Structures
+  06-Itemizations-Structures
 
     06_01_desinging_with_itemizations  Ex.  94-100
 
@@ -166,9 +173,9 @@ Have fun.
 
     intermezzo-BSL                     Ex. 116-128
 
-# 2-Arbitrarily-Large-Data
+## 2-Arbitrarily-Large-Data
 
-  8-Lists
+  08-Lists
 
     08_01_creating_lists               Ex. 129-131
 
@@ -176,7 +183,7 @@ Have fun.
 
     08_04_computing_lists              Ex. 135-136
 
-  9-Designing-Self-Referential
+  09-Designing-Self-Referential
 
     09_01_designing_self_ref           Ex. 137-142
 
@@ -246,3 +253,5 @@ Have fun.
     12_02_iTunes                       Ex. 199-208
 
     12_03_word_games_composition       Ex. 209-214
+
+Ok.
