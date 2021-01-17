@@ -3,7 +3,7 @@
 # Spoiler Alert!
 
 Here are my solutions for the exercises in "How to Design Programs 2nd Edition".
-HTDP is still the best method to learn basic programming for motivated people. It's also a great intoduction to   
+HTDP is still the best method to learn basic programming for motivated people. It's also a great intoduction to functional programming and Lispy languages.
 
 The book: (https://htdp.org/)
 
@@ -17,8 +17,10 @@ I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofrac
 See the 'Realm-of-Racket directory. I may try SICP someday also.
 
 NOTE:
-As of January 2021, Im refactoring this repository for two main reasons
+As of January 2021, Im refactoring this repository for two main reasons:
+
 1 I followed a beta version of the book, so exercises and examples have chnaged.  So, I'm reviewing my solutions and examp;es.
+
 2 I'm refactoring my code repository to make it more organized and to have information easier to find.  Book examples and notes will be in book.rkt files under their repsective section directories. Intermezzos will go under their own directory  I'll put each exercise in it's own file. I'm also going to use text format files Instead of DrRacket specific file format.
 
 I just may complet the rest of the exercises given time.
