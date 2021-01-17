@@ -33,7 +33,7 @@ Have fun.
 
 ## 0-Prologue
 
-    0_rocket.rkt                       Ex.
+    book.rkt                           Ex.
 
 ## 1-Fixed-Size-Data
 
