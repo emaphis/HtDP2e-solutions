@@ -37,9 +37,7 @@ Have fun.
 
 ## 1-Fixed-Size-Data
 
-  01-Arithmetic
-
-    01_01_Arithmetic                   Ex.   1-10
+  01-Arithmetic                        Ex.   1-10
 
   02-Functions and programs
 
