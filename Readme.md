@@ -11,7 +11,12 @@ I've completed Exercises 1-214 so far.
 
 You owe it to yourself to work through your own solutions first before you look at mine.  If for no other reason than my solutions being an examples of how not to do it, and it may corrupt your style. :-)
 
-Make sure you are using Stable Release dated after Aug 13, 2016, the exercise numbering has changed.
+The design recipe us presented by Gregor Kiczales:
+
+<https://s3.amazonaws.com/edx-course-spdx-kiczales/HTC/Pages/design-recipes.html>
+
+<https://courses.edx.org/courses/course-v1:UBCx+HtC1x+2T2017/77860a93562d40bda45e452ea064998b/#HtDF>
+
 
 I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)
 See the 'Realm-of-Racket directory. I may try SICP someday also.
@@ -37,19 +42,9 @@ Have fun.
 
 ## 1-Fixed-Size-Data
 
-  01-Arithmetic                        Ex.   1-10
+  01-Arithmetic                        Ex.  1-10
 
-  02-Functions and programs
-
-    02_01_Functions                    Ex.  11-20
-
-    02_02_Computing                    Ex.  21-26
-
-    02_03_Composing                    Ex.  27-29
-
-    02_04_Global                       Ex.  30
-
-    02_05_Programs                     Ex.  31,32
+  02-Functions and programs            Ex. 11-32
 
     first.rkt
 
