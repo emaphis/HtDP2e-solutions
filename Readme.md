@@ -5,7 +5,7 @@
 Here are my solutions for the exercises in "How to Design Programs 2nd Edition".
 HTDP is still the best method to learn basic programming for motivated people. It's also a great intoduction to functional programming and Lispy languages.
 
-The book: (https://htdp.org/)
+The book: (<https://htdp.org/>)
 
 I've completed Exercises 1-214 so far.
 
@@ -34,23 +34,45 @@ Have fun.
 
 ## Index
 
-   Directory                           Exercises
+   Directory                              Exercises
 
 ## 0-Prologue
 
-    book.rkt                           Ex.
+    book.rkt                              Ex.
 
 ## 1-Fixed-Size-Data
 
-  01-Arithmetic                        Ex.  1-10
+  01-Arithmetic
 
-  02-Functions and programs            Ex. 11-32
+    01_The_Arithmetic_of_Numbers          Ex. 1
 
-    first.rkt
+    02_The_Arithmetic_of_Strings          Ex. 2
+
+    03_Mixing_It_Up                       Ex. 3,4
+
+    04_The_Arithmetic_of_Images           Ex. 5,6
+
+    05_The_Arithmetic_of_Booleans         Ex. 7
+
+    06_Mixing_it_Up_with_Booleans         Ex. 8
+
+    07_Predicates_Know_Thy_Data           Ex. 9,10
+
+  02-Functions and programs               Ex. 11-32
+
+    01_Functions                          Ex. 11-20
+
+    02_Computing                          Ex. 21-26
+
+    03_Composting_Functions               Ex. 27-29
+
+    04_Global_Constants                   Ex. 30
+
+    05_Programs                           Ex. 31, 32, first.rkt
 
   03-HtDP
 
-    03_01_Designing_Functions          Ex.  33
+    03_01_Designing_Functions           Ex.  33
 
     03_02_Finger_Exercises             Ex.  34-38
 
