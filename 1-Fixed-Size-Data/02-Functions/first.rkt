@@ -1,7 +1,8 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
 #reader(lib "htdp-beginner-reader.ss" "lang")((modname first) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-;; first interactive program from fig 17 "interactive programs"
+;; first interactive program from fig 18 "interactive programs"
+
 (require 2htdp/image)
 (require 2htdp/universe)
 
@@ -20,3 +21,8 @@
 
 (define (stop y ke)
   0)
+
+;; Try out program
+; > (place-dot-at 89)
+; > (stop 89 "q")
+; > (main 90)
