@@ -72,31 +72,19 @@ Have fun.
 
   03-HtDP
 
-    03_01_Designing_Functions           Ex.  33
+    01_Designing_Functions                Ex. 33
 
-    03_02_Finger_Exercises             Ex.  34-38
+    02_Finger_Exercises_Functions         Ex. 34-38
 
-    03_05_On_Testing                   Ex.
+    05_On_Testing                         Ex.
 
-    03_06_Desinging_Worlds             Ex.  39-44
+    06_Desinging_World_Programs           Ex. 39-44
 
-    righthand.rkt                      Ex.  42
+    allkeys.rkt                           Ex.
 
-    anitmationstate.rkt                Ex.  43a
+    allmouse.rkt                          Ex.
 
-    sinefunction.rkt                   Ex.  43b
-
-    allkeys.rkt                        Ex.
-
-    allmouse.rkt                       Ex.
-
-    carkeys.rkt                        Ex.  44
-
-    03_07_Virtualpet                   Ex.  45
-
-    03_07_Virtualpet1                  Ex.  46
-
-    03_07_Virtualpet2                  Ex.  47
+    07_Virtual_Pet_World                  Ex. 45,46,47
 
   04-Intervals
 
