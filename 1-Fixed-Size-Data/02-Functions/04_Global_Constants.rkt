@@ -28,3 +28,5 @@
 ; arbitrary expressions
 (define MID-WIDTH (/ WIDTH 2))
 (define MID-HEIGHT (/ HEIGHT 2))
+
+;; see exercise 30.

@@ -59,6 +59,7 @@
 ;> (read-file "out.dat")
 ;"100"
 
+
 ;; See exercise 31
 
 
@@ -66,3 +67,51 @@
 ;; Interactive Programs
 
 ;; See Exercise 42
+
+
+;;; Universe and big-bang
+
+(require 2htdp/image)
+(require 2htdp/universe)
+
+
+;; first basic definitions:
+(define (number->square s)
+  (square s "solid" "red"))
+
+; >(number->square 5)
+
+; > (big-bang 100 [to-draw number->square])
+
+
+;; more interesting big-bang expession
+#;
+(big-bang 100
+          [to-draw number->square]
+          [on-tick sub1]
+          [stop-when zero?])
+
+
+;; a function that consumes the current state and a string that describes
+;; the key event and then returns a new state:
+(define (reset s ke)
+  100)
+
+#;  ; now handle keypresses
+(big-bang 100
+    [to-draw number->square]
+    [on-tick sub1]
+    [stop-when zero?]
+    [on-key reset])
+
+#; schematic big-bang
+(big-bang cw0
+  [on-tick tock]
+  [on-key ke-h]
+  [on-mouse me-h]
+  [to-draw render]
+  [stop-when end?]
+  ...)
+
+
+;; See "first.rkt" for first interactive program from figure 18:-
