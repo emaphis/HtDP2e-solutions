@@ -1,0 +1,7 @@
+;; Ex. 33:
+;; Research the “year 2000” problem and what it meant for software developers.
+
+It was a lot of work becuase programs weren't desinged for the long term.
+Wrong assumptions were made for programs that had a long lifespan.
+Date formats were chosen for performance and size on much smaller computers
+Also programs weren't designed to be modified so that created more work.

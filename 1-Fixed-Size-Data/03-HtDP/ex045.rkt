@@ -1,21 +1,16 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-intermediate-reader.ss" "lang")((modname 03_07_Virtualpet) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex045) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e 3 How to Design Programs
 ;; 3.7 Virtual Pet Worlds
 
-;; Exercise 45 VirtualPet
-;; This file
-
-;; Exercise 46 Improvements
-;; See 03_07_Virtualpet1.rkt
-
-;; Exercise 49 Pet Guage
-;; See 03_07_Virtualpet2.rkt
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Exercise 47 VirtualPet
+;; Design a “virtual cat” world program that continuously moves the cat from left
+;; to right. Let’s call it cat-prog and let’s assume it consumes the starting
+;; position of the cat. Furthermore, make the cat move three pixels per clock
+;; tick. Whenever the cat disappears on the right, it reappears on the left
+;; . You may wish to read up on the modulo function. 
 
 (require 2htdp/image)
 (require 2htdp/universe)
@@ -31,7 +26,7 @@
 (define DY (/ W-HEIGHT 2))
 (define MT (empty-scene W-WIDTH W-HEIGHT))
 
-(define CAT1 (bitmap "cat.png"))
+(define CAT1 (bitmap "images/cat.png"))
 
 (define SPEED 3)
 

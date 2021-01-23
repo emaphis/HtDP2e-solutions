@@ -1,15 +1,8 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex042) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-;; HtDP 2e 3 How to Design Programs
-;; 3.6 Designing World Programs
-;; Exercise 42
-
-;; Car sample world
-
-;; Ex. 42
-;; Modify the interpretation of the sample data definition so that a state
-;; denotes the x-coordinate of the right-most edge of the car.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex041) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+;; Ex. 41:
+;; Assemble into a working program
 
 (require 2htdp/image)
 (require 2htdp/universe)
@@ -61,7 +54,7 @@
 
 ; A WorldState is a Number.
 ; the number of pixels between the left border of
-; the scene and the right edge of the car.
+; the scene and the car.
   
 ;;; Functions
 
@@ -80,12 +73,11 @@
 ;; WorldState -> Image
 ; place the car into the BACKGROUND scene,
 ;; according to the given world state
-(check-expect (render  50) (place-image CAR  (- 50 BODY-LENGTH) Y-CAR BACKGROUND))
-(check-expect (render 100) (place-image CAR  (- 100 BODY-LENGTH) Y-CAR BACKGROUND))
-(check-expect (render 200) (place-image CAR (- 200 BODY-LENGTH) Y-CAR BACKGROUND))
+(check-expect (render  50) (place-image CAR  50 Y-CAR BACKGROUND))
+(check-expect (render 200) (place-image CAR 200 Y-CAR BACKGROUND))
 
 (define (render ws)
-   (place-image CAR (- ws BODY-LENGTH) Y-CAR BACKGROUND))
+   (place-image CAR ws Y-CAR BACKGROUND))
 
 
 ;; WorldState -> Boolean
@@ -95,7 +87,7 @@
 (check-expect (end? (+ WIDTH-OF-WORLD (/ (image-width CAR) 2))) #true)
 
 (define (end? ws)
-  (>= ws (+ WIDTH-OF-WORLD (/ BODY-LENGTH 2))))
+  (>= ws (- WIDTH-OF-WORLD (/ (image-width CAR) 2))))
 
 ;; main : WorldState -> WorldState
 ;; launch the program from some initial state

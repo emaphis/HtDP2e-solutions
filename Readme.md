@@ -72,17 +72,13 @@ Have fun.
 
   03-HtDP
 
-    01_Designing_Functions                Ex. 33
+    01_Designing_Function                 Ex. 33
 
     02_Finger_Exercises_Functions         Ex. 34-38
 
     05_On_Testing                         Ex.
 
     06_Desinging_World_Programs           Ex. 39-44
-
-    allkeys.rkt                           Ex.
-
-    allmouse.rkt                          Ex.
 
     07_Virtual_Pet_World                  Ex. 45,46,47
 
