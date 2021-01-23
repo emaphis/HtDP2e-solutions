@@ -1,6 +1,6 @@
 # HtDP 2e Solutions
 
-# Spoiler Alert!
+## Spoiler Alert!
 
 Here are my solutions for the exercises in "How to Design Programs 2nd Edition".
 HTDP is still the best method to learn basic programming for motivated people. It's also a great intoduction to functional programming and Lispy languages.
@@ -84,23 +84,23 @@ Have fun.
 
   04-Intervals
 
-    04_01_Programming_Conditionals
+    01_Programming_with_Conditionals
 
-    04_02_Computing_Conditionaly       Ex.  48,49
+    02_Computing_Conditionaly             Ex. 48,49
 
-    04_03_Enumerations                 Ex.  50,51
+    03_Enumerations                       Ex. 50,51
 
-    04_04_Intervals                    Ex.  52
+    04_Intervals                          Ex. 52
 
     04_04_Ufo
 
-    04_05_Itemizations                 Ex. 53-57
+    05_Itemizations                       Ex. 53-57
 
     rocketlaunch.rkt
 
-    04_06_Designing_Itemizations       Ex. 58
+    06_Designing_with_Itemizations        Ex. 58
 
-    04_07_Finite_State_Worlds          Ex. 59-62
+    07_Finite_State_Worlds                Ex. 59-62
 
     Trafficlight                       Ex. 59
 
@@ -170,7 +170,7 @@ Have fun.
 
     06_05_equality_predicates          Ex. 115
 
-  Intermezzo-BSL
+07  Intermezzo-BSL
 
     intermezzo-BSL                     Ex. 116-128
 
