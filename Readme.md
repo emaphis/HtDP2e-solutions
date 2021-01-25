@@ -104,34 +104,23 @@ Have fun.
 
   05-Adding-Structure
 
-    05_02_Computing_with posns         Ex. 63,64
+    01_From_Positions_to_posn_Structures
 
-    05_04_defining_structures          Ex. 65-68
-    05_05_computing_with_structures    Ex. 69-71
+    02_Computing_with_posns               Ex. 63,64
 
-    05_06_programming_with_structures  Ex. 72-75
+    04_Defining_Structure_Types           Ex. 65-68
 
-    reddot1.rkt                        Ex. 74
+    05_Computing_with_Structures          Ex. 69-71
 
-    ufo1.rkt                           Ex. 75
+    06_Programming_with_Structures        Ex. 72-75
 
-    05_07_universe_of_data             Ex. 76-79
+    07_Universe_of_Data                   Ex. 76-79
 
-    05_08_designing_with_structures    Ex. 80-82
+    08_Designing_with_Structures          Ex. 80-82
 
-    05_09_structure_in the world       Ex. 83-87
+    09_Structure_in_the_World             Ex. 83-87
 
-    editor2.rkt                        Ex. 86
-
-    editor3.rkt                        Ex. 87
-
-    05_11_virtual_pet3                 Ex. 88-93
-
-    cat4.rkt                           Ex. 91
-
-    chameleon1.rkt                     Ex. 92
-
-    chameleon2.rkt                     Ex. 92
+    11_More_Virtual_Pets                  Ex. 88-93
 
   06-Itemizations-Structures
 
