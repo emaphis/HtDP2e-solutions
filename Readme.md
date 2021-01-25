@@ -87,12 +87,12 @@ Have fun.
     01_Programming_with_Conditionals
 
     02_Computing_Conditionaly             Ex. 48,49
-
+    
     03_Enumerations                       Ex. 50,51
 
     04_Intervals                          Ex. 52
 
-    04_04_Ufo
+    04_Ufo
 
     05_Itemizations                       Ex. 53-57
 
@@ -102,20 +102,11 @@ Have fun.
 
     07_Finite_State_Worlds                Ex. 59-62
 
-    Trafficlight                       Ex. 59
-
-    Trafficlight2                      Ex. 60
-
-    Trafficlight3                      Ex. 61
-
-    doorstate                          Ex. 62
-
   05-Adding-Structure
 
     05_02_Computing_with posns         Ex. 63,64
 
     05_04_defining_structures          Ex. 65-68
-
     05_05_computing_with_structures    Ex. 69-71
 
     05_06_programming_with_structures  Ex. 72-75

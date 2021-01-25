@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname trafficlight) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex059) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e - 4 Enumerations and Intervals
 ;; 4.7 Finite State Worlds
 
@@ -17,11 +17,12 @@
 
 
 ;; traffic light FSA.
-;; TrafficLight is on of
+;; TrafficLight is on of three Strings
 ;;  - "red"
 ;;  - "green"
 ;;  - "yellow"
 ;; interp. one of three colors at any given time in order of r-g-y
+
 #;
 (define (fn-for-tl tl)  ; template
   (cond [(string=? tl "red") (... tl)]

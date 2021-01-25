@@ -1,73 +1,11 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname 05_Itemizations) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-;; HtDP 2e - 4 Enumerations, Intervals, Itemizations
-;; 4.5 Itemizations
-;; Exercises: 53-57
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex056) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+;; Ex. 56:
+;; Define main2 so that you can launch the rocket and watch it lift off.
+;; Read up on the on-tick clause to determine the length of one tick
+;; and how to change it.
 
-;; itemizations generalize intervals and enumerations
-;; which include items of both
-
-
-; A KeyEvent is one of: 
-; – 1String
-; – "left"
-; – "right"
-; – "up"
-; – ...
-
-;; In this case, the KeyEvent data definition refers to the
-;; 1String data definition
-
-
-; String -> NorF
-; converts the given string into a number;
-; produces #false if impossible
-(define (string->number1 s) (... s ...))
-
-; A NorF is one of:
-; – #false
-; – a Number
-
-
-; NorF -> Number
-; add 3 to the given number; 3 otherwise
-
-(check-expect (add3 #false) 3)
-(check-expect (add3 0.12) 3.12)
-
-(define (add3 x)
-  (cond
-    [(false? x) 3]
-    [else (+ x 3)]))
-
-
-;; String -> Number
-;; converts a String to a Number adds 3 to it
-;; if the String is an invalid number return 3
-
-(check-expect (add3-to-str "1") 4)
-(check-expect (add3-to-str "10") 13)
-(check-expect (add3-to-str "one") 3)
-
-;(define (add3-to-str str) 3) ;stub
-
-(define (add3-to-str str)
-  (add3 (string->number str)))
-
-
-;; Sample problem - rocket launch
-;; See rocketlaunch.rkt
-
-;; See exercise 53
-
-
-;; but rockets have coundowns.
-
-;; see rocket2.rkt
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Rocket Launch with countdown using Itemizations
 
 (require 2htdp/image)
 (require 2htdp/universe)
@@ -200,17 +138,6 @@
     [(>= x 0) (- x YDELTA)]))
 
 
-;; main program...
-; LRCD -> LRCD
-; run with (main1 "")
-(define (main1 s)
-  (big-bang s
-    [to-draw show]
-    [on-key launch]))
-
-
-;; From Ex. 56:
-
 ;; LRCD -> LRCD
 ;; run with: (main2 "")
 (define (main2 s)
@@ -218,6 +145,3 @@
             [on-tick fly .3]
             [to-draw show]
             [on-key launch]))
-
-
-;; See exercise 57.

@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-intermediate-reader.ss" "lang")((modname doorstate) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex062) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e - 4 Enumerations and Intervals
 ;; 4.7 Finite State Machines
 ;; Ex 62.
@@ -15,16 +15,22 @@
 (require 2htdp/image)
 (require 2htdp/universe)
 
-;; data
-
-(define LOCKED "locked")
-(define CLOSED "closed")
-(define OPEN "open")
+;;; data
 
 ; A DoorState is one of:
 ; – LOCKED
 ; – CLOSED
 ; – OPEN
+
+(define LOCKED "locked")
+(define CLOSED "closed")
+(define OPEN "open")
+
+;; KeyEvent  ; key presses
+(define UNLOCK "u")
+(define LOCK "l")
+(define PUSH " ") ; space bar
+
 
 #;
 (define (fun-for-ds state-of-door)  ; template
@@ -42,7 +48,6 @@
 (check-expect (door-closer LOCKED) LOCKED)
 (check-expect (door-closer CLOSED) CLOSED)
 (check-expect (door-closer OPEN) CLOSED)
-
 ;(define (door-closer state-of-door) state-of-door) ;stub
 
 (define (door-closer state-of-door)
@@ -73,9 +78,9 @@
      OPEN]
     [else s]))
 
+
 ; DoorState -> Image
 ; translates the state s into a large text image
-
 (check-expect (door-render CLOSED)
               (text CLOSED 40 "red"))
 

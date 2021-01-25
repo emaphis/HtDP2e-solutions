@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-intermediate-reader.ss" "lang")((modname 04_04_Ufo) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname 04_Ufo) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e - 4 Enumerations and Intervals
 ;; 4.4 Intervals
 ;; ufo example
@@ -50,7 +50,6 @@
 
 ;; WorldState -> WorldState 
 ;; compute next location of UFO  
-
 (check-expect (nxt 11) 14) 
 
 (define (nxt y) 
@@ -59,7 +58,6 @@
 
 ; WorldState -> Image 
 ; place UFO at given height into the center of MTSCN
-
 (check-expect (render 11) 
               (place-image UFO (/ WIDTH 2) 11 MTSCN))
 
@@ -72,16 +70,17 @@
 ; WorldState -> Image 
 ; add a status line to the scene create by render   
 
+;; Figure 27.
 (check-expect (render/status 10) 
-              (place-image (text "descending" 14 "green") 
+              (place-image (text "descending" 11 "green") 
                            20 20 
                            (render 10))) 
-(check-expect (render/status 50) 
-              (place-image (text "closing in" 14 "orange") 
+(check-expect (render/status 42) 
+              (place-image (text "closing in" 11 "orange") 
                            20 20 
-                           (render 50))) 
+                           (render 42))) 
 (check-expect (render/status 101) 
-              (place-image (text "landed" 14 "red") 
+              (place-image (text "landed" 11 "red") 
                            20 20 
                            (render 101))) 
 
@@ -89,11 +88,11 @@
   (place-image 
    (cond 
      [(<= 0 y CLOSE) 
-      (text "descending" 14 "green")] 
+      (text "descending" 11 "green")] 
      [(and (< CLOSE y) (<= y HEIGHT)) 
-      (text "closing in" 14 "orange")] 
+      (text "closing in" 11 "orange")] 
      [(> y HEIGHT) 
-      (text "landed" 14 "red")]) 
+      (text "landed" 11 "red")]) 
    20 20 
    (render y))) 
 
@@ -103,3 +102,5 @@
   (big-bang y0
             [on-tick nxt .2]
             [to-draw render/status]))
+
+; (main1 0)

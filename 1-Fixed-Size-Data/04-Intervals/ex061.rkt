@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-intermediate-reader.ss" "lang")((modname trafficlight3) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-intermediate-reader.ss" "lang")((modname ex061) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 
 ;; HtDP 2e - 4 Enumerations and Intervals
 ;; 4.7 Finite State Worlds
@@ -43,26 +43,15 @@
 ; yields the next state given current state cs
 ; 0 -> 1 -> 2 -> 0   R=0 G=1 Y=2
 
-(check-expect (tl-next-symbolic RED) GREEN)
-(check-expect (tl-next-symbolic GREEN) YELLOW)
-(check-expect (tl-next-symbolic YELLOW) RED)
+(check-expect (tl-next RED) GREEN)
+(check-expect (tl-next GREEN) YELLOW)
+(check-expect (tl-next YELLOW) RED)
 
-(define (tl-next-symbolic cs)
+(define (tl-next cs)
   (cond
     [(equal? cs RED) GREEN]
     [(equal? cs GREEN) YELLOW]
     [(equal? cs YELLOW) RED]))
-
-#;
-(define (tl-next-numeric cs) (modulo (+ cs 1) 3))
-
-#; ; the old version
-(define (tl-next cs)
-  (cond [(string=? cs "red") "green"]
-        [(string=? cs "yellow") "red"]
-        [(string=? cs "green") "yellow"]))
-
-
 
 ; S-TrafficLight -> Image
 ; renderS the current state cs as an image
@@ -129,4 +118,4 @@
 (define (traffic-light-simulation initial-state)
   (big-bang initial-state
             [to-draw tl-render]
-            [on-tick tl-next-symbolic 1]))
+            [on-tick tl-next 1]))

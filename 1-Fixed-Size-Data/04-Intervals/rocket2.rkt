@@ -5,6 +5,14 @@
 ;; 4.5 Itemizations
 ;; Rocket experiment
 
+#|
+Sample Problem
+Design a program that launches a rocket when the user presses
+the space bar. At that point, the simulation starts a countdown for
+three ticks, before it displays the scenery of a rising rocket.
+The rocket should move upward at a rate of three pixels per clock tick.
+|#
+
 ;; version using (define CENTER (- HEIGHT (/ (image-height ROCKET) 2)))
 ;; This center seems to be more of a formula for a landed rocket
 
@@ -13,15 +21,15 @@
 
 ;; Physical constants
 
-(define HEIGHT 300) ; distances in pixels 
+(define HEIGHT 200) ; distances in pixels 
 (define WIDTH  100)
 (define YDELTA 3)
  
 (define BACKG  (empty-scene WIDTH HEIGHT))
 (define ROCKET (rectangle 5 30 "solid" "red"))
  
-(define CENTER (- HEIGHT (/ (image-height ROCKET) 2)))
-;(define CENTER (/ (image-height ROCKET) 2))
+;(define CENTER (- HEIGHT (/ (image-height ROCKET) 2)))
+(define CENTER (/ (image-height ROCKET) 2))
 
 
 ; A LRCD (for launching rocket count down) is one of:
@@ -45,15 +53,15 @@
  (show -2)
  (place-image (text "-2" 20 "red")
               10 (* 3/4 WIDTH)
-              (place-image ROCKET 10 CENTER BACKG)))
+              (place-image ROCKET 10 (- HEIGHT CENTER) BACKG)))
 
 (check-expect  ; just off the screen
  (show HEIGHT)
- (place-image ROCKET 10 (- CENTER HEIGHT) BACKG))
+ (place-image ROCKET 10 (- HEIGHT CENTER) BACKG))
 
 (check-expect
  (show 53)
- (place-image ROCKET 10 (- CENTER 53) BACKG))
+ (place-image ROCKET 10 (- 53 CENTER) BACKG))
 
 
 
