@@ -128,13 +128,14 @@ Have fun.
 
   06-Itemizations-Structures
 
-    06_01_desinging_with_itemizations  Ex.  94-100
+    01_Desinging_with_Itemizations_A      Ex.  94-100
 
-    06_01_space_invader_2              Ex. 101-102
+    01_Desinging_with_Itemizations_B      Ex. 101-102
 
-    06_01_designing_itemizations_3     Ex. 103-105
+    01_Desinging_with_Itemizations_C      Ex. 103-105
 
-    O6_02_cat_cham                     Ex. 106
+    02_Mixing_Up_Worlds                   Ex. 106-109
+
 
     107_cham_and_cat                   Ex. 107
 
