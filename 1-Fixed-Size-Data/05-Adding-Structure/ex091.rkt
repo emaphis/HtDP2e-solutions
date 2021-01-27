@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname cat4) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex091) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e - 5 Adding Structure
 ;; 5.11 More Virtual Pets
 ;; Exercise: 91
@@ -42,7 +42,7 @@
 (define G-HEIGHT 10)
 (define MT (empty-scene W-WIDTH W-HEIGHT))
 
-(define CAT (bitmap "cat.png"))
+(define CAT (bitmap "images/cat.png"))
 
 (define SPEED 3)
 
@@ -51,7 +51,7 @@
 ;; Functions:
 
 ;; VCat -> VCat
-;; start the world with (happy-cat (make-vcat 1 30)
+;; start the world with (happy-cat (make-vcat 1 30 #true))
 ;;
 (define (happy-cat vc)
   (big-bang vc                      ; VCat
@@ -218,3 +218,6 @@
 
 (define (unhappy? vc)
   (<= (vcat-happy vc) 0.0))
+
+;; testing example
+;(happy-cat (make-vcat 1 30 #true))

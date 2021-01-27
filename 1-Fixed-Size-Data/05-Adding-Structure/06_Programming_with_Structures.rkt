@@ -1,24 +1,23 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname 05_06_programming_with_structures) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname 06_Programming_with_Structures) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e - 5 Adding Structure
 ;; 5.6 Programming with Structures
 ;; Exercises: 72-75
-
 
 ; some data defininitions are obvious:
 
 (define-struct posn1 [x y])
 ; A Posn1 is a structure:
 ; (make-posn1 Number Number)
-; interpretation a point x pixels from left, y from top
+; interpretation. a point x pixels from left, y from top
 
 ;; clearly x,y are numbers
 
 (define-struct entry [name phone email])
 ; An Entry is a structure:
 ;   (make-entry String String String)
-; interpretation a contact's name, phone#, and email
+; interpretation. a contact's name, phone#, and email
 
 ;; name, phone# and email are obvious strings
 
@@ -45,33 +44,7 @@
 ; dx pixels [per tick] along the horizontal and
 ; dy pixels [per tick] along the vertical direction
 
-
-;; Ex. 72:
-;; Formulate a data definition for the above phone structure type definition
-;; that accommodates the given examples.
-
-(define-struct phone [area number])
-; A Phone is a structure:
-;    (make-phone Number String)
-; interpretation (make-phone area number)
-; area the area code
-; number the phone-number
-
-(make-phone 207 "363-2421")
-
-;; Next formulate a data definition for phone numbers using this structure
-;; type definition:
-
-(define-struct phone# [area switch num])
-; A Phone# is a structure:
-;   (make-phone# Number Number Number)
-; interpretation: (make-phone# area switch number)
-; area is the area code               [100, 999]
-; switch is phonew switch exhange     [100, 999]
-; number is number in the neighborhood [0001, 9999]
-
-(make-phone# 207 363 2421)
-
+;; See exercise 72 - phone number defininions
 
 ;; so how do we use data definitions in a program design?
 
@@ -79,7 +52,6 @@
 ;; Your team is designing an interactive game program that moves a red dot
 ;; across a 100 x 100 canvas and allows players to use the mouse to reset the
 ;; dot.
-
 ;; Here is how far you got together;
 
 (require 2htdp/image)
@@ -136,24 +108,7 @@
 
 ;; see reset-dot below:
 
-
-;; Ex. 73:
-;; Design the function posn-up-x, which consumes a Posn p and a Number n.
-;; It produces a Posn like p with n in the x field.
-
-; Posn Number -> Posn
-; produces a Posn given a Posn and a Number with the x field replaced by n
-(check-expect (posn-up-x (make-posn 10 20) 30)
-              (make-posn 30 20))
-
-; (define (posn-up-x p n) (make-posn 0 0)) ; stub
-
-(define (posn-up-x p n)
-  (make-posn n (posn-y p)))
-
-
-;; Note Functions such as posn-up-x are often called updaters or functional
-;; setters. They are extremely useful when you write large programs.
+;; see exercise 73 - design the function posn-up-x
 
 
 ;; Sample Problem:
@@ -186,11 +141,7 @@
 
 ; (main (make-posn 10 30))
 
-;; Ex. 74:
-;; Copy all relevant constant and function definitions to DrRacket’s definition
-;; area. Add the tests and make sure they pass.
-;; Then run the program and use the mouse to place the red dot.
-;; See reddot1.rkt
+;; See exercise 74.
 
 
 ;; programs with nested structures
@@ -239,6 +190,10 @@
 
 ;(define (ufo-move-1 u) u) ; stub
 
+;; template
+;(define (ufo-move-1 u)
+;  (... (ufo-loc u) ... (ufo-vel u) ...))
+
 (define (ufo-move-1 u)
   (make-ufo (posn+ (ufo-loc u) (ufo-vel u))
             (ufo-vel u)))
@@ -262,6 +217,8 @@
   (make-posn (+ (posn-x p) (vel-deltax v))
              (+ (posn-y p) (vel-deltay v))))
 
+
+;; See exercise 75  - UFO program.          
 ;; Ex. 75:
 ;; Enter these definitions and their test cases into the definitions area of
 ;; DrRacket and make sure they work. It is the first time that we made a “wish”

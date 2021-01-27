@@ -1,20 +1,33 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex086) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-;; HtDP 2e - 5 Adding Structure
-;; 5.10 Grapical Editor
-;; Exercises: 86
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex084) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+;; Ex. 84:
+;; Design edit. The function consumes two inputs, an editor ed and
+;; a KeyEvent ke, and it produces another editor. Its task is to add
+;; a single-character KeyEvent ke to the end of the pre field of ed, unless ke
+;; denotes the backspace ("\b") key. In that case, it deletes the character
+;; immediately to the left of the cursor (if there are any). The function
+;; ignores the tab key ("\t") and the return key ("\r").
 
-;; Ex. 86:
-;; Notice that if you type a lot, your editor program does not display all of
-;; the text. Instead the text is cut off at the right margin. Modify your
-;; function edit from exercise 84 so that it ignores a keystroke if adding it
-;; to the end of the pre field would mean the rendered text is too wide for
-;; your canvas.
+;; The function pays attention to only two KeyEvents longer than one letter:
+;; "left" and "right". The left arrow moves the cursor one character to the
+;; left (if any), and the right arrow moves it one character to the right (if
+;; any). All other such KeyEvents are ignored.
+
+;; Develop a good number of examples for edit, paying attention to special
+;; cases. When we solved this exercise, we created 20 examples and turned all
+;; of them into tests.
+
+;; Hint Think of this function as consuming KeyEvents, a collection that is
+;; specified as an enumeration. It uses auxiliary functions to deal with the
+;; Editor structure. Keep a wish list handy; you will need to design
+;; additional functions for most of these auxiliary functions, such as
+;; string-first, string-rest, string-last, and string-remove-last. If you
+;; haven’t done so, solve the exercises in Functions.
+
 
 (require 2htdp/image)
 (require 2htdp/universe)
-
 
 ;; data definition - the editor
 
@@ -29,14 +42,9 @@
 (define ED2 (make-editor "" "Hello world")) ; Cursor at beginning or buffuer
 (define ED3 (make-editor "He" "llo world")) ; Cursor after "e" in buffer
 
-; Editor -> ???
-#;; template
-(define (fn-for-editor e)
-  (... (... (editor-pre e))
-       (... (editor-post e))))
-
 
 ;; graphical constants
+
 (define TEXT-SIZE 16)
 (define TEXT-COLOR "black")
 
@@ -46,6 +54,7 @@
 (define MT (empty-scene BUFFER-LENGTH BUFFER-HEIGHT))
 
 (define CURSOR-COLOR "red")
+
 (define CURSOR (rectangle 1 BUFFER-HEIGHT "solid" CURSOR-COLOR))
 
 
@@ -59,6 +68,7 @@
 (define (render-text txt)
   (text txt TEXT-SIZE TEXT-COLOR))
 
+
 ; try a mock-up
 (define MOCK-UP1 (overlay/align "left" "center"
                                 (beside (render-text "hel")
@@ -67,8 +77,9 @@
                                 MT))
 
 
+
 ; Editor -> Image
-; produce an Image given and Editor
+; produce an Image of text given an Editor
 
 (check-expect (render (make-editor "" ""))
               (overlay/align "left" "center"
@@ -84,6 +95,7 @@
                                      (render-text "lo world"))
                              MT))
 
+;(define (render ed) MT) ;stub
 
 (define (render ed)
   (overlay/align "left" "center"
@@ -93,18 +105,32 @@
                  MT))
 
 
-;; Editor functionality
+;;; Editor functionality
 
 ; Editor KeyEvent -> Editor
 ; add or delete chars to the buffor or move the cursor around
 (check-expect (edit (make-editor "hel" "lo") "left")
               (make-editor "he" "llo"))
+(check-expect (edit (make-editor "" "hello") "left")
+              (make-editor "" "hello"))
+
 (check-expect (edit (make-editor "hel" "lo") "right")
               (make-editor "hell" "o"))
+(check-expect (edit (make-editor "hello" "") "right")
+              (make-editor "hello" ""))
+
 (check-expect (edit (make-editor "hel" "lo") "a")
               (make-editor "hela" "lo"))
+
 (check-expect (edit (make-editor "hel" "lo") "\b")
               (make-editor "he" "lo"))
+(check-expect (edit (make-editor "" "hello") "\b")
+              (make-editor "" "hello"))
+
+(check-expect (edit (make-editor "hel" "lo") "\t")
+              (make-editor "hel" "lo"))
+(check-expect (edit (make-editor "hel" "lo") "\r")
+              (make-editor "hel" "lo"))
 
 ;(define (edit ed ke) (make-editor "" "")) ;stub
 
@@ -113,8 +139,10 @@
         [(key=? ke "left")  (cursor-left ed)]
         [(key=? ke "right") (cursor-right ed)]
         [(key=? ke "\b")    (delete-left ed)]
+        [(key=? ke "\t") ed] ; ignore
+        [(key=? ke "\r") ed] ; ignore
         [(equal? (string-length ke) 1)
-         (add-right-limit ed ke)]
+         (add-right ed ke)]
         [else ed])) ; ignore other key presses
 
 
@@ -131,7 +159,6 @@
          (make-editor (string-remove-last (editor-pre ed))
                       (string-append (string-last (editor-pre ed))
                                      (editor-post ed)))]))
-
 
 ; Editor-> Editor
 ; move cursor right
@@ -165,15 +192,6 @@
 
 (define (add-right ed c)
   (make-editor (string-append (editor-pre ed) c) (editor-post ed)))
-
-
-; Editor 1String -> Editor
-; add 1String to String until buffer limit
-; BLECH: this feels kind of hackish.
-(define (add-right-limit ed c)
-  (cond
-    [(> (image-width (render (add-right ed c))) BUFFER-LENGTH) ed]
-    [else (add-right ed c)]))
 
 
 ; string handling helpers
@@ -225,13 +243,3 @@
       (substring str 0 (sub1 (string-length str)))
       str))
 
-
-; Editor -> Editor
-; start with: (run (make-editor "hello world" "")
-(define (run ed)
-  (big-bang ed                   ; Editor
-            (to-draw   render)   ; Editor -> Image
-            (on-key    edit)))   ; Editor KeyEvent -> Editor
-
-;; test example
-;(run (make-editor "hello world" ""))

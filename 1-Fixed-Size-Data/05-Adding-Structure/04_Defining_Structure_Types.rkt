@@ -1,23 +1,21 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname 05_04_defining_structures) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname 04_Defining_Structure_Types) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e - 5 Adding Structure
 ;; 5.4 Defining Structure Types
 ;; Exercises: 65-68
 
+
+;(define-struct posn [x y])
+
 ;; (define-struct StructuteName [FieldName ..])
 
+;; Structure type definitions defines several function.
 
-;; Ex 65.
-;; Write down the names of the functions
-;; (constructors, selectors, and predicates) that it introduces
-
-;; (define-struct movie [title producer year])
-;; make-movie, movie?, movie-title, movie-producer, movie-year
-
-;; (define-struct person [name hair eyes phone])
-;; make-person, person?, person-name, person-hair, person-eyes
-
+;; One constructor that creates structure instances
+;; One selector per field
+;; A predicate
+ 
 
 ;; a structure type definition that we might use to keep track of contacts such
 ;; as those in your cell phone:
@@ -40,34 +38,6 @@
 (make-entry "Sara Lee" "666-7771" "lee@camlu.edu")
 
 
-;; Ex. 66:
-;; Revisit the structure type definitions of exercise 65. Make sensible
-;; guesses as to what kind of values go with which fields. Then create at
-;; least one instance per structure type definition.
-
-(define-struct movie [title producer year])
-; title: String
-; producer: String
-; year: PositiveNumber
-(make-movie "The Great Gatsby" "John Ford" 1955)
-
-(define-struct person [name hair eyes phone])
-; name: String
-; hair: String
-; eyes: String
-; phone: String
-(make-person "Susanne" "Blonde" "Blue" "555-3545")
-
-(define-struct pet [name number])
-; name: String
-; number: PositiveNumber
-(make-pet "Muffy" 5)
-
-(define-struct CD [artist title price])
-
-(define-struct sweater [material size producer])
-
-
 ;; Sample Problem:
 ;; Develop a structure type definition for a program that deals with “bouncing
 ;; balls” , briefly mentioned at the very beginning of this chapter. The ball’s
@@ -75,22 +45,14 @@
 ;; Its constant speed is the number of pixels it moves per clock tick. Its
 ;; velocity is the speed plus the direction in which it moves.
 
+; velocity is a number
+; positive number means ball moves down.
+; negative number means ball moves up.
+
 (define-struct ball [location velocity])
 
 
-;; Ex. 66:
-;; Here is another way to represent bouncing balls:
-
-(define SPEED 3)
-(define-struct balld [location direction])
-(make-balld 10 "up")
-
-;; Interpret this code fragment and create other instances of balld
-
-(make-balld 100 "up")
-(make-balld (+ 25 SPEED) "down")
-(make-balld 0 "up")
-
+;; See exercise 67 - another way to represent bouncing balls:
 
 ;; a ball with velocity in a 2d universe
 
@@ -102,21 +64,10 @@
 (define ball1
   (make-ball (make-posn 30 40) (make-vel -10 5)))
 
-
-;; Ex. 68:
-;; An alternative to the nested data representation of balls uses four fields
-;; to keep track of the four properties:
-
-(define-struct ballf [x y deltax deltay])
-
-;; Programmers call this a flat representation.
-;; Create an instance of ballf that has the same interpretation as ball1.
-
-(define ball2
-  (make-ballf 30 40 -10 5))
+;; See exercise 68. - Alternative definition.
 
 
-;; another example of a nested structure
+;;; another example of a nested structure
 
 (define-struct centry [name home office cell])
  

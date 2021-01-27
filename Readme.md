@@ -106,7 +106,9 @@ Have fun.
 
     01_From_Positions_to_posn_Structures
 
-    02_Computing_with_posns               Ex. 63,64
+    02_Computing_with_posns
+
+    03_Programming_with_posn              Ex. 63,64
 
     04_Defining_Structure_Types           Ex. 65-68
 
@@ -118,9 +120,11 @@ Have fun.
 
     08_Designing_with_Structures          Ex. 80-82
 
-    09_Structure_in_the_World             Ex. 83-87
+    09_Structure_in_the_World
 
-    11_More_Virtual_Pets                  Ex. 88-93
+    10_A_Graphical_Editor                 Ex. 83-87
+
+    11_More_Virtual_Pets                  Ex. 89-93
 
   06-Itemizations-Structures
 

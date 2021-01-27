@@ -1,7 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname ufo1) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex075) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; Ex. 75:
 ;; Enter these definitions and their test cases into the definitions area of
 ;; DrRacket and make sure they work. It is the first time that we made a “wish”
@@ -77,3 +76,6 @@
   (make-posn (+ (posn-x p) (vel-deltax v))
              (+ (posn-y p) (vel-deltay v))))
 
+;; test
+;(ufo-move-1 u1)
+;(ufo-move-1 u2)
