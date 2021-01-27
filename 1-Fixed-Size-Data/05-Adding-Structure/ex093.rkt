@@ -1,6 +1,6 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname chameleon2) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex093) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e - 5 Adding Structure
 ;; 5.11 More Virtual Pets
 ;; Exercise: 93
@@ -62,7 +62,7 @@
           (empty-scene WIDTH W-HEIGHT "white")
           (empty-scene WIDTH W-HEIGHT "red")))
 
-(define CHAM (bitmap "chameleon.png"))
+(define CHAM (bitmap "images/chameleon.png"))
 
 (define SPEED 3)
 
@@ -72,7 +72,7 @@
 
 
 ;; VCham -> VCham
-;; start the world with (happy-cham (make-vcham 1 50.0 "blue"))
+;; start the world with (happy-cham (make-vcham 1 100 "blue"))
 ;;
 (define (happy-cham vc)
   (big-bang vc                       ; VCham
