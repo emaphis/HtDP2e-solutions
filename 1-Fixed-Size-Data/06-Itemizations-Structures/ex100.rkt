@@ -1,25 +1,19 @@
 ;; The first three lines of this file were inserted by DrRacket. They record metadata
 ;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname 01_Designing_with_Itemizations_A) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex100) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
 ;; HtDP 2e - 6 Itemizations and Structures
 ;; 6.1 Designing with Itemizations, Again
-;; Exercises: 94-100
+;; Exercise: 100
 
 ;; space invader simulation
-;; see ex100.rkt for the complete program
 
 (require 2htdp/image)
 (require 2htdp/universe)
 
-
-;; see exercise 94
-
-;; exercise 94 definitions:
-
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;; Physical Constants
 
-(define WIDTH 300)
+(define WIDTH 200)
 (define HEIGHT 200)
 (define SCENE (empty-scene WIDTH HEIGHT "skyblue"))
 
@@ -32,13 +26,22 @@
 (define TANK-WIDTH (* 2 TANK-HEIGHT))
 (define TANK (rectangle TANK-WIDTH TANK-HEIGHT "solid" "olive"))
 
-
+(define MISSILE-WIDTH 1)
+(define MISSILE-HEIGHT 15)
+(define MISSILE
+  (rectangle MISSILE-WIDTH MISSILE-HEIGHT "solid" "red"))
 
 ;; starting positions
 (define UFO-X 100)
 (define UFO-Y 50)
 (define TANK-X 150)
 (define TANK-Y (- HEIGHT (/ TANK-HEIGHT 2)))
+
+(define TANK-SPEED 3)
+(define UFO-SPEED 7)
+(define MISSILE-SPEED 10)
+(define JUMP 7) ; UFO randomly jumps by this amount
+
 
 ;; a mock-up
 (define MOCK-UP
@@ -49,8 +52,7 @@
                             SCENE)))
 
 
-;;; Defining Itemizations - first step of the design recipe
-
+;;;;;;;;;;;;;;;;;;;;;;;
 ;; data definitions:
 
 ; A UFO is a Posn.
@@ -58,12 +60,6 @@
 ; (using the top-down, left-to-right convention)
 
 (define UFO-POSN1 (make-posn 10 60))
-
-; UFO-POSN -> ???
-#; ;template for UFO
-(define (fn-for-ufo u)
-  (... (... (posn-x u))   ; Number
-       (... (posn-y u)))) ; Number
 
 
 (define-struct tank [loc vel])
@@ -74,23 +70,11 @@
 
 (define TANK1 (make-tank 50 10))
 
-; Tank -> ???
-#; ;template for Tank
-(define (fn-for-tank t)
-  (... (... (tank-loc t))   ; Number
-       (... (tank-vel t)))) ; Number
-
 
 ; A Missile is a Posn.
 ; interpretation (make-posn x y) is the missile's place
 
 (define MISSILE1 (make-posn 20 80))
-
-; Missile -> ???
-#; ;template for Missile-Posn
-(define (fn-for-missile-posn m)
-  (... (... (posn-x m))   ; Number
-       (... (posn-y m)))) ; Number
 
 
 ; the time period when the player is trying to get the tank in position
@@ -101,12 +85,6 @@
 (define AIM0 (make-aim (make-posn 100 120)
                        (make-tank 50 3)))
 
-; Aim -> ???
-#; ;template for Aim
-(define (fn-for-aim a)
-  (... (fn-for-ufo (aim-ufo a))     ; UFO
-       (fn-for-tank (aim-tank a)))) ; Tank
-
 
 ; States after the missile is fired. Before we can formulate a data definition
 ; for the complete game state
@@ -115,13 +93,6 @@
 (define FIRED1 (make-fired (make-posn 100 120)
                            (make-tank 50 3)
                            (make-posn 20 150)))
-
-; Fired -> ???
-#; ;template for Fired
-(define (fn-for-fired f)
-  (... (fn-for-ufo (fired-ufo f))           ; UFO
-       (fn-for-tank (fired-tank f))         ; Tank
-       (fn-for-missile (fired-missile f)))) ; Missile
 
 
 ; A SIGS is one of:
@@ -148,24 +119,6 @@
               (make-tank 100 3)
               (make-posn 22 103)))
 
-; SIGS -> ???
-#; ;template for SIGSs
-(define (fn-for-sigs s)
-  (cond [(aim? s)
-         (... (fn-for-ufo (aim-ufo s))
-              (fn-for-tank (aim-tank s)))]
-        [(fired? s)
-         (... (fn-for-ufo (fired-ufo s))
-              (fn-for-tank (fired-tank s))
-              (fn-for-missile (fired-missile s)))]))
-
-
-;; See exercise 95 - explanation
-
-;; See exercise 96 - Mock-ups with Missiles
-
-
-;; The Design Recipe
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Functions:
@@ -202,37 +155,6 @@
                                                  SCENE)))]))
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; See exercise 97 - render functions
-
-;; Is the result of this expression
-;    (tank-render
-;      (fired-tank s)
-;      (ufo-render (fired-ufo s)
-;                  (missile-render (fired-missile s)
-;                                  SCENE)))
-
-;; the same as the result of
-
-;    (ufo-render
-;      (fired-ufo s)
-;      (tank-render (fired-tank s)
-;                   (missile-render (fired-missile s)
-;                                   SCENE)))
-
-;;  the two expressions produce the same result?
-
-; the different implementations will only produce the same result
-; when the images don't overlap.
-
-;; Constants
-
-(define MISSILE-WIDTH 1)
-(define MISSILE-HEIGHT 15)
-(define MISSILE
-  (rectangle MISSILE-WIDTH MISSILE-HEIGHT "solid" "red"))
-
-
 ; Tank Image -> Image
 ; adds t to the given image im
 (check-expect (tank-render (make-tank 28 -3) SCENE)
@@ -265,9 +187,6 @@
 (define (missile-render m im)
   (place-image MISSILE (posn-x m) (posn-y m) im))
 
-
-;;;;;;;;;;;;;;;;;;;
-;; See exercise 98: for function definitions
 
 ; SIGS -> Boolean
 ; returns #true if the UFO has landed or if the Missile is in
@@ -350,18 +269,6 @@
        (<= (abs (- (posn-y u) (posn-y m)))
            (+ (/ UFO-HEIGHT 2) (/ MISSILE-HEIGHT 2)))))
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; See exercise 99
-;; functions form 99:
-;;  Design si-move. This function is called for every clock tick to determine
-;; to which position the objects move now. Accordingly it consumes an element
-;; of SIGS and produces another one.
-
-(define TANK-SPEED 3)
-(define UFO-SPEED 7)
-(define MISSILE-SPEED 10)
-(define JUMP 7) ; UFO randomly jumps by this amount
 
 ;; Assumption:
 ;; 'si-move-proper' will move the Missile (if exists),the UFO andd the Tank

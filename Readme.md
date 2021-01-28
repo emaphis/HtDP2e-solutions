@@ -136,28 +136,13 @@ Have fun.
 
     02_Mixing_Up_Worlds                   Ex. 106-109
 
+    03_Input_Errors                       Ex. 110-113
 
-    107_cham_and_cat                   Ex. 107
+    05_Equality_Predicates                Ex. 115
 
-    108_pedestrain_light               Ex. 108
+  07-Intermezzo-BSL
 
-    109_finite_sm                      Ex. 109
-
-    06_03_input_errors                 Ex. 110-113
-
-    06_04_checking_the_world           Ex. 114
-
-    06_04_space_invader_3              Ex. 114 a
-
-    06_04_cat_cham_3                   Ex. 114 b
-
-    06_04_editor_4                     Ex. 114 c
-
-    06_05_equality_predicates          Ex. 115
-
-07  Intermezzo-BSL
-
-    intermezzo-BSL                     Ex. 116-128
+    intermezzo-BSL                        Ex. 116-128
 
 ## 2-Arbitrarily-Large-Data
 

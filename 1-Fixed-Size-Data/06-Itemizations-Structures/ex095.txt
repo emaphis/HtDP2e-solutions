@@ -1,0 +1,9 @@
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Ex. 95:
+;; Explain why the three instances are generated according to the
+;; first or second clause of the data definition.
+
+; The first data definition is the only one that follows the first because it
+; has only one representation, the second clause has two defintions since it
+; modles two major states, just fired and in flight.
