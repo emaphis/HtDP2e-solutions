@@ -1,0 +1,181 @@
+HtDP Index of the design recipe
+
+design guideline, 159, 213, 308, 314, 317, 353, 356, 359, 410, 577
+
+design process, 78, 81, 126, 180, 200, 317, 452, 614, 622, 753 
+
+design recipe, 78, 285, 382, 516, 546, 588, 591, 603, 604, 614, 706
+
+
+Figure 1: The basic steps of a function design recipe
+automated test code, which ensures that the function works properly, 16
+
+*1 Fixed-Size Data 33
+
+01 - Arithmetic 33
+
+02 - Functions and Programs
+
+03 - How to Design Programs - 77
+
+    design recipe, 78
+    design process, 78, 81
+    design recipe, batch programs, 79
+    design recipe, interactive program, 79
+
+    
+    design recipe, functions, 81, 95
+
+    Figure 18: The wish list for designing world programs 91
+    
+    13: How big-bang works 101
+
+04 - Intervals, Enumerations and itemizations 102
+
+    design recipe, world program, 122
+
+    design process, 126
+
+    design recipe, itemization, 127
+
+05 - Adding Structure 138
+
+    design guideline, 159
+
+    design recipe, structures, 166, 185
+
+06 - itemizations and Structures 174
+
+    design recipe, mixed data, 177, 248
+
+    design process, 180
+
+07 - Summary
+
+    design process, 200
+    design recipe, dimensions, 200
+
+    design guideline, 213
+
+    structure definition, define-struct, 220
+
+*2 - Abitrarily Large Data, 231
+
+08 - List, 231
+
+09 - Designing with Self-Referential Data Definitions, 246
+
+    design recipe, self-referential data definitions, 246, 253, 423, 506
+    design recipe & induction, 250
+
+    Figure 52: How to translate a data definition into a template, 249
+    Figure 53: How to turn a template into a function definition, 251
+    Figure 54: Turning a template into a function, the table method, 252
+    Figure 55: Tabulating arguments, intermediate values, and results, 254
+    Figure 56: Designing a function for self-referential data, 255
+    Figure 57: A table for cat, 256
+    Figure 58: A table for sorted>? , 263
+    Figure 82: Representing and interpreting finite state machines in general, 361
+
+10 - More on Lists  - 282
+
+     design recipe, 285
+
+     design guideline, 308
+
+11 - Design by Composition - 314
+
+    design, composition, 314
+
+    design guideline, 317
+    design process, 317
+
+    design guideline, 314, 317,  353, 356, 359
+
+*3 - Abstraction 
+14 - Similarities Everywhere, 382
+
+15 - Designing Abstractions, 397
+
+    design recipe, abstraction, 397, 404, 410, 433, 577
+
+    similarities in signatures, 408
+
+    design guideline, 410
+
+16 - Using Abstractions, 411
+    map, 412
+    filter, 412
+    foldl, 413
+    foldr, 413
+
+17 - Nameless Functions 439
+
+     design process, 452
+
+*4 - Intertwined Data
+19 - The Poetry of S-expressions,  487
+
+   Figure 116: A template for S-expressions, 504
+   Figure 117: A program for S-expressions, 505
+
+    design recipe, mut.-referential data definitions, 506, 544
+
+    design recipe, structural data, 512
+
+20 - Iterative Refinement, 514
+
+     design recipe, 516
+    
+21 - Refining Interpreters, 522
+22 - Project The Commerce of XML, 533
+
+    design recipe, use of abstraction, 544
+    design recipe, mut.-referential data definitions, 506, 544
+    design recipe, 546
+
+    Figure 129: Finite state machines, revisited, 548
+
+23 - Simultaneous Processing 557
+
+    design recipe, simultaneous processing, 568
+    design guideline, 577
+    design recipe, 588, 591
+
+*5 Generative Recursion, 603
+    design recipe, 603, 604
+25 - Non-standard Recursion, 604
+
+    design recipe, failure, 606
+
+    Figure 147: Generative recursion, 607
+
+26 - Designing Algorithms, 614
+     design recipe, 614
+     design process, 614, 622
+
+    design recipe, generative recursion,  614, 615, 618, 619, 621, 622, 679, 696, 697, 703
+
+    Figure 151: Designing algorithms (part 1), 619
+    Figure 152: Designing algorithms (part 2), 620
+    Figure 153: From generative to structural recursion, 621
+
+27 - Variations on the Theme, 627
+28 - Mathematical Examples, 643
+
+29 - Algorithms that backtrack, 661
+     design recipe, generative recursion,  679, 696, 697, 703
+
+    design recipes, 691
+
+* 4 - Accumulators, 695
+31 - The Loss of Knowledge, 696
+
+32 - Designing Accumulator-Style Functions, 703
+
+    design recipe, 704
+    design recipe, with accumulator, 717
+
+33 - More Users of Accumulation, 727
+
+     design process, 753
