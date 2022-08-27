@@ -17,16 +17,17 @@ The design recipe us presented by Gregor Kiczales:
 
 <https://courses.edx.org/courses/course-v1:UBCx+HtC1x+2T2017/77860a93562d40bda45e452ea064998b/#HtDF>
 
-
-I'm also experimenting with [Realm of Racket](http://www.nostarch.com/realmofracket)
-See the 'Realm-of-Racket directory. I may try SICP someday also.
-
 NOTE:
-As of January 2021, Im refactoring this repository for two main reasons:
+As of January 2021 (now 2022), Im refactoring this repository for two main reasons:
 
-1 I followed a beta version of the book, so exercises and examples have chnaged.  So, I'm reviewing my solutions and examp;es.
+1 I followed a beta version of the book, so exercises and examples have chnaged.  So, I'm reviewing my solutions and examples.
 
 2 I'm refactoring my code repository to make it more organized and to have information easier to find.  Book examples and notes will be in book.rkt files under their repsective section directories. Intermezzos will go under their own directory  I'll put each exercise in it's own file. I'm also going to use text format files Instead of DrRacket specific file format.
+
+NOTE:
+Don't try to use Emacs to do the exercises, even with Greg Hundershott's excelletn
+racket-mode for Emacs, there is just too much impedence mismatch with editing 
+Beginning Student language. Just use DrRacket, it's not too bad.
 
 I just may complet the rest of the exercises given time.
 
