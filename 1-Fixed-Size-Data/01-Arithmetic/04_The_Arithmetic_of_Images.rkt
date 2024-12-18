@@ -10,22 +10,27 @@
 ;; mode: "solid" "outline"
 ;; color: name passed as string
 
-(ellipse 10 20 "solid" "green")
+(circle 10 "solid" "green")
 
-(star 12 "solid" "green")
+(rectangle 10 20 "solid" "blue")
 
-(regular-polygon 50 3 "outline" "red")
+(star 12 "solid" "gray")
 
-(regular-polygon 40 4 "outline" "blue")
-
-(regular-polygon 20 8 "solid" "red")
-
+;; Stop!
+(text "Hello, World!" 36 "purple")
 
 ;; functions returning image properties:
 ;; image-width, image-height
 
+(image-width (circle 10 "solid" "red"))
+
+(image-height (rectangle 10 20 "solid" "blue"))
+
+;; Stop!
 (+ (image-width (circle 10 "solid" "red"))
    (image-height (rectangle 10 20 "solid" "blue")))
+;; it evaluates each expressin in the parentheses working
+;; inside out.
 
 ;; functions that compose images:
 ;; overlay, overlay/xy, overlay/align

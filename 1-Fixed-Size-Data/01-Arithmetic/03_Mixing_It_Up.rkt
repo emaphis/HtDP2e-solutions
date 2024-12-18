@@ -14,11 +14,17 @@
 ;;  j : natural-number
 ;; Extracts the substring starting at i up to j (or the end if j is not provided).
 
+;; Inappropiate arguments
+;(string-length 42
+;string-length: expects a string, given 42)
+
 (string-length "fourty-two") ;=> 10
 ;(string-length 42) type error
 
 ;; we may nest operations if we keep track of types:
-(+ (string-length "hello world") 60) ;=> 71
+(+ (string-length "hello world") 20) ;=> 31
+
+
 (+ (string-length (number->string 42)) 2) ;=> 4
 ;;(+ (string-length 42) 2) type error
 ;; string-length: expects a string, given 42

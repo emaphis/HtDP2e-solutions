@@ -11,5 +11,5 @@
 (image-height cat)
 (image-width cat)
 
-;; expression
+;; expression  -- (* 117  75)
 (* (image-height cat) (image-width cat)) ;=> 8775
