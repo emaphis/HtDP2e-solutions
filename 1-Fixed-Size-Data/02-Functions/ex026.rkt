@@ -1,6 +1,4 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex026) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#lang htdp/bsl
 ;; Ex 26:
 ;; What do you expect as the value of this program:
 
@@ -9,9 +7,14 @@
                  "_"
                  (substring s i)))
 
+(string-insert "helloworld" 6)
+
+;"hellow_orld"
+
 ;; Confirm your expectation with DrRacket and its stepper.
 
-(string-insert "helloworld" 6)
+
+;step
 (string-append (substring "helloworld" 0 6) "_" (substring "helloworld" 6))
 (string-append "hellow" "_" (substring "helloworld" 6))
 (string-append "hellow" "-" (substring "helloworld" 6))

@@ -1,6 +1,13 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex027) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#lang htdp/bsl
+
+;; Ex 27:
+;; Our solution to the sample problem contains several constants
+;; in the middle of functions. As “One Program, Many Definitions”
+;; already points out, it is best to give names to such constants so that future
+;; readers understand where these numbers come from. Collectalldefinitions
+;; in DrRacket’s definitions area and change them so that all magic numbers
+;; are refactored into constant definitions.
+
 ;; definitions
 (define BASE-ATTENDEES 120)
 (define BASE-PRICE 5.00)

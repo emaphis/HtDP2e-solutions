@@ -1,6 +1,4 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex023) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#lang htdp/bsl
 ;; Ex. 23:
 ;; The first 1String in "hello world" is "h".
 ;; How does the following function compute this result?
@@ -13,5 +11,7 @@
   (substring s 0 1))
 
 (string-first "hello world")
+
+; steps
 (substring "hello world" 0 1)
 "h"

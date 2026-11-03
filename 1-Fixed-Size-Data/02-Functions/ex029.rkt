@@ -1,7 +1,6 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex029) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-;; ex 29.
+#lang htdp/bsl
+
+;; Ex 29.
 
 ;; After studying the costs of a show, the owner discovered several ways of lowering the cost.
 ;; As a result of these improvements, there is no longer a fixed cost;

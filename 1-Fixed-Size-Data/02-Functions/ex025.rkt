@@ -1,10 +1,7 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex025) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-;; Ex 25
-
+#lang htdp/bsl
 (require 2htdp/image)
 
+;; Ex 25
 ;;Take a look at this attempt to solve exercise 17:
 
 (define (image-classify img)
@@ -19,7 +16,8 @@
 (image-classify (circle 3 "solid" "red"))
 
 ;; Does stepping through an application suggest a fix?
-;;  => Yes the "=" clause should come first.
+
+; Ans: Yes the "=" clause should come first since it's more specific.
 
 ;; fixed
 (define (image-classify-fixed img)

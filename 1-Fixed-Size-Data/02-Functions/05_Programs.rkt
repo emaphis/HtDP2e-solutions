@@ -1,6 +1,4 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname 05_Programs) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#lang htdp/bsl
 ;; HtDP 2e 2.2 Functions
 ;; 2.5 Programs
 ;; Ex 33,34
@@ -104,7 +102,7 @@
     [stop-when zero?]
     [on-key reset])
 
-#; schematic big-bang
+#; ;schematic big-bang
 (big-bang cw0
   [on-tick tock]
   [on-key ke-h]
