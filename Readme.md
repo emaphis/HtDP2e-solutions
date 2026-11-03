@@ -24,6 +24,8 @@ As of January 2021 (now 2022), Im refactoring this repository for two main reaso
 
 2 I'm refactoring my code repository to make it more organized and to have information easier to find.  Book examples and notes will be in book.rkt files under their repsective section directories. Intermezzos will go under their own directory  I'll put each exercise in it's own file. I'm also going to use text format files Instead of DrRacket specific file format.
 
+3 I'm switching to "Determine language from souce" instead of selecting language from menu as in the book.
+
 NOTE:
 Don't try to use Emacs to do the exercises, even with Greg Hundershott's excelletn
 racket-mode for Emacs, there is just too much impedence mismatch with editing 

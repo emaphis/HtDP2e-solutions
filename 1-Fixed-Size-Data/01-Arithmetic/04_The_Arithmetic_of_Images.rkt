@@ -1,6 +1,4 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname 04_The_Arithmetic_of_Images) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#lang htdp/bsl
 (require 2htdp/image)
 
 ;; 1.4  Arithmetic of Images
@@ -29,7 +27,7 @@
 ;; Stop!
 (+ (image-width (circle 10 "solid" "red"))
    (image-height (rectangle 10 20 "solid" "blue")))
-;; it evaluates each expressin in the parentheses working
+;; it evaluates each expression in the parentheses working
 ;; inside out.
 
 ;; functions that compose images:
