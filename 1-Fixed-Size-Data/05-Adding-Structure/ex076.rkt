@@ -1,6 +1,4 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex76) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#lang htdp/bsl
 ;; Ex. 76:
 ;; Formulate data definitions for the following structure type definitions:
 
@@ -71,5 +69,3 @@
   (... (sweater-material s)
        (sweater-size s)
        (sweater-producer s)))
-
-

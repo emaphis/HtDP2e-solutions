@@ -1,6 +1,4 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex084) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#lang htdp/bsl
 ;; Ex. 84:
 ;; Design edit. The function consumes two inputs, an editor ed and
 ;; a KeyEvent ke, and it produces another editor. Its task is to add
@@ -242,4 +240,3 @@
   (if (> (string-length str) 0)
       (substring str 0 (sub1 (string-length str)))
       str))
-

@@ -1,7 +1,5 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname 09_Structure_in_the_World) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-1`;; HtDP 2e - 5 Adding Structure
+#lang htdp/bsl
+;; HtDP 2e - 5 Adding Structure
 ;; 5.9 Structure in the World
 
 (require 2htdp/image)
