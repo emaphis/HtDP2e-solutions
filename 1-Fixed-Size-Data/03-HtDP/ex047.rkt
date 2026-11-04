@@ -1,6 +1,4 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-intermediate-reader.ss" "lang")((modname 03_07_Virtualpet2) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#lang htdp/bsl
 ;; HtDP 2e 3 How to Design Programs
 ;; 2.3.7 Virtual Pet Worlds
 
@@ -92,4 +90,3 @@
 (check-expect (feed 10) 12.0)
 
 (define (feed cs) (+ cs 2.0))
-

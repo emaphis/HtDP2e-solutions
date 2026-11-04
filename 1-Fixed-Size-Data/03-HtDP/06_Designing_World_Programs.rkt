@@ -1,6 +1,4 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname 06_Designing_World_Programs) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#lang htdp/bsl
 ;; HtDP 2e 3 How to Design Programs
 ;; 3.6 Designing World Programs
 ;; Exercises 39-44
@@ -136,7 +134,7 @@
 ;; Ex. 43b:
 ;; Use the data definition to design a program that moves the car according
 ;; to a sine wave. Don’t try to drive like that.
-;; See sinefunction.rck
+;; See sinefunction.rkt
 
 
 ;; Ex. 44:
