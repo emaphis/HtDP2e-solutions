@@ -1,13 +1,11 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname 06_01_designing_itemizations_3) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#lang htdp/bsl
 ;; HtDP 2e - 6 Itemizations and Structures
 ;; 6.1 Designing with Itemizations, Again
 ;; Exercises: 103-105
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; More exerces
+;; More exercises
 
 ;; Ex 103:
 ;; Develop a data representation for the following four kinds of zoo animals:

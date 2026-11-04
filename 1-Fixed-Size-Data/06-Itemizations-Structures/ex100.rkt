@@ -1,6 +1,4 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex100) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#lang htdp/bsl
 ;; HtDP 2e - 6 Itemizations and Structures
 ;; 6.1 Designing with Itemizations, Again
 ;; Exercise: 100
@@ -50,8 +48,6 @@
                (place-image TANK
                             TANK-X TANK-Y
                             SCENE)))
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;; data definitions:
 
