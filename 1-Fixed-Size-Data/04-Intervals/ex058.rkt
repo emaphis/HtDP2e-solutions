@@ -1,7 +1,4 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex058) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
-
+#lang htdp/bsl
 ;; Ex. 58:
 ;; Introduce constant definitions that separate the intervals for low
 ;; prices and luxury prices from the others so that the legislator in

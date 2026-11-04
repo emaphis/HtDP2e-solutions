@@ -1,6 +1,4 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname ex053) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#lang htdp/bsl
 ;; Ex. 53:
 ;; In some way it is best to draw some world scenarios and to represent
 ;; them with data and, conversely, to pick some data examples and to
@@ -36,4 +34,3 @@ ROCKET-HEIGHT
 (place-image ROCKET CENTER-Y (/ HEIGHT 2) SCENE)  ; almost half way
 (place-image ROCKET CENTER-Y 0 SCENE)  ; almost all the way
 (place-image ROCKET CENTER-Y HEIGHT SCENE)  ; all the way up
-

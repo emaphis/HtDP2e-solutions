@@ -1,6 +1,4 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname 01_Programming_with_Conditionals) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#lang htdp/bsl
 ;; HtDP 2e 1.4 Intervals, Enumerations, etc.
 ;; 4.1 Programming with Condinals
 
@@ -17,7 +15,7 @@
     [(string=? "green" traffic-light-state) "yellow"]
     [(string=? "yellow" traffic-light-state) "red"]))
 
-(next"yellow")
+(next "yellow")
 
 ;; else for all other cases
 
