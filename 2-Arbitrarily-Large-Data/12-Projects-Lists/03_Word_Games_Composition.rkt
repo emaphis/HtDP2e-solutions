@@ -1,6 +1,4 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname 12_03_word_games_composition) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#lang htdp/bsl+
 ;; HtDP 2e - 12 Projects: Lists
 ;; 12.3 Word Games, Composition Illustrated
 ;; 12.4 Word Games, the Heart of the Problem

@@ -1,6 +1,4 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname 11_04_functions_that_generalize) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#lang htdp/bsl+
 ;; HtDP 2e - 11 Design by Composition
 ;; 11.4 Auxiliary Functions that Generalize
 ;; Exercises: 191-194

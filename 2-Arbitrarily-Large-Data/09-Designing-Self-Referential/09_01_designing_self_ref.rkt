@@ -1,6 +1,4 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname 09_01_designing_self_ref) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#lang htdp/bsl
 ;; HtDP 2e - 9 Designing with Self-Referential Data Definitions
 ;; 9.0 Designing with Self-Referential Data Definitions
 ;; 9.1 Finger Exercises
@@ -39,7 +37,6 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 9.1 Finger Exercises: Lists
-
 ;; Ex. 137:
 ;; Compare the template for contains-flatt? with the one for how-many.
 ;; Ignoring the function name, they are the same. Explain the similarity.

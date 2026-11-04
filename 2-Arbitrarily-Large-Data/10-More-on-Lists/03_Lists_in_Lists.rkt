@@ -1,6 +1,4 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname 10_03_lists_in_lists) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#lang htdp/bsl
 ;; HtDP 2e - 10 More on Lists
 ;; 10.3 Lists in Lists, Files
 ;; Exercises: 171-176

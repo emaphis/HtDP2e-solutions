@@ -1,6 +1,4 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-abbr-reader.ss" "lang")((modname 12_01_198_word_count) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#lang htdp/bsl+
 ;; HtDP 2e - 12 Projects: Lists
 ;; 12.1 Real-world Data: Dictionaries
 ;; Exercises: 198
@@ -187,4 +185,3 @@
          (count-by-letter lol (rest lolow))]
         [(string<? (first lol) (first-letter (first (first lolow))))
          (count-by-letter (rest lol) lolow)]))
-

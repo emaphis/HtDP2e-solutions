@@ -1,6 +1,4 @@
-;; The first three lines of this file were inserted by DrRacket. They record metadata
-;; about the language level of this file in a form that our tools can easily process.
-#reader(lib "htdp-beginner-reader.ss" "lang")((modname 09_06_note_on_lists_sets) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+#lang htdp/bsl
 ;; HtDP 2e - 9 Designing with Self-Referential Data Definitions
 ;; 9.6 A Note on Lists ans Sets
 ;; Exercises: 160
